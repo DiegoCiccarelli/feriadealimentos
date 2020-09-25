@@ -10,3 +10,5 @@ De esta manera, buscan acompañar a pequeños productores y productoras, generan
 El público al que está destinado este e-commerce es a las personas residentes en el area de la ciudad de Córdoba, en el cual la Feria cuenta con entrega a domicilio y con nodos estrategicos para retiro en persona.
 
 El e-commerce será desarrollado por Diego Cicarelli, Gino Luciano Rojo y Martín de Amorín. Diego tiene conocimientos en diseño web (HTML, CSS, WordPress) y Photoshop. Gino es ingeniero de la nube trabajando para Amazon. Martín tiene conocimientos muy basicos de JavaScript, HTML y CSS. 
+
+Paginas de referencias:
