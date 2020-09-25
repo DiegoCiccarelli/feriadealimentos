@@ -1,4 +1,4 @@
-# feriadealimentos
+# Feria de alimentos 
 Ecommerce del programa de Economía Social y Solidaria de la Secretaría de Extensión y Relaciones Institucionales de la Universidad Provincial de Córdoba.
 
 La Feria de Alimentos de la Agricultura Familiar de UPC ofrece una serie de combos para que puedan elegir lo que más les gusta, y disfrutar de productos caseros, sanos, ricos y naturales.
