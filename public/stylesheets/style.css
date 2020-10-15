@@ -1,8 +1,116 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/** CONTENEDOR//GLOBALES **/
+.contenedor{
+  box-sizing: border-box;
+  width: 1000px;
+  border: solid 1px black;
+  margin: 0 auto;
 }
 
-a {
-  color: #00B7FF;
+.contenedor h2{
+display: block;
+text-align: center;
 }
+/** SLIDER */
+.banner{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 250px;
+  border-bottom: solid 1px black;
+  position: relative;
+}
+
+#arrowleft{
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 45%;
+  left: 10px;
+}
+
+#arrowright{
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 45%;
+  right: 10px;
+}
+
+
+
+/** PRODUCTOS DESTACADOS y COMBOS**/
+
+.contenedorproductos{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  margin-left: 3.5px;
+}
+
+.producto{
+  display: inline-block;
+  box-sizing: border-box;
+  border: black 1px solid;
+  margin-left: 35px;
+  margin-top: 25px;
+  height: 300px;
+  width: 200px;
+  text-align: center;
+}
+
+.producto img{
+  display: block;
+  height: 150px;
+  width: 100%;
+  border-bottom: black 1px solid;
+  background-size: cover;
+}
+
+.producto a{
+  display: block;
+  box-sizing: border-box;
+  border: solid 1px black;
+  font-size: small;
+  border-radius: 2px;
+  width: 150px;
+  margin-left: 25px;
+  margin-top: 8.5px;
+  text-decoration: none;
+  color: black;
+}
+
+/** ICONOGRAFIA **/
+
+.contenedoriconos{
+  display: block;
+  width: 100%;
+}
+
+.iconos{
+  display: inline-block;
+  margin-left: 20px;
+  width: 300px;
+  text-align: center;
+  vertical-align: top;
+}
+
+/** NEWLSETTER **/
+
+.contenedornewsletter{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.contenedornewsletter form input{
+  width: 80%;
+  height: 20px;
+}
+
+.contenedornewsletter form button{
+  display: block;
+  margin-left: 470px;
+  margin-top: 5px;
+}
+
+
