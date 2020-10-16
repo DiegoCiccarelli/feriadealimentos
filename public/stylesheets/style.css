@@ -4,7 +4,8 @@
 
 footer {
   /*background-color: antiquewhite;*/
-
+ width: 1000px;
+ margin: 0 auto;
 }
 
 #iconoFacebook{
@@ -51,7 +52,8 @@ color: lightblue;
 }
 
 #contenedorListasFooter{
-  text-align: center;
+  
+ text-align: center;
   
 }
 
