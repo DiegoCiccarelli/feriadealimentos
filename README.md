@@ -23,3 +23,8 @@ Sitios de referencia:
 - https://www.dinoonline.com.ar/super/home
 
 - https://saboresandinos.com/
+
+
+Trello:
+
+https://trello.com/b/TMkfJjV7/feria-de-alimentos
