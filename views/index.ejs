@@ -3,7 +3,7 @@
 <head>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="https://kit.fontawesome.com/dee27fc75f.js" crossorigin="anonymous"></script>
-
+	<meta name="viewport" content="width=device-widht, initial-scale=1">
 </head>
   
 <body>
@@ -14,16 +14,18 @@
 
 			<!--BANNER-->
 
-			<div class="banner"> 
-				<i class="fas fa-arrow-left fa-2x" id="arrowleft"></i>
-				<i class="fas fa-arrow-right fa-2x" id="arrowright"></i>
-			</div>
+		<div class="banner"> 
+			<i class="fas fa-arrow-left fa-2x"></i>
+			<i class="fas fa-arrow-right fa-2x"></i>
+		</div>
 				
 			<!--PRODUCTOS DESTACADOS-->
 
-		<div class="contenedorproductos">
+		<h2>Poductos Destacados</h2>
 
-			<h2>Poductos Destacados</h2>
+		<div class="contenedorProductos">
+
+			
 
 			<div class="producto">
 				<img src="https://i.picsum.photos/id/775/200/300.jpg?hmac=nko360AK314QqqXl8HbvoKqB5EoQuRQHGQ1pDRmSn0c" alt="imagen">
@@ -60,9 +62,19 @@
 
 			<!--COMBOS-->
 			
-		<div class="contenedorproductos">
+		<h2>Combos</h2>
 
-			<h2>Combos</h2>
+		<div class="contenedorProductos">
+
+			
+
+			<div class="producto">
+				<img src="https://i.picsum.photos/id/775/200/300.jpg?hmac=nko360AK314QqqXl8HbvoKqB5EoQuRQHGQ1pDRmSn0c" alt="imagen">
+				<p>Nombre producto</p>
+				<p>Precio</p>
+				<a href="">Agregar al carrito</a>
+				<a href="">Ver detalle</a>
+			</div>
 
 			<div class="producto">
 				<img src="https://i.picsum.photos/id/775/200/300.jpg?hmac=nko360AK314QqqXl8HbvoKqB5EoQuRQHGQ1pDRmSn0c" alt="imagen">
@@ -78,14 +90,6 @@
 				<p>Precio</p>
 				<a href="">Agregar al carrito</a>
 				<a href="">Ver detalle</a>
-			</div>
-
-			<div class="producto">
-				<img src="https://i.picsum.photos/id/775/200/300.jpg?hmac=nko360AK314QqqXl8HbvoKqB5EoQuRQHGQ1pDRmSn0c" alt="imagen">
-				<p>Nombre producto</p>
-				<p>Precio</p>
-				<a href="">Agregar al carrito</a> <!--Cambiar a button-->
-				<a href="">Ver detalle</a> <!--Cambiar a button-->
 			</div>
 
 			<div class="producto">
@@ -97,10 +101,11 @@
 			</div>
 		</div>
 
-			<!--ICONOGRAFIA-->
-		<div class="contenedoriconos">
+		<h2>¿Como trabajamos?</h2>
 
-			<h2>¿Como trabajamos?</h2>
+			<!--ICONOGRAFIA-->
+		<div class="contenedorIconos">
+
 
 			<div class="iconos">
 				<i class="fas fa-desktop fa-4x"></i>
@@ -119,15 +124,18 @@
 		
 		</div>
 		
-		<div>
-			<div class="contenedornewsletter">
-				<h2>¡No te pierdas ninguna oferta!</h2>
-				<form action="/" method="POST">
-				<input type="email" id="email" name="email">
-				<button type="submit">Enviar</button>
-				</form>			
-			</div>
+		<!-- NEWSLETTER -->
+		
+		<h2>¡No te pierdas ninguna oferta!</h2>
+
+		<div class="contenedorNewsletter">
+				
+			<form action="/" method="POST">
+			<input type="email" id="email" name="email">
+			<button type="submit">Enviar</button>
+			</form>			
 		</div>
+		
 	</div>
 </body>
 </html>
