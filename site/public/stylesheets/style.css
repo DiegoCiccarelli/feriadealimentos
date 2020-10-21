@@ -22,7 +22,7 @@ text-align: center;
 /** SLIDER */
 .banner{
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 40vh;
   border-bottom: solid 1px black;
   align-items: center;
@@ -60,7 +60,7 @@ text-align: center;
   background-size: cover;
 }
 
-.producto a{
+.producto button{
   border: solid 1px black;
   font-size: small;
   border-radius: 2px;
@@ -68,22 +68,28 @@ text-align: center;
   text-decoration: none;
   color: black;
   margin-bottom: 1vh;
+  background-color: transparent;
 }
 
 /** ICONOGRAFIA **/
 
 .contenedorIconos{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   text-align: center;
   font-size: large;
+  width: 80%;
 }
 
 .iconos{
-  width: 33%;
+  width: 20%;
+  margin-left: 2vh;
+  margin-right: 2vh;
   font-weight: bolder;
+  min-width: 240px;
 }
+
 
 /** NEWLSETTER **/
 
@@ -110,6 +116,10 @@ text-align: center;
   margin-bottom: 1vh;
 }
 
+.producto a{
+  margin-bottom: 2vh;
+}
+
 /** ICONOS **/
 .iconos{
   width: 100%;
@@ -124,15 +134,16 @@ text-align: center;
                     /** TABLET CHICA**/
  @media only screen and (max-width: 699px) and (min-width: 481px){
 
-
-   /** ICONOS **/
-
 .producto{
 width: 40%;
 max-width: 250px;
-margin-bottom: 1vh;
+
 }
 
+.producto:nth-child(1n + 3){
+margin-top: 2vh;
+}
+ /** ICONOS **/
 .iconos{
   width: 100%;
   border-bottom: black solid 1px;
