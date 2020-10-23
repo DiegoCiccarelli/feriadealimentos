@@ -1,0 +1,20 @@
+.contenedorListado{
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    border: black 1px solid;
+    justify-content: space-around;
+}
+
+.categoriasGeneral{
+    width: 10%;
+}
+
+.grilla{
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}

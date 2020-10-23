@@ -11,5 +11,9 @@ router.get('/footer', function(req, res, next) {
   res.render('footer', { title: 'footer' });
 });
 
+/* GET home page. */
+router.get('/listado-productos', function(req, res, next) {
+  res.render('listado-producto');
+});
 
 module.exports = router;
