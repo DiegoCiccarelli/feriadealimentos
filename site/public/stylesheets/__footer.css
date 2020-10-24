@@ -1,69 +1,102 @@
-#iconosSociales{
-    text-align: center;
-  }
+
+#listaIconosSociales{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 0px ;
+
+}
   
-  footer {
-    /*background-color: antiquewhite;*/
-   width: 1000px;
-   margin: 0 auto;
-  }
+footer   ul{
+  padding: 0px;
+  margin: 16px 0px;
+}
   
-  #iconoFacebook{
-    color: blue;
+footer h3 {
+  margin: 0px;
+}
+  
+#iconoFacebook a i{
+  color:#4267B2;
     
-  }
+}
   
-  #iconoInstagram{
-    color: red;
-  }
+#iconoInstagram a i{
+  color: #C13584;
+}
   
-  #iconoTwitter{
-  color: lightblue;
-  }
+#iconoTwitter a i{
+  color: #1DA1F2;
+}
   
-  #iconoFacebook, #iconoInstagram, #iconoTwitter {
-    display: inline-block;
-    padding: 20px;
-  }
+#iconoFacebook, #iconoInstagram, #iconoTwitter {
+  padding: 20px;
+}
+
+#copyright{
+  text-align: center;
+  font-size: 12px;
+}
+
+.listaFooter li:nth-child(1) {
+
+  font-weight: bold;
+  list-style: none;
+  margin-bottom: 10px;
+
+}
   
-  .lineaCorta{
-    width: 90%;
+
+#contenedorListasFooter{
     
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    
+}
   
-  .lineaLarga{
-    width: 100%;
-  }
+    
+#listaMediosPago{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+
+}
+
+@media (min-width: 480px){
+
+
+}
   
-  #copyright{
-    text-align: center;
-  }
-  
-  .listaFooter{
-    list-style: none;
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  
-  .listaFooter li:nth-child(1) {
-    font-weight: bold;
-  }
-  
+@media (min-width: 768px) {
   #contenedorListasFooter{
     
-   text-align: center;
-    
+    flex-direction: row;
+    justify-content: space-around;
+
   }
-  
-  .iconoMedioPago{
-    display: inline-block;
-    padding-left: 50px;
-    padding-right: 50px;
+
+  #listaMediosPago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+
   }
-  
-  #contenedorMediosPago{
-    text-align: center;
+
+  #listaMediosPago .iconoMedioPago img{
+    content: url("/images/banner-mercadopago.jpg");
   }
-  
+} 
+
+
+@media (min-width: 992px) { 
+
+}
+
+@media(max-width: 767px){
+  #listaMediosPago .iconoMedioPago img{
+    content: url("/images/logo-mercadopago.jpg");
+  }
+}
