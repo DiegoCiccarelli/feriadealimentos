@@ -2,46 +2,32 @@
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-items: center;
 }
 
 .categoriaGeneral{
 display: flex;
-position: relative;
 flex-direction: column;
-justify-content: center;
-align-items: center;
 list-style: none;
 border: 1px black solid;
 text-align: center;
-background-color: #9ca651;
 }
+
 .categoria-padre{
 display: none;
+list-style: none;
 }
 
 .categoria-hija{
-    display: none;
-}
-.categoriaGeneral i{
-    margin-left: 1vh;
+display: none;
+list-style: none;
 }
 
 .categoriaGeneral li i:hover > ul{
-    display: block;
+    list-style: none;
+    display: inline-block;
 }
 
-.categoriaGeneral li ul li i:hover + ul{
-    display: block;
-}
-
-.contenedorProductos{
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.producto{
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+.categoriaGeneral li ul li i:hover > ul{
+    display: inline-block;
 }
