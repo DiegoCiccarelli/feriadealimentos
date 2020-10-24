@@ -1,0 +1,138 @@
+
+.rutaProducto{
+    font-size: 14px;
+}   
+
+
+
+h1.tituloProducto{
+    
+    text-align: center;
+    
+}
+
+p.descripcionCortaProducto{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.imagenPrincipalProducto{
+    width: 100%;
+    height: auto;
+    border:grey 1px solid;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px grey;
+}
+
+#listaMiniaturas li a img{
+   
+    width: 70%;
+    height: auto;
+    border:grey 1px solid;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px grey;
+    
+   
+
+    
+}
+
+#listaMiniaturas {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+       
+
+}
+
+
+#listaCompartirIconosSociales{
+    display: flex;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.textoCompartir{
+    font-size: 12px;
+}
+
+.compartirRedes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconoCompartirFacebook a i{
+    color:#4267B2;
+
+}
+
+#iconoCompartirInstagram a i{
+    color: #C13584;
+    
+}
+
+#iconoCompartirTwitter a i{
+    color: #1DA1F2;
+}
+
+#iconoCompartirFacebook, #iconoCompartirInstagram, #iconoCompartirTwitter{
+    padding: 5px;
+    
+}
+
+#sumaRestaCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.cantidadAgregaCarrito{
+    text-align: center;
+    width: 50px;
+}
+
+#btnAgregarCarrito{
+    margin-left: 20px;
+}
+
+#textoCantidadCarrito{
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+#btnContinuarComprando{
+    display: flex;
+    justify-content: center;
+   
+}
+
+#btnContinuarComprando button{
+padding-left: 40px;
+padding-right: 40px;
+}
+
+p#condiciones{
+    font-size: 14px;
+    text-align: center;
+}
+
+.descripcionLargaProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descripcionLargaProducto p{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.descripcionLargaProducto h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
