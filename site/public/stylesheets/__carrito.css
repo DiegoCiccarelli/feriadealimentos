@@ -1,0 +1,92 @@
+h1{
+    text-align: center;
+}
+
+.separador{
+    width: 70%;
+    border: 1px black solid;
+}
+
+.productoCarrito{
+    display: flex;
+    position: relative;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    margin: 2vh 0;
+    font-size: 0.6rem;
+    flex-wrap: wrap;
+    max-height: 70px;
+    justify-content: space-between;
+    width: 100vw;
+
+}
+
+.productoCarrito img{
+width: 20%;
+border-right: black 1px solid;
+max-height: 70px;
+}
+
+.abajoIzquierda{
+    position: absolute;
+    left: 22%;
+    top: 65%;
+}
+
+
+.abajoDerecha{
+    position: absolute;
+    right: 2%;
+    top: 65%;
+}
+
+
+.arribaIzquierda{
+    position: absolute;
+    left: 22%;
+}
+
+.arribaDerecha{
+position: absolute;
+right: 2%;
+}
+
+h2{
+    font-size: 0.9rem;
+
+}
+
+.costo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    margin-right: 1vw;
+}
+
+.costoEnvio{
+    position: absolute;
+    top: 55%;
+    right: 0%;
+}
+
+.contenedorBotones{
+width: 100%;
+margin-top: 10vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.contenedorBotones button{
+    border: solid 1px black;
+    font-size: small;
+    border-radius: 2px;
+    width: 80%;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1vh;
+    background-color: transparent;
+
+}

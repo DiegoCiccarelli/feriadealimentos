@@ -1,33 +1,36 @@
 .contenedorListado{
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.contenedorCategorias{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.categorias{
 display: flex;
+background-color: red;
 flex-direction: column;
-justify-content: center;
 align-items: center;
+justify-content: center;
+
 }
 
-.categoriaGeneral{
-display: flex;
+.desplegable{
 flex-direction: column;
-list-style: none;
-border: 1px black solid;
-text-align: center;
-}
-
-.categoria-padre{
 display: none;
-list-style: none;
 }
 
-.categoria-hija{
-display: none;
-list-style: none;
+.desplegable a{
+    width: 100%;
+    max-width: 200px;
+    height: 2vh;
+    margin-bottom: 2vh;
+    text-align: right;
 }
 
-.categoriaGeneral li i:hover > ul{
-    list-style: none;
-    display: inline-block;
-}
-
-.categoriaGeneral li ul li i:hover > ul{
-    display: inline-block;
+.categorias i:hover + .desplegable{
+display: flex;
 }

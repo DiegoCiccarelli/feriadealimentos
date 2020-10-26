@@ -16,4 +16,10 @@ router.get('/listado-productos', function(req, res, next) {
   res.render('listado-producto');
 });
 
+/* GET home page. */
+router.get('/carrito', function(req, res, next) {
+  res.render('carrito');
+});
+
+
 module.exports = router;
