@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-/* GET home page. */
+/* GET footer. */
 router.get('/footer', function(req, res, next) {
   res.render('footer', { title: 'footer' });
 });
 
-/* GET home page. */
+/* GET listado productos. */
 router.get('/listado-productos', function(req, res, next) {
   res.render('listado-producto');
 });
@@ -21,5 +21,10 @@ router.get('/carrito', function(req, res, next) {
   res.render('carrito');
 });
 
+
+/* GET Detalle producto. */
+router.get('/detalleProducto', function(req, res, next) {
+  res.render('detalleProducto');
+});
 
 module.exports = router;
