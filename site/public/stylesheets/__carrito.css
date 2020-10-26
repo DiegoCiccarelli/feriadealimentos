@@ -33,6 +33,29 @@ max-height: 70px;
     top: 65%;
 }
 
+.sumarRestar{
+    position: absolute;
+    top: 72%;
+    left: 35%;
+}
+
+.sumarRestar button{
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    width: 10%;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+}
+
+.sumarRestar input{
+    width: 5%;
+    height: 0%;
+    font-size: 0.8rem;
+    border: none;
+}
 
 .abajoDerecha{
     position: absolute;
