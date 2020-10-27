@@ -1,4 +1,4 @@
-.contenedor{
+.contenedorHome{
     display: flex;
     margin: 0 auto;
     padding: 0;
@@ -9,8 +9,8 @@
   
                       /** PC **/
   
-  .contenedor h2{
-  display: block;
+  .contenedorHome h2{
+    display: block;
   text-align: center;
   }
   

@@ -5,17 +5,18 @@
 }
 
 .contenedorCategorias{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
 }
 .categorias{
 display: flex;
-background-color: red;
+background-color: green;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-
+position: relative;
 }
 
 .desplegable{
