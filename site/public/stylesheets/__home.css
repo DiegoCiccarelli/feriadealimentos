@@ -48,6 +48,10 @@
     width: 20%;
     max-width: 250px;
   }
+
+  #precioProducto{
+    font-size: 1.5rem;
+  }
   
   .producto img{
     width: 100%;
@@ -76,8 +80,7 @@
     font-size: large;
     width: 80%;
   }
-  
-  /* .iconos i{
+.iconos i{
     transform: scale(0.8);
     transition: 0.3s;
     filter: grayscale(100%);
@@ -86,7 +89,7 @@
   .iconos i:hover{
     transform: scale(1) rotate(30deg);
     filter: brightness(150%) grayscale(0);
-  } */
+  } 
   
   .iconos{
     width: 20%;
