@@ -17,16 +17,16 @@ footer h3 {
 }
   
 #iconoFacebook a i{
-  color:#4267B2;
+  color:white /*#4267B2;*/
     
 }
   
 #iconoInstagram a i{
-  color: #C13584;
+  color:white; /* #C13584;*/
 }
   
 #iconoTwitter a i{
-  color: #1DA1F2;
+  color:white; /* #1DA1F2;*/
 }
   
 #iconoFacebook, #iconoInstagram, #iconoTwitter {
@@ -36,11 +36,14 @@ footer h3 {
 #copyright{
   text-align: center;
   font-size: 12px;
+  color: white;
+  background-color:  #365902;
+  padding: 5px 0;
 }
 
 .listaFooter li:nth-child(1) {
 
-  font-weight: bold;
+  font-size: 18px;
   list-style: none;
   margin-bottom: 10px;
 
@@ -52,6 +55,9 @@ footer h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #BF9D73;
+  color: white;
+  margin-bottom: 0px;
     
 }
   
@@ -61,7 +67,17 @@ footer h3 {
   flex-direction: column;
   align-items: center;
   list-style: none;
+  background-color:  #558C03;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding-bottom: 20px;
 
+}
+
+#listaMediosPago p{
+  color: white;
+  font-size: 18px;
 }
 
 @media (min-width: 480px){
