@@ -1,4 +1,13 @@
 
+#mainDetalleProducto{
+    max-width: 1200px;
+    margin: auto;
+}
+#contenedorFlex{
+    display: flex;
+    flex-direction: column;
+}
+
 .rutaProducto{
     font-size: 14px;
 }   
@@ -8,16 +17,28 @@
 h1.tituloProducto{
     
     text-align: center;
+    margin-bottom: 10px;
     
+}
+
+#contenedorTituloDescripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 p.descripcionCortaProducto{
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 500px;
+    margin-top: 5px;
 }
 
 .imagenPrincipalProducto{
+    display: block;
+    margin: auto;
     width: 100%;
     height: auto;
     border:grey 1px solid;
@@ -25,25 +46,25 @@ p.descripcionCortaProducto{
     box-shadow:2px 2px 5px grey;
 }
 
-#listaMiniaturas li a img{
+#listaMiniaturas img{
    
-    width: 70%;
-    height: auto;
+    width: 80%;
+    display: block;
+    margin: auto;
     border:grey 1px solid;
     border-radius: 5px;
     box-shadow:2px 2px 5px grey;
-    
-   
-
-    
+}
+#listaMiniaturas div{
+width: 100px;
 }
 
-#listaMiniaturas {
-    list-style: none;
-    display: flex;
-    margin: 0px;
-       
 
+#listaMiniaturas {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+ 
 }
 
 
@@ -57,7 +78,7 @@ p.descripcionCortaProducto{
     font-size: 12px;
 }
 
-.compartirRedes{
+#contenedorCompartirRedes{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,37 +103,46 @@ p.descripcionCortaProducto{
     
 }
 
+#precio{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
 #sumaRestaCarrito{
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .cantidadAgregaCarrito{
     text-align: center;
-    width: 50px;
+    width: 10%;
+    font-size: 16px;
 }
 
 #btnAgregarCarrito{
     margin-left: 20px;
+    font-size: 14px;
 }
 
 #textoCantidadCarrito{
-    font-size: 14px;
+    font-size: 16px;
     margin-right: 20px;
 }
 
-#btnContinuarComprando{
+#contenedorBotonContinuarComprando{
     display: flex;
     justify-content: center;
    
 }
 
-#btnContinuarComprando button{
-padding-left: 40px;
-padding-right: 40px;
+#contenedorBotonContinuarComprando button{
+width: 80%;
+font-size: 16px;
+max-width: 335px;
+
 }
 
 p#condiciones{
@@ -120,21 +150,76 @@ p#condiciones{
     text-align: center;
 }
 
-.descripcionLargaProducto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.descripcionLargaProducto p{
-    padding-left: 10px;
-    padding-right: 10px;
+
+.descripcionLargaProducto{
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: center;
     margin-top: 10px;
+    
 }
 
-.descripcionLargaProducto h3{
-    margin-top: 10px;
-    margin-bottom: 10px;
+#mainDetalleProducto h3{
+    text-align: center;
+}
+
+
+@media (min-width: 480px){
+
+    .imagenPrincipalProducto{
+        width: 70%;
+        
+    }
+    
+    #listaMiniaturas{
+        justify-content: center ;
+    }
+
+    
+
+}
+
+@media (min-width: 768px){
+
+    #contenedorFlex{
+        
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height:50vh;
+
+    }
+
+    #contenedor1{
+       justify-self: flex-start;
+       align-self: flex-start;
+        width: 50%;
+        order: 1;
+    }
+
+    #contenedor2{
+
+        width: 50%;
+        order: 2;
+        
+    }
+
+    .descripcionLargaProducto{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    #contenedorFlex{
+       
+        height:65vh;
+        max-width: 1200px;
+        margin: auto;
+
+    }
 
 }
