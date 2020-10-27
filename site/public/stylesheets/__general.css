@@ -6,7 +6,21 @@ body{
     box-sizing: border-box;
     color: #4f4f4f;
     font-family: 'Roboto';
+    background-color:  RGB(242, 226, 196, 0.2);
+    padding: 0;
+    margin: 0;
+
     
   }
 
 
+ 
+  
+  
+  /* Color Theme Swatches in Hex */
+  .New-plants-1-hex { color: #558C03; }
+  .New-plants-2-hex { color: #365902; }
+  .New-plants-3-hex { color: #BFB304; }
+  .New-plants-4-hex { color: #F2E2C4; }
+  .New-plants-5-hex { color: #BF9D73; }
+  
