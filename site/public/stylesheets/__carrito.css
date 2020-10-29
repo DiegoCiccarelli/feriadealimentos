@@ -20,20 +20,17 @@
 .productoCarrito{
     display: flex;
     position: relative;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
     margin: 2vh 0;
     font-size: 0.6rem;
     flex-wrap: wrap;
     max-height: 70px;
     justify-content: space-between;
     width: 100%;
-
+    background-color: white;
 }
 
 .productoCarrito img{
 width: 20%;
-border-right: black 1px solid;
 max-height: 70px;
 max-width: 70px;
 }
@@ -42,22 +39,23 @@ max-width: 70px;
     position: absolute;
     left: 22%;
     top: 60%;
-    max-width: 110px;
+    max-width: 20%;
 }
 
-
 .abajoIzquierda button{
-    border: none;
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: black;
-    background-color: transparent;
+    min-width: auto;
+    width: 20px;
+    height: 25px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .abajoIzquierda input{
-    width: 5%;
+    width: 15%;
     font-size: 0.8rem;
     border: none;
+    overflow: hidden;
+    margin-left: 0.7vh;
 }
 
 .abajoDerecha{
@@ -65,6 +63,7 @@ max-width: 70px;
     right: 2%;
     top: 65%;
     margin-right: 1vh;
+    max-width: 20%;
 }
 
 
@@ -72,6 +71,7 @@ max-width: 70px;
     position: absolute;
     left: 22%;
     bottom: 60%;
+    max-width: 20%;
 }
 
 .arribaDerecha{
@@ -79,6 +79,7 @@ position: absolute;
 right: 2%;
 bottom: 60%;
 margin-right: 1vh;
+max-width: 20%;
 }
 
 .contenedorCarrito h2{
@@ -111,15 +112,7 @@ align-items: center;
 }
 
 .contenedorBotones button{
-    border: solid 1px black;
     width: 40%;
-    font-size: small;
-    border-radius: 2px;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 1vh;
-    background-color: transparent;
-
 }
 
 @media only screen and (min-width: 460px){
@@ -197,11 +190,7 @@ right: 0%;
     align-items: center;
     justify-content: space-around;
 }
-.botonesCarrito{
-    width: 40%;
-    text-align: center;
-    background-color: red;
-}
+
 }
 
 @media only screen and (min-width: 1000px){
