@@ -127,11 +127,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1050px;
+    margin-bottom: 1vh;
+    border-radius: 2px;
   }
 
   .newsletter h2{
     margin-top: 1vh;
     margin-bottom: 2vh;
+    color: white;
   }
   .contenedorNewsletter{
     display: flex;
@@ -139,7 +143,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
   }
   
   .contenedorNewsletter input{
@@ -157,7 +160,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    max-width: 1500px;
+  
   }
                       /** CELULAR **/
   @media only screen and (max-width: 480px) {
