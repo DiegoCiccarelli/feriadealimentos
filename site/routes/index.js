@@ -27,4 +27,5 @@ router.get('/detalleProducto', function(req, res, next) {
   res.render('detalleProducto');
 });
 
+
 module.exports = router;
