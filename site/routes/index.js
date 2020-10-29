@@ -28,4 +28,20 @@ router.get('/detalleProducto', function(req, res, next) {
 });
 
 
+/* GET Detalle producto. */
+router.get('/registro', function(req, res, next) {
+  res.render('register');
+});
+
+/* GET Detalle producto. */
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
+/* GET Detalle producto. */
+router.get('/header', function(req, res, next) {
+  res.render('header');
+});
+
+
 module.exports = router;

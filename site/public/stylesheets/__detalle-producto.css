@@ -118,15 +118,24 @@ width: 100px;
     align-items: center;
 }
 
+#botonSumar, #botonRestar{
+    
+    width: 25px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 .cantidadAgregaCarrito{
     text-align: center;
     width: 10%;
     font-size: 16px;
+    margin-bottom: 1vh;
 }
 
 #btnAgregarCarrito{
     margin-left: 20px;
-    font-size: 14px;
+    max-width: 200px;
+    /*font-size: 14px;*/
 }
 
 #textoCantidadCarrito{
@@ -143,7 +152,7 @@ width: 100px;
 #contenedorBotonContinuarComprando button{
 width: 80%;
 font-size: 16px;
-max-width: 335px;
+width: 425px;
 
 }
 

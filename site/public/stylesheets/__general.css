@@ -21,7 +21,7 @@ body{
     margin-bottom: 1vh;
     background-color: green;
     padding: 5px 0;
-    min-width: 51px;
+    /*min-width: 51px;*/
   }
 
   .claseButton:hover{
