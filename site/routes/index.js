@@ -43,5 +43,19 @@ router.get('/header', function(req, res, next) {
   res.render('header');
 });
 
+/* Cabecera Diego. */
+router.get('/cabeceradiego', function(req, res, next) {
+  res.render('cabeceraDiego');
+});
+
+/* Cabecera Diego. */
+router.get('/logindiego', function(req, res, next) {
+  res.render('loginDiego');
+});
+
+/* Cabecera Diego. */
+router.get('/registerdiego', function(req, res, next) {
+  res.render('registerDiego');
+});
 
 module.exports = router;
