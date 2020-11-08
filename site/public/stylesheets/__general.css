@@ -33,6 +33,13 @@ body{
     color: white;
     text-decoration: none;
   }
+
+  .contenedorFooter{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 1300px;
+  }
  
   
   /*

@@ -26,6 +26,7 @@
     background-image: url("../images/banner-home1.jpg");
     max-width: 1200px;
     background-size: cover;
+    margin-top: 1vh;
   }
 
   .banner i{
@@ -156,12 +157,6 @@
     height: 25px;
   }
 
-  .contenedorFooter{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  
-  }
                       /** CELULAR **/
   @media only screen and (max-width: 480px) {
   

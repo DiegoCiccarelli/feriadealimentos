@@ -13,12 +13,12 @@ router.get('/footer', function(req, res, next) {
 
 /* GET listado productos. */
 router.get('/listado-productos', function(req, res, next) {
-  res.render('listado-producto');
+  res.render('product/listado-producto');
 });
 
 /* GET Carrito. */
 router.get('/carrito', function(req, res, next) {
-  res.render('carrito');
+  res.render('product/carrito');
 });
 
 
