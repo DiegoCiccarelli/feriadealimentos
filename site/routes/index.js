@@ -6,17 +6,17 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-/* GET footer. */
+/* GET footer. 
 router.get('/footer', function(req, res, next) {
-  res.render('footer', { title: 'footer' });
-});
+  res.render('footer');
+});*/
 
 /* GET listado productos. */
 router.get('/listado-productos', function(req, res, next) {
   res.render('listado-producto');
 });
 
-/* GET home page. */
+/* GET Carrito. */
 router.get('/carrito', function(req, res, next) {
   res.render('carrito');
 });
@@ -24,38 +24,23 @@ router.get('/carrito', function(req, res, next) {
 
 /* GET Detalle producto. */
 router.get('/detalleProducto', function(req, res, next) {
-  res.render('detalleProducto');
+  res.render('product/detalleProducto');
 });
 
 
-/* GET Detalle producto. */
+/* GET register. */
 router.get('/registro', function(req, res, next) {
-  res.render('register');
+  res.render('user/register');
 });
 
-/* GET Detalle producto. */
+/* GET login. */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  res.render('user/login');
 });
 
-/* GET Detalle producto. */
+/* GET header. 
 router.get('/header', function(req, res, next) {
   res.render('header');
-});
-
-/* Cabecera Diego. */
-router.get('/cabeceradiego', function(req, res, next) {
-  res.render('cabeceraDiego');
-});
-
-/* Cabecera Diego. */
-router.get('/logindiego', function(req, res, next) {
-  res.render('loginDiego');
-});
-
-/* Cabecera Diego. */
-router.get('/registerdiego', function(req, res, next) {
-  res.render('registerDiego');
-});
+});*/
 
 module.exports = router;

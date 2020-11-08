@@ -3,11 +3,11 @@
 @import "__home.css";
 @import "__footer.css";
 @import "__listado-productos.css";
-/*@import "__login.css";*/
+@import "__login.css";
 @import "__detalle-producto.css";
 @import "__carrito.css";
-/*@import "__header.css";*/
-/*@import "__register.css";*/
+@import "__header.css";
+@import "__register.css";
 
 
 @import "__loginDiego.css";

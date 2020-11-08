@@ -1,204 +1,107 @@
-/* Contenedor del logo y texto alternativo */
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  
-  /* Bottom left text */
-  .bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-  }
-  
-  /* Top left text */
-  .top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-  }
-  
-  /* Top right text */
-  .top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-  }
-  
-  /* Bottom right text */
-  .bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-  }
-  
-  /* Centered text */
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  
-  
-  /* Estilo del Boton Busqueda*/
-  form.submit input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-  
-  /* Estilo del Boton Submit */
-  form.submit button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /
-    cursor: pointer;
-  }
-  
-  form.submit button:hover {
-    background: #0b7dda;
-  }
-  
-  /* limpiar espacio flotante */
-  form.submit::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  /* Estilo de navbar */
-  .navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-  }
-  
-  /* Navbar links */
-  .navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Navbar links al pasar el mouse */
-  .navbar a:hover {
-    background-color: #000;
-  }
-  
-  /* link que esta "Activo" en navbar */
-  .active {
-    background-color: #4CAF50;
-  }
-  
-  /* responsive, mostrara en verticial en vez de horizontal si el tamaño de la pantalla es menor a 500px */
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
-  /* Estilo de navbar */
-  .navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-  }
-  
-  /* Navbar links */
-  .navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Navbar links cuando el mouse se posiciona por encima*/
-  .navbar a:hover {
-    background-color: #000;
-  }
-  
-  /* navbar,link activo */
-  .active {
-    background-color: #4CAF50;
-  }
-  
-  /*responsive, mostrara en verticial en vez de horizontal si el tamaño de la pantalla es menor a 500px*/
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
-  
-  #listaIconosUsuario{
+header{
     display: flex;
     justify-content: center;
-    list-style: none;
-    margin-bottom: 0px ;
-  
-  }
-    
-  
-    
-  #iconoCarrito a i{
-    color:#4267B2;
-      
-  }
-    
-  #iconoAyuda a i{
-    color: #C13584;
-  }
-    
-  #iconoCuenta a i{
-    color: #1DA1F2;
-  }
-    
-  
-  
-  
-  #contenedorListaHeader{
-      
-    display: flex;
     flex-direction: column;
     align-items: center;
-      
-  }
+    background-color: #558C03;
+}
+
+#contenedorHeader{
+    width: 1200px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     
-      
-  
-  
-  @media (min-width: 480px){
-  
-  
-  }
+
+}
+
+#contenedorHeader img{
+    width: 300px;
+    height: auto;
     
-  @media (min-width: 768px) {
-    #contenedorListasFooter{
-      
-      flex-direction: row;
-      justify-content: space-around;
-  
-    }
-  
-  
-  @media (min-width: 992px) { 
-  
-  }
-  
-  
+}
+
+#contenedorIconosHeader{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+
+}
+
+#contenedorIconosHeader p{
+
+    font-size: 0.8rem;
+    text-align: center;
+
+}
+
+#contenedorHeader #contenedorBusqueda{
+    width: 50%;
+    position: relative;
+
+}
+
+#contenedorHeader input{
+
+    width: 100%;
+    font-size: 1.2rem;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    
+}
+
+#iconoBusqueda{
+    position: absolute;
+    left: 94%;
+    top: 6px;
+    color: lightslategrey;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    margin: auto;
+    border-top-style:solid; 
+    border-top-width: 1px;
+    border-top-color: white;
+
+}
+nav ul{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+
+}
+
+nav ul li{
+    text-align: center;
+    border-radius: 2px;
+    
+    
+    background-color: #BF9D73;
+    
+    width: 200px;
+    height: 35px;
+    padding-top: 7px;
+    margin: 0 10px;
+
+}
+
+nav ul li:hover{
+background-color: #a88b67;
+box-shadow: 0px 0px 5px 0px white;
+}
+
+nav ul li a{
+
+    text-decoration: none;
+    color: white;
+}

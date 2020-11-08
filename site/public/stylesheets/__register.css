@@ -1,79 +1,97 @@
-* {box-sizing: border-box}
+#contenedorRegister{
+    margin: auto;
+    width: 900px;
+    margin-top: 30px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    background-color: rgb(253, 253, 253);
+   
+    
 
-/* padding de contenedores */
-.container {
-  padding: 99px;
 }
 
-/* el width es full para el formulario de imput */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+#contenedorRegister form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+ #contenedorRegister h1{
+
+    background-color: green;
+    align-self: stretch;
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
+
+#contenedorRegister hr{
+    width: 80%;
+    height: 1px;
+    border: none !important;
+    margin: 0px;
+    margin-bottom: 10px;
+    background-color: green;
 }
 
-/* Estilos del hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+#contenedorRegister input{
+
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 10px 0 10px 0;
+    background: #f1f1f1;
+    width: 100%;
+    font-size: 1.2rem;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    
 }
 
-/* Estilo  de los botones del registro */
-.registerbtn {
-  background-color:#558C03;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+#contenedorRegister p{
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+   text-align: center;
+   
 }
 
-.registerbtn:hover {
-  opacity:1;
+
+
+#contenedorRegister form div{
+
+    margin-bottom: 20px;  
+    display: flex;
+    justify-content: center;
+    
+
 }
 
-/* Definamos el color */
-a {
-  color: dodgerblue;
+#contenedorRegister input[type="checkbox"]{
+
+    margin: 0;
+    padding: 0;
+    width: 15px;
+    height: 1rem;
 }
 
-/* seteo de color gris al formulario de signin */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-/* Customizar la clase para el checkboxuno) */
-.container singin {
-  display: block;
-  position: absolute;
-  padding-left: 55px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 2px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 16px 20px;
-  margin: 8px 0;
-}
 
-/* Customizar la clase para el texto alineado al checkb) */
-.texto {
-  padding-left: 60px;
-  padding-right:90px;
-  user-select: none;
-  padding: 8px 100px 20px;
-  margin: 10px 0;
-align-content: center;
+#contenedorRegister a{
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: gray;
+
 }
