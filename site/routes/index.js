@@ -6,11 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-/* GET footer. 
-router.get('/footer', function(req, res, next) {
-  res.render('footer');
-});*/
-
 /* GET listado productos. */
 router.get('/listado-productos', function(req, res, next) {
   res.render('product/listado-producto');
@@ -29,7 +24,7 @@ router.get('/detalleProducto', function(req, res, next) {
 
 
 /* GET register. */
-router.get('/registro', function(req, res, next) {
+router.get('/register', function(req, res, next) {
   res.render('user/register');
 });
 
