@@ -33,9 +33,10 @@ router.get('/login', function(req, res, next) {
   res.render('user/login');
 });
 
-/* GET header. 
-router.get('/header', function(req, res, next) {
-  res.render('header');
-});*/
+/* GET login. */
+router.get('/productCreateEdit', function(req, res, next) {
+  res.render('product/productCreateEdit');
+});
+
 
 module.exports = router;

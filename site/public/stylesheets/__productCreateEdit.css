@@ -1,0 +1,128 @@
+
+#contenedorProductCreateEdit{
+ 
+    margin: auto;
+    width: 90%;
+    max-width: 900px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    background-color: rgb(253, 253, 253);
+ 
+}
+
+#contenedorProductCreateEdit form{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    
+}
+
+
+
+
+ #contenedorProductCreateEdit h1{
+
+    background-color: green;
+    align-self: stretch;
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
+
+
+
+#contenedorProductCreateEdit input, #contenedorProductCreateEdit select, #contenedorProductCreateEdit textarea{
+
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 10px 0 10px 0;
+    background: #f1f1f1;
+    width: 100%;
+    font-size: 1.2rem;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    
+}
+
+#contenedorProductCreateEdit textarea{
+    resize: none;
+    font-family: inherit;
+   font-size: 1.2rem;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   
+}
+
+#contenedorProductCreateEdit #descripcionCorta{
+    height: 50px;
+}
+
+#contenedorProductCreateEdit #descripcionLarga{
+    height: 100px;
+}
+
+
+
+#contenedorProductCreateEdit #precioCreateEdit, #contenedorProductCreateEdit #stock{
+
+width: 25%;
+min-width: 100px;
+align-self: flex-start;
+    
+
+}
+
+
+#precioCategoria{
+
+   
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+
+}
+
+#imagenesCargadas{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+#imagenesCargadas img{
+    
+    
+    width: 25%;
+    min-width: 100px;
+    
+}
+
+@media (max-width: 480px){
+
+    #contenedorProductCreateEdit h1{
+        font-size: 1.5rem;
+    }
+
+    #contenedorProductCreateEdit p{
+        font-size: 1rem;
+    }
+
+
+}

@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs'); %>
+   
+    <div id="contenedorProductCreateEdit">
+        <h1>Nuevo Producto</h1>
+        
+        <form>
+                  
+            <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre Producto">
+               
+            <input type="text" name ="precioCreateEdit" id="precioCreateEdit" placeholder="Precio">
+                
+            <input type="text" name="stock" id="stock" placeholder="Stock">
+
+            <select name="nombreProducto" id="nombreProducto"> 
+               
+                <option value="0">Categoria</option>
+                <option value="1">Dulces Caseros</option>
+                <option value="2">Merienda</option>
+                <option value="3">Artesanias</option>
+                   
+            </select>
+          
+            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"></textarea>
+            <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"></textarea>
+            
+            <input type="file" name="imagenProductoCarga" id="imagenProductoCarga" placeholder="Subir Imágenes">
+            
+            <div id="imagenesCargadas">
+                <img src="/images/imagen-producto1.jpg">
+                <img src="/images/imagen-miniatura2-producto1.jpg">
+                <img src="/images/imagen-miniatura3-producto1.jpg">
+            </div>
+            
+            <button class="claseButton">Crear Producto</button>
+
+        </form>
+
+        
+        
+    </div>
+
+    <%- include('../partials/footer.ejs'); %>
