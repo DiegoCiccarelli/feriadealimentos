@@ -7,7 +7,9 @@ header{
 }
 
 #contenedorHeader{
-    width: 1200px;
+    
+    max-width: 1200px;
+    width: 90%;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -29,6 +31,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     color: white;
+    margin-left: 5px;
 
 }
 
@@ -36,7 +39,14 @@ header{
 
     font-size: 0.8rem;
     text-align: center;
+    
 
+}
+
+#contenedorIconosHeader i{
+
+    font-size: 2.5rem;
+    
 }
 
 #contenedorHeader #contenedorBusqueda{
@@ -65,7 +75,8 @@ header{
 nav{
     display: flex;
     justify-content: center;
-    width: 1200px;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     border-top-style:solid; 
     border-top-width: 1px;
@@ -78,6 +89,7 @@ nav ul{
     flex-direction: row;
     justify-content: center;
     list-style: none;
+    padding-left: 0px;
 
 }
 
@@ -106,7 +118,121 @@ nav ul li a{
     color: white;
 }
 
+@media(max-width: 992px) {
+   
+    nav{
+        
+        border: none;
 
-@media(max-width: 480px){
-  
+    }
+
+    nav ul{
+        
+        flex-direction: column;
+        align-self: flex-start;
+    }
+
+    #contenedorIconosHeader i{
+
+        font-size: 2rem;
+        
+    }
+
+    #contenedorHeader img{
+        width: 250px;
+        height: auto;
+        
+        order: 1;
+       
+    }
+
+    
+    #iconoCarrito{
+
+        order: 2;
+        
+        
+    }
+    
+    #contenedorHeader {
+        flex-wrap: wrap;
+    }
+
+    #contenedorHeader #contenedorBusqueda{
+        width: 90%;
+        order: 3;
+    }
+
+    #iconoBusqueda{
+        left: 93%;
+        top: 8px;
+        color: lightslategrey;
+        font-size: 1.5rem;
+    }
+
 }
+@media(max-width: 768px){
+ 
+    nav{
+        
+        border: none;
+
+    }
+
+    nav ul{
+        
+        flex-direction: column;
+        align-self: flex-start;
+    }
+
+    #contenedorIconosHeader i{
+
+        font-size: 2rem;
+        
+    }
+
+    #contenedorHeader img{
+        width: 150px;
+        height: auto;
+        margin-left: 20%;
+        margin-right: 20%;
+        order: 1;
+       
+    }
+
+    #iconoAyuda {
+        
+        display: none;
+
+    }
+    
+    #iconoLogin {
+        
+        display: none;
+
+    }
+
+    #iconoCarrito{
+
+        order: 2;
+        
+        
+    }
+    
+    #contenedorHeader {
+        flex-wrap: wrap;
+    }
+
+    #contenedorHeader #contenedorBusqueda{
+        width: 90%;
+        order: 3;
+    }
+
+    #iconoBusqueda{
+        left: 93%;
+        top: 8px;
+        color: lightslategrey;
+        font-size: 1.5rem;
+    }
+}
+

@@ -41,7 +41,7 @@ p.descripcionCortaProducto{
 .imagenPrincipalProducto{
     display: block;
     margin: auto;
-    width: 100%;
+    width: 90%;
     height: auto;
     border:grey 1px solid;
     border-radius: 5px;
