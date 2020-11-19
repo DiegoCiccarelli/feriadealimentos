@@ -7,24 +7,24 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET listado productos. */
-router.get('/listado-productos', function(req, res, next) {
-  res.render('product/listado-producto');
+router.get('/listadoProductos', function(req, res, next) {
+  res.render('product/productList');
 });
 
 /* GET Carrito. */
 router.get('/carrito', function(req, res, next) {
-  res.render('product/carrito');
+  res.render('product/cart');
 });
 
 
 /* GET Detalle producto. */
 router.get('/detalleProducto', function(req, res, next) {
-  res.render('product/detalleProducto');
+  res.render('product/productDetail');
 });
 
 
 /* GET register. */
-router.get('/register', function(req, res, next) {
+router.get('/registro', function(req, res, next) {
   res.render('user/register');
 });
 
@@ -33,8 +33,13 @@ router.get('/login', function(req, res, next) {
   res.render('user/login');
 });
 
-/* GET login. */
-router.get('/productCreateEdit', function(req, res, next) {
+/* GET Producto Nuevo */
+router.get('/productoNuevo', function(req, res, next) {
+  res.render('product/productCreateEdit');
+});
+
+/* GET Producto Editar */
+router.get('/productoEditar', function(req, res, next) {
   res.render('product/productCreateEdit');
 });
 
