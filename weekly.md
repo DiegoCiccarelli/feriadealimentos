@@ -27,3 +27,12 @@ En equipo coordinamos que archivos en desuso debian eliminarse
 Comentamos sobre unir a federico a nuestras proximas daylis para consultas sobre la dificultad del nuevo modulo
 
 - Ahora debemos estandarizar todo
+
+
+
+Weekly 16.11.2020
+
+- Diego acomodo los views de las vistas
+- Debemos reciclar codigo!
+- Sumemos a Federico Garcia a las meetings donde encontremos que nos puede ayudar y el este disponible
+-Debemos reunirnos por lo menos 90 minutos para analizar el estado del Sprint siguiente y alinear el codigo del proyecto
