@@ -6,35 +6,40 @@
     <div id="contenedorProductCreateEdit">
         <h1>Nuevo Producto</h1>
         
-        <form>
+        <form action="/products/productoNuevo" method="POST" enctype="multipart/form-data">
                   
-            <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre Producto">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto">
                
-            <input type="text" name ="precioCreateEdit" id="precioCreateEdit" placeholder="Precio">
-                
-            <input type="text" name="stock" id="stock" placeholder="Stock">
+            <input type="number" name ="precioProducto" id="precio" placeholder="Precio">
 
-            <select name="nombreProducto" id="nombreProducto"> 
+            <select name="estado" id="estado">
+                <option value="Estado">Estado</option>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+
+            </select>
+                
+            <select name="categoria" id="categoria"> 
                
-                <option value="0">Categoria</option>
-                <option value="1">Dulces Caseros</option>
-                <option value="2">Merienda</option>
-                <option value="3">Artesanias</option>
+                <option value="default">Categoria</option>
+                <option value="Dulces Caseros">Dulces Caseros</option>
+                <option value="Merienda">Merienda</option>
+                <option value="Artesanias">Artesanias</option>
                    
             </select>
           
             <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"></textarea>
             <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"></textarea>
             
-            <input type="file" name="imagenProductoCarga" id="imagenProductoCarga" placeholder="Subir Imágenes">
+            <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
             
-            <div id="imagenesCargadas">
+            <!-- <div id="imagenesCargadas">
                 <img src="/images/imagen-producto1.jpg">
                 <img src="/images/imagen-miniatura2-producto1.jpg">
                 <img src="/images/imagen-miniatura3-producto1.jpg">
-            </div>
+            </div> -->
             
-            <button class="claseButton">Crear Producto</button>
+            <button class="claseButton" type="submit">Crear Producto</button>
 
         </form>
 
