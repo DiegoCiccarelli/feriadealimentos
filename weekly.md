@@ -36,3 +36,21 @@ Weekly 16.11.2020
 - Debemos reciclar codigo!
 - Sumemos a Federico Garcia a las meetings donde encontremos que nos puede ayudar y el este disponible
 -Debemos reunirnos por lo menos 90 minutos para analizar el estado del Sprint siguiente y alinear el codigo del proyecto
+
+
+
+Weekly 19.11.2020
+
+- Unificamos Criterios para el Sprint 3 y los siguientes
+- en las folders partials,view, se solidifica la eleccion del header
+-en el footer, se cierran las 2 etiquetas
+
+- Desiciones tomadas en la weekly 19.11.2020
+       - Se nombro en ingles, las views
+       - se nombro a español "paths" (ahora es ruta)
+       - Debemos refinar el codigo de "partials"
+       - La nomenclatura  interna del proyecto sera en ingles
+       -Para el cliente, los views ,seran en español
+       -Realizamos el cambio de todos los css , modificando sus nombres
+
+       
