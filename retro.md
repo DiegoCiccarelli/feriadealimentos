@@ -1,3 +1,4 @@
+
 Retrospectiva primer sprint:
 
 Comenzar a hacer: 
@@ -18,9 +19,8 @@ Hacer menos:
     - Programar de manera aislada al equipo.
 
 Dejar de hacer: 
-    - Cambiar horarios de reuniónes de equipo.
-    - Desconectarse de una reunión en curso.
-
+    -No ser puntuales (Avisemos si no podemos)
+    
 
 Retrospectiva segundo sprint:
 
@@ -42,6 +42,37 @@ Continuar haciendo:
 
 Hacer menos:
     - Subestimar la complejidad de las tareas y del proyecto en general.
+
+Dejar de hacer:
+    - Asumir tareas que no podamos resolver.
+    - No avisar al equipo con antelacion si no vamos a poder cumplir con una tarea.
+
+
+
+Retrospectiva 3er sprint:
+
+Comenzar a hacer:
+    - En discord, compartir las soluciones que encontramos a los problemas de codigo
+    - Unifiquemos los CSS
+     - Agregar a Trello la peticion de consejos, como la unificacion de CSS, o los que necesitemos
+
+Hacer mas:
+    - Comunicarnos, reforzar la comunicacion
+    - Determinar la duración de la reunión al pactarla., Horario especifico de incio y de fin
+    - Unificar estandares de archivos creados por diferentes integrantes del grupo.
+    - Recurrir a los profesores - reforzar
+     - Planifiquemos las reuniones y que trataremos en cada reunion con antelacion.
+
+
+Continuar haciendo:
+    - Mejorar la planificación de contenido a tratar en reuniones del equipo.
+    - Comunicación más fluida del equipo.
+    - Mantener el Trello organizado.
+
+
+Hacer menos:
+    - Subestimar la complejidad de las tareas y del proyecto en general.
+     - No asumir tareas que no sepamos , si no sabemos, pedir ayuda.
 
 Dejar de hacer:
     - Asumir tareas que no podamos resolver.
