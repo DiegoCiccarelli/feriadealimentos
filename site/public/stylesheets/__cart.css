@@ -37,6 +37,13 @@ height: auto;
     max-height: inherit;
     padding: 0;
     margin: 0;
+    word-wrap: break-word;
+}
+
+.informacionProducto button{
+    width: 18%;
+    max-width: 150px;
+    margin: 0 1vw 0 0;
 }
 
 .informacionProducto div{

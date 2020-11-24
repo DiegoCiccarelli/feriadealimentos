@@ -36,6 +36,9 @@ const productsController = {
         fs.writeFileSync(productsDirname, productsDataJSON);
         res.send("Se ha creado con exito el producto: " + req.body.nombre)
     },
+    productListAdmin : function(req, res, next) {
+        res.render('product/productListAdmin', {productsData});
+    }
     // editProduct : function(req, res, next) {
     //     res.render('product/productCreateEdit');
     // }

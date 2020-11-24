@@ -1,0 +1,26 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+<main class="contenedor">
+
+    <section class="contenedorCarrito">
+        <% for(let i = 0; i < productsData.length; i++){ %>
+        <article class="productoCarrito">
+            <div class="imagenCarrito">
+                <img src="../images/productsImages/<%= productsData[i].imagenProducto %>" alt="">
+            </div>
+            <div class="informacionProducto">
+                <p><%= productsData[i].nombre %></p>
+                <p><%= productsData[i].estado %></p>
+                <p><%= productsData[i].categoria %></p>
+                <p>$<%= productsData[i].precioProducto %></p>
+                <button class="claseButton">EDITAR</button>
+                <button class="claseButton">BORRAR</button>
+            </div>
+        </article>
+        <%}%>
+    </section>
+    </main>
+    
+<%- include('../partials/footer.ejs'); %>

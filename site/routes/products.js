@@ -22,7 +22,10 @@ router.get('/carrito', productsController.cart);
 router.get('/detalleProducto', productsController.productDetail);
 
 router.get('/productoNuevo', productsController.newProduct);
-router.post('/productoNuevo', upload.any(), productsController.createProduct)
+router.post('/productoNuevo', upload.any(), productsController.createProduct);
+
+router.get('/listadoProductosAdmin', productsController.productListAdmin);
+
 
 // router.get('/productoEditar', productsController.editProduct);
 
