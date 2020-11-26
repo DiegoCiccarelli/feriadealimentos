@@ -2,7 +2,6 @@
 
 <%- include('../partials/header.ejs'); %>
 
-   
     <div id="contenedorProductCreateEdit">
         <h1>Nuevo Producto</h1>
         
@@ -16,7 +15,6 @@
                 <option value="Estado">Estado</option>
                 <option value="Activo">Activo</option>
                 <option value="Inactivo">Inactivo</option>
-
             </select>
                 
             <select name="categoria" id="categoria"> 
@@ -29,9 +27,12 @@
             </select>
           
             <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"></textarea>
+            <span></span>
             <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"></textarea>
+            <span></span>
             
             <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+            <span></span>
             
             <!-- <div id="imagenesCargadas">
                 <img src="/images/imagen-producto1.jpg">
