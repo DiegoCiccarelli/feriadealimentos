@@ -22,6 +22,7 @@ const productsController = {
         formData.imagenProducto = req.files[0].filename;
         const errors = validationResult(req);
         let id = 0;
+        console.log(errors);
         if(!errors.isEmpty()){
             res.render("product/productCreateEdit", {errors : errors.errors})
         }
