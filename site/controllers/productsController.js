@@ -5,18 +5,34 @@ let productsDirname = path.join(__dirname, "/../data/productsData.json");
 let productsData = JSON.parse(fs.readFileSync(productsDirname, "utf-8"));
 
 const productsController = {
+
     productList : function(req, res, next) {
         res.render('product/productList');
     },
+
     cart : function(req, res, next){
         res.render('product/cart');
     },
+
     productDetail : function(req, res, next) {
-        res.render('product/productDetail');
+              
+        let product = productsData.find(p => parseInt(req.params.id)==p.id);
+        console.log(product)
+        
+        if (product){
+            return res.render('product/productDetail', {product: product});
+            console.log(product);
+        }else{
+            return res.send("Error no se encuentra el producto");
+        }
+
     },
+
     newProduct : function(req, res, next) {
+
         res.render('product/productCreateEdit');
     },
+
     createProduct : function(req, res, next){
         let formData = req.body;
         formData.imagenProducto = req.files[0].filename;
@@ -42,12 +58,37 @@ const productsController = {
         fs.writeFileSync(productsDirname, productsDataJSON);
         res.send("Se ha creado con exito el producto: " + req.body.nombre)
     },
+    
     productListAdmin : function(req, res, next) {
         res.render('product/productListAdmin', {productsData});
+    },
+    
+    showProductEdit : function(req, res, next) {
+        
+              
+            let product = productsData.find(p => parseInt(req.params.id)==p.id);
+            console.log(product)
+            
+            if (product){
+                return res.render('product/productEdit', {
+                product: product,
+                mode: "edit",
+                title: "Editar Producto",
+                buttonText: "Guardar Cambios",
+                formAction: "/products/editProduct/"
+                });
+                console.log(product);
+            }else{
+                return res.send("Error no se encuentra el producto");
+            }
+    
+        
+    },
+
+    productEdit: function(req, res, next) {
+
+
     }
-    // editProduct : function(req, res, next) {
-    //     res.render('product/productCreateEdit');
-    // }
-};
+}
 
 module.exports = productsController;

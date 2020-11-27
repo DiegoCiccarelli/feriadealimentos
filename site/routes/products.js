@@ -22,14 +22,19 @@ router.get('/listadoProductos', productsController.productList);
   /* GET Carrito. */
 router.get('/carrito', productsController.cart);
 
-router.get('/detalleProducto', productsController.productDetail);
+/* GET detalle de un producto */
+router.get('/detalleProducto/:id', productsController.productDetail);
 
 router.get('/productoNuevo', productsController.newProduct);
 router.post('/productoNuevo', productsMiddleware.checkForm, upload.any(), productsController.createProduct);
 
 router.get('/listadoProductosAdmin', productsController.productListAdmin);
 
+/* GET carga de formulario con datos para edicion de producto */
+router.get('/productoEditar/:id', productsController.showProductEdit);
 
-// router.get('/productoEditar', productsController.editProduct);
+/*Post guardar producto editado */
+router.post('/productoEditar/:id', productsController.productEdit);
+
 
 module.exports = router;
