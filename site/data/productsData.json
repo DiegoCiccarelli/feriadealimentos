@@ -78,5 +78,15 @@
         "descripcionLarga": "",
         "imagenProducto": "imagenProducto-1606417953965.jpg",
         "id": 8
+    },
+    {
+        "nombre": "Cafetera2",
+        "precioProducto": "501",
+        "estado": "Inactivo",
+        "categoria": "Merienda",
+        "descripcionCorta": "dasdasaaaaaaaaaaaaaaaaaa",
+        "descripcionLarga": "dasdasaaaaaaaaaaaaaaaaa",
+        "id": 9,
+        "imagenProducto": "imagenProducto-1606606751090.png"
     }
 ]

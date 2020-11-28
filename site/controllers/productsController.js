@@ -15,7 +15,7 @@ const productsController = {
     },
 
     productDetail : function(req, res, next) {
-              
+              console.log(productsData)
         let product = productsData.find(p => parseInt(req.params.id)==p.id);
         console.log(product)
         
@@ -30,10 +30,11 @@ const productsController = {
 
     newProduct : function(req, res, next) {
 
-        res.render('product/productCreateEdit');
+       return res.render('product/productCreateEdit');
     },
 
     createProduct : function(req, res, next){
+       
         let formData = req.body;
         formData.imagenProducto = req.files[0].filename;
         const errors = validationResult(req);
@@ -64,19 +65,12 @@ const productsController = {
     
     showProductEdit : function(req, res, next) {
         
-              
+            console.log(productsData);  
             let product = productsData.find(p => parseInt(req.params.id)==p.id);
             console.log(product)
             
             if (product){
-                return res.render('product/productEdit', {
-                product: product,
-                mode: "edit",
-                title: "Editar Producto",
-                buttonText: "Guardar Cambios",
-                formAction: "/products/editProduct/"
-                });
-                console.log(product);
+                return res.render('product/productEdit', {product: product})
             }else{
                 return res.send("Error no se encuentra el producto");
             }
@@ -84,8 +78,20 @@ const productsController = {
         
     },
 
-    productEdit: function(req, res, next) {
+    productEdit : function(req, res, next) {
+       
+        for(let i=0; i<productsData.length; i++){
+    
+            if(req.params.id==productsData[i].id){
+                productsData[i] = req.body;
+                productsData[i].id=parseInt(req.params.id);
+                productsData[i].imagenProducto = req.files[0].filename;
+            }
 
+        };
+         
+    fs.writeFileSync(productsDirname, JSON.stringify(productsData));
+    return res.send("Se han guardado los cambios con éxito");
 
     }
 }

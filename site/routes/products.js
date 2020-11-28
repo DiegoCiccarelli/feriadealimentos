@@ -26,7 +26,7 @@ router.get('/carrito', productsController.cart);
 router.get('/detalleProducto/:id', productsController.productDetail);
 
 router.get('/productoNuevo', productsController.newProduct);
-router.post('/productoNuevo', upload.any(), productsMiddleware.checkForm, productsController.createProduct);
+router.post('/productoNuevo', upload.any(), productsController.createProduct);
 
 router.get('/listadoProductosAdmin', productsController.productListAdmin);
 
@@ -34,7 +34,7 @@ router.get('/listadoProductosAdmin', productsController.productListAdmin);
 router.get('/productoEditar/:id', productsController.showProductEdit);
 
 /*Post guardar producto editado */
-router.post('/productoEditar/:id', productsController.productEdit);
+router.post('/productoEditar/:id', upload.any(), productsController.productEdit);
 
 
 module.exports = router;

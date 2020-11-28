@@ -2,63 +2,68 @@
 
 <%- include('../partials/header.ejs'); %>
 
-    <div id="contenedorProductCreateEdit">
-        <h1>Editar Producto</h1>
-        
-        <form action="" method="POST" enctype="multipart/form-data">
-                  
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" value="<%= product.nombre %>">
+<div id="contenedorProductCreateEdit">
+    <h1>Editar Producto</h1>
+    
+<form action="/products/productoEditar/<%= product.id %>" method="POST" enctype="multipart/form-data">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" value="<%= product.nombre %>">
                
-            <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precioProducto %>">
+    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precioProducto %>">
 
-            <select name="estado" id="estado">
-                <option value="Estado" >Estado</option>
-                
-                <% if(product.estado=="activo"){%>
-                    <option value="Activo" selected >Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                <%}else{%>
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo" selected >Inactivo</option>
-                <%}%>
-           
-                
-            </select>
-                
-            <select name="categoria" id="categoria"> 
-                <% if(product.categoria =="activo"){%>
-                <option value="default">Categoria</option>
-                <option value="Dulces Caseros">Dulces Caseros</option>
-                <option value="Merienda">Merienda</option>
-                <option value="Artesanias">Artesanias</option>
-                   
-            </select>
+    <select name="estado" id="estado">
+        <option value="Estado" >Estado</option>
+        
+        <% if(product.estado=="activo"){%>
+            <option value="Activo" selected >Activo</option>
+            <option value="Inactivo">Inactivo</option>
+        <%}else{%>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo" selected >Inactivo</option>
+        <%}%>
+   
+        
+    </select>
 
-            <!--<input type="text" name="estado" id="estado" placeholder="Activo / Inactivo" value="<%= product.estado %>">
-                
-            <input type="text" name="Categoría" id="categoria" placeholder="Categoría" value="<%= product.categoria %>">-->
-            
+    <select name="categoria" id="categoria"> 
+        <% if(product.categoria=="default"){%>
+            <option value="default" selected>Categoria</option>
+            <option value="Dulces Caseros">Dulces Caseros</option>
+            <option value="Merienda">Merienda</option>
+            <option value="Artesanias">Artesanias</option>
+        <%}else if(product.categoria=="Dulces Caseros"){%>
+            <option value="default" >Categoria</option>
+            <option value="Dulces Caseros" selected>Dulces Caseros</option>
+            <option value="Merienda">Merienda</option>
+            <option value="Artesanias">Artesanias</option>
+        <%}else if(product.categoria=="Merienda"){%>
+            <option value="default" >Categoria</option>
+            <option value="Dulces Caseros">Dulces Caseros</option>
+            <option value="Merienda" selected>Merienda</option>
+            <option value="Artesanias">Artesanias</option>
+        <%}else if(product.categoria=="Artesanias"){%>
+            <option value="default" >Categoria</option>
+            <option value="Dulces Caseros" >Dulces Caseros</option>
+            <option value="Merienda" >Merienda</option>
+            <option value="Artesanias" selected>Artesanias</option>
+        
+        <%}%>
 
-            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><%= product.descripcionCorta %></textarea>
+    </select>
+
+    <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><%= product.descripcionCorta %></textarea>
             <span></span>
             <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><%= product.descripcionLarga %></textarea>
             <span></span>
-            
-            <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes" value="<%= product.imagenProducto%>">
-            <span></span>
-            
-            <!-- <div id="imagenesCargadas">
-                <img src="/images/imagen-producto1.jpg">
-                <img src="/images/imagen-miniatura2-producto1.jpg">
-                <img src="/images/imagen-miniatura3-producto1.jpg">
-            </div> -->
-            
-            <button class="claseButton" type="submit">Crear Producto</button>
 
-        </form>
+            <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+            <div id="imagenesCargadas">
+                <img src="/images/productsImages/<%= product.imagenProducto %>">
+               
+            </div> 
 
-        
-        
-    </div>
+    <button class="claseButton" type="submit">Guardar Cambios</button>
+</form>
 
-    <%- include('../partials/footer.ejs'); %>
+</div>
+
+<%- include('../partials/footer.ejs'); %>
