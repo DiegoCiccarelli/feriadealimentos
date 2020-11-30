@@ -1,0 +1,235 @@
+#mainDetalleProducto{
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 50px;
+    
+}
+#contenedorFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.rutaProducto{
+    font-size: 14px;
+}   
+
+
+
+h1.tituloProducto{
+    
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+#contenedorTituloDescripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p.descripcionCortaProducto{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 500px;
+    margin-top: 5px;
+}
+
+.imagenPrincipalProducto{
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    border:grey 1px solid;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px grey;
+}
+
+#listaMiniaturas img{
+   
+    width: 80%;
+    display: block;
+    margin: auto;
+    border:grey 1px solid;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px grey;
+}
+#listaMiniaturas div{
+width: 100px;
+}
+
+
+#listaMiniaturas {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+ 
+}
+
+
+#listaCompartirIconosSociales{
+    display: flex;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.textoCompartir{
+    font-size: 12px;
+}
+
+#contenedorCompartirRedes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#iconoCompartirFacebook a i{
+    color:#4267B2;
+
+}
+
+#iconoCompartirInstagram a i{
+    color: #C13584;
+    
+}
+
+#iconoCompartirTwitter a i{
+    color: #1DA1F2;
+}
+
+#iconoCompartirFacebook, #iconoCompartirInstagram, #iconoCompartirTwitter{
+    padding: 5px;
+    
+}
+
+#precio{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+#sumaRestaCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonSumar, #botonRestar{
+    
+    width: 25px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.cantidadAgregaCarrito{
+    text-align: center;
+    width: 10%;
+    font-size: 16px;
+    margin-bottom: 1vh;
+}
+
+#btnAgregarCarrito{
+    margin-left: 20px;
+    max-width: 200px;
+    /*font-size: 14px;*/
+}
+
+#textoCantidadCarrito{
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+#contenedorBotonContinuarComprando{
+    display: flex;
+    justify-content: center;
+   
+}
+
+#contenedorBotonContinuarComprando button{
+width: 80%;
+font-size: 16px;
+width: 425px;
+
+}
+
+p#condiciones{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+.descripcionLargaProducto{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+#mainDetalleProducto h3{
+    text-align: center;
+}
+
+
+@media (min-width: 480px){
+
+    .imagenPrincipalProducto{
+        width: 70%;
+        
+    }
+    
+    #listaMiniaturas{
+        justify-content: center ;
+    }
+
+    
+
+}
+
+@media (min-width: 768px){
+
+    #contenedorFlex{
+        
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height:50vh;
+
+    }
+
+    #contenedor1{
+       justify-self: flex-start;
+       align-self: flex-start;
+        width: 50%;
+        order: 1;
+    }
+
+    #contenedor2{
+
+        width: 50%;
+        order: 2;
+        
+    }
+
+    .descripcionLargaProducto{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    #contenedorFlex{
+       
+        height:65vh;
+        max-width: 1200px;
+        margin: auto;
+
+    }
+
+}
