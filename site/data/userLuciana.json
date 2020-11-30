@@ -1,0 +1,32 @@
+{
+    "_id": "5fc4cfe7069194e8d2ee7fcb",
+    "index": 0,
+    "guid": "4432ef60-8f2e-4fdb-bf42-191835eb23fa",
+    "isActive": false,
+
+    "picture": "http://placehold.it/32x32",
+    "edad": 28,
+    
+    "nombre": "Luciana",
+    "genero": "Femenino",
+    "compania": "Feria de Alimentos",
+    "email": "luciana@feriadealimentos.com",
+    "telefono": "54 9 011 678099",
+    "Direccion": "Carlos Paz, Cordoba",
+    "Sobre el usuario": "Dueña del Sitio.\r\n",
+    "registrada": "2020-11-30T04:02:43 +03:00",
+    "latitude": -26.290379,
+    "longitude": -121.797114,
+    "tags": [
+      "eiusmod",
+      "aliquip",
+      "commodo",
+      "exercitation",
+      "minim",
+      "officia",
+     
+    ]
+    
+   
+    
+  }

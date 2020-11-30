@@ -1,0 +1,95 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+
+    <main id="mainDetalleProducto">
+        
+        <p class="rutaProducto"><a href="">Tienda</a>/<a href=""><%=product.categoria%></a>/<%=product.nombre%></p>    
+        
+        <div id="contenedorFlex">
+        
+            
+            <div id="contenedor1"> <!--DIV Imagen y miniaturas-->
+                
+                <div class="contenedorImagenPrincipalProducto">
+
+                    <img class="imagenPrincipalProducto" src="/images/productsImages/<%= product.imagenProducto %>">
+                
+                </div>
+
+                <div id="listaMiniaturas">
+
+                    <div><a><img src="/images/productsImages/<%= product.imagenProducto %>"></a></div>
+                    <div><a><img src="/images/productsImages/<%= product.imagenProducto %>"></a></div>
+                    <div><a><img src="/images/productsImages/<%= product.imagenProducto %>"></a></div>
+            
+                </div>
+            </div>    
+            
+            <div id="contenedor2">
+            
+                <div id="contenedorTituloDescripcion"> <!--DIV titulo y descripcion-->
+                    
+                    <h1 class="tituloProducto"><%=product.nombre%></h1>
+                    <p class="descripcionCortaProducto"><%=product.descripcionCorta%></p>
+                
+                </div>
+
+
+                <div id="contenedorCompartirRedes"> <!--DIV compartir en redes -->
+
+                    
+                
+                    <p class="textoCompartir">Compartir</p>
+                
+                    <ul id="listaCompartirIconosSociales"> 
+                    
+                        <li id="iconoCompartirFacebook"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                        <li id="iconoCompartirInstagram"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li id="iconoCompartirTwitter"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    
+                    </ul>
+                    
+
+                </div>
+
+                <div id="contenedorPrecioCantidadBotones"> <!--DIV Precio Cantidad Botones Condiciones-->
+                    
+                    <p id="precio">PRECIO: $ <%=product.precioProducto%></p>    
+                
+                    <div id="sumaRestaCarrito">
+                            
+                        <p id="textoCantidadCarrito">Cantidad:</p>
+                    
+                        <button class="claseButton" id="botonRestar">-</button>
+                    
+                        <input type="number" value="1" class="cantidadAgregaCarrito">
+                    
+                        <button class="claseButton" id="botonSumar">+</button>
+                    
+                        <button id="btnAgregarCarrito" class="claseButton">Agregar al Carrito</button>
+                
+                    </div>
+                
+                    <div id="contenedorBotonContinuarComprando">
+            
+                        <button class="claseButton">Continuar Comprando</button>
+            
+                    </div>
+
+                    <p id="condiciones"> Condiciones: Las entregas son los días sábado, sujeto a disponibilidad.</p>
+                
+                </div>
+
+            </div>
+
+            
+        
+        </div>
+       
+        <h3>Descripcion</h3>
+        <p class="descripcionLargaProducto"><%=product.descripcionLarga%></p>
+
+    </main>
+<%- include('../partials/footer.ejs'); %>
