@@ -44,15 +44,16 @@
 
         <div class="contenedorListadoProductos">
                 <div class="listadoProductos">
-                    
+                    <%for ( let i=0 ; i<productsData.lenght;i++ ){%>
+                      
                     <div class="productoListado">
                         <img src="./images/imagen-producto5.jpg" alt="imagen">
-                        <p class="productoNombre"><%= productsData[0].nombre %></p>
-                        <p class="productoPrecio">$ 210</p>
+                        <p class="productoNombre"><%= productsData[i].nombre %></p>
+                        <p class="productoPrecio">$ <%= productsData[i].precioProducto %></p>
                         <button class="claseButton"><a href="">Agregar al carrito</a></button>
                         <button class="claseButton"><a href="">Ver detalle</a></button>
                     </div>
-                    
+                    <% } %>
                     <div class="productoListado">
                         <img src="./images/imagen-producto6.jpg" alt="imagen">
                         <p class="productoNombre">Ravioles rellenos de ricota</p>
