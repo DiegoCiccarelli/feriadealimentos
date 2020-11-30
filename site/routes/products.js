@@ -37,5 +37,5 @@ router.get('/productoEditar/:id', productsController.showProductEdit);
 /*Post guardar producto editado */
 router.post('/productoEditar/:id', upload.any(), productsController.productEdit);
 
-
+router.get('/productDelete/:id',  productsController.productDelete) 
 module.exports = router;

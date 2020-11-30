@@ -94,7 +94,17 @@ const productsController = {
     fs.writeFileSync(productsDirname, JSON.stringify(productsData));
     return res.send("Se han guardado los cambios con éxito");
 
-    }
-}
+    } ,
 
-module.exports = productsController;
+    productDelete : function(req,res,next){
+        var idProduct = req.params.id;
+        var productDelete = productsData.filter(function(product){
+            if (product.id == idProduct){
+                return product.id != idProduct;
+            } else {
+                res.send("No existe el producto con el Id :  " + idProduct);
+            }
+
+}
+}
+module.exports = productsController; 
