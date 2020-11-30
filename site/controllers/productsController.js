@@ -7,7 +7,7 @@ let productsData = JSON.parse(fs.readFileSync(productsDirname, "utf-8"));
 const productsController = {
 
     productList : function(req, res, next) {
-        res.render('product/productList');
+        res.render('product/productList', {productsData});
     },
 
     cart : function(req, res, next){
@@ -94,17 +94,19 @@ const productsController = {
     fs.writeFileSync(productsDirname, JSON.stringify(productsData));
     return res.send("Se han guardado los cambios con éxito");
 
-    } ,
-
+    },
     productDelete : function(req,res,next){
         var idProduct = req.params.id;
         var productDelete = productsData.filter(function(product){
-            if (product.id == idProduct){
-                return product.id != idProduct;
-            } else {
-                res.send("No existe el producto con el Id :  " + idProduct);
-            }
-
-}
+        return product.id != idProduct;  
+        })
+        if(productDelete.length != productsData.length){
+        productDeleteJSON = JSON.stringify(productDelete);
+        fs.writeFileSync(productsDirname ,productDeleteJSON);
+        return res.send("El producto  con el id " + req.params.id + " ha sido eliminado");
+    } else {
+        return res.send("El producto con el id: " + idProduct + " no se ha encontrado")
+    }
+    }
 }
 module.exports = productsController; 
