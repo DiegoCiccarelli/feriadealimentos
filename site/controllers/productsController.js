@@ -7,7 +7,7 @@ let productsData = JSON.parse(fs.readFileSync(productsDirname, "utf-8"));
 const productsController = {
 
     productList : function(req, res, next) {
-        res.render('product/productList');
+        res.render('product/productList', {productsData});
     },
 
     cart : function(req, res, next){
@@ -34,16 +34,19 @@ const productsController = {
     },
 
     createProduct : function(req, res, next){
-       
-        let formData = req.body;
-        formData.imagenProducto = req.files[0].filename;
         const errors = validationResult(req);
+        let formData = req.body;
         let id = 0;
+<<<<<<< HEAD
         //console.log(errors);
+=======
+>>>>>>> 54068c28861080ef607757e5a0f22c24d9280b33
         if(!errors.isEmpty()){
+            console.log(errors)
             res.render("product/productCreateEdit", {errors : errors.errors})
         }
         else if(productsData[0] == undefined){
+            formData.imagenProducto = req.files[0].filename;
             productsData.push(formData);
             productsData[0].id = 1;
         } else{
@@ -52,6 +55,7 @@ const productsController = {
             id = parseInt(productsData[i].id, 10) + 1;
         }
         }
+        formData.imagenProducto = req.files[0].filename;
         formData.id = id;
         productsData.push(formData);
     }
@@ -94,7 +98,19 @@ const productsController = {
     fs.writeFileSync(productsDirname, JSON.stringify(productsData));
     return res.send("Se han guardado los cambios con éxito");
 
+    },
+    productDelete : function(req,res,next){
+        var idProduct = req.params.id;
+        var productDelete = productsData.filter(function(product){
+        return product.id != idProduct;  
+        })
+        if(productDelete.length != productsData.length){
+        productDeleteJSON = JSON.stringify(productDelete);
+        fs.writeFileSync(productsDirname ,productDeleteJSON);
+        return res.send("El producto  con el id " + req.params.id + " ha sido eliminado");
+    } else {
+        return res.send("El producto con el id: " + idProduct + " no se ha encontrado")
+    }
     }
 }
-
-module.exports = productsController;
+module.exports = productsController; 

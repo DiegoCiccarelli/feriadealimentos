@@ -15,8 +15,8 @@
                 <p><%= productsData[i].estado %></p>
                 <p><%= productsData[i].categoria %></p>
                 <p>$<%= productsData[i].precioProducto %></p>
-                <button class="claseButton">EDITAR</button>
-                <button class="claseButton">BORRAR</button>
+                <button class="claseButton"><a href="/products/productoEditar/<%= productsData[i].id %>">EDITAR</a></button>
+                <button class="claseButton"><a href="/products/productDelete/<%= productsData[i].id %>">BORRAR</a></button>
             </div>
         </article>
         <%}%>

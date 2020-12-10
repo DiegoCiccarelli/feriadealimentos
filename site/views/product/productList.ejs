@@ -44,109 +44,28 @@
 
         <div class="contenedorListadoProductos">
                 <div class="listadoProductos">
-                    
+                    <% for( let i=0; i < productsData.length ; i++){%>
+                      
                     <div class="productoListado">
-                        <img src="./images/imagen-producto5.jpg" alt="imagen">
-                        <p class="productoNombre">Frasco de aceitunas</p>
-                        <p class="productoPrecio">$ 210</p>
+                        <img src="../images/productsImages/<%= productsData[i].imagenProducto %>" alt="imagen">
+                        <p class="productoNombre"><%= productsData[i].nombre %></p>
+                        <p class="productoPrecio"> <%= productsData[i].precioProducto %></p>
                         <button class="claseButton"><a href="">Agregar al carrito</a></button>
                         <button class="claseButton"><a href="">Ver detalle</a></button>
                     </div>
-                    
-                    <div class="productoListado">
-                        <img src="./images/imagen-producto6.jpg" alt="imagen">
-                        <p class="productoNombre">Ravioles rellenos de ricota</p>
-                        <p class="productoPrecio">$ 110</p>
-                        <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                        <button class="claseButton"><a href="">Ver detalle</a></button>
-                    </div>
-                    
-                    <div class="productoListado">
-                        <img src="./images/imagen-producto7.jpg" alt="imagen">
-                        <p class="productoNombre">Sándwiches de miga de jamon y queso</p>
-                        <p class="productoPrecio">$ 320</p>
-                        <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                        <button class="claseButton"><a href="">Ver detalle</a></button>
-                    </div>
+                    <% } %>
 
-                    <div class="productoListado">
-                        <img src="./images/imagen-producto2.jpg" alt="imagen">
-                        <p class="productoNombre">Budin con frutos secos</p>
-                        <p class="productoPrecio">$ 90</p>
-                        <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                        <button class="claseButton"><a href="">Ver detalle</a></button>
-                    </div>
                 </div>    
 
                     
                 <div class="listadoProductos">
                     
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto1.jpg" alt="imagen">
-                            <p class="productoNombre">Miel de pradera - dias de Miel</p>
-                            <p class="productoPrecio">$ 259</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
-            
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto2.jpg" alt="imagen">
-                            <p class="productoNombre">Budin con frutos secos</p>
-                            <p class="productoPrecio">$ 90</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
-            
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto3.jpg" alt="imagen">
-                            <p class="productoNombre">Pasta frola de batata</p>
-                            <p class="productoPrecio">$ 160</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
-            
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto4.jpg" alt="imagen">
-                            <p class="productoNombre">Aceite de oliva</p>
-                            <p class="productoPrecio">$300</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
+
                     </div> 
                         
                     <div class="listadoProductos">
                         
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto5.jpg" alt="imagen">
-                            <p class="productoNombre">Frasco de aceitunas</p>
-                            <p class="productoPrecio">$ 210</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
-                        
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto6.jpg" alt="imagen">
-                            <p class="productoNombre">Ravioles rellenos de ricota</p>
-                            <p class="productoPrecio">$ 110</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
-                        
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto7.jpg" alt="imagen">
-                            <p class="productoNombre">Sanguches de miga de jamon y queso</p>
-                            <p class="productoPrecio">$ 320</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
 
-                        <div class="productoListado">
-                            <img src="./images/imagen-producto2.jpg" alt="imagen">
-                            <p class="productoNombre">Budin con frutos secos</p>
-                            <p class="productoPrecio">$ 90</p>
-                            <button class="claseButton"><a href="">Agregar al carrito</a></button>
-                            <button class="claseButton"><a href="">Ver detalle</a></button>
-                        </div>
                     </div> 
                 </div>
             </div>

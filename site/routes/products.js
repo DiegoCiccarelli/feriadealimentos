@@ -10,9 +10,9 @@ var storage = multer.diskStorage({
 	  destination:(req,file,cb)=>{
 		  cb(null,'public/images/productsImages');
 	  },
-	  filename:(req,file,cb)=>{   
+	  filename:(req,file,cb)=>{
 		  cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-	  }
+		}
     });
 var upload = multer({storage:storage});
 
@@ -37,5 +37,5 @@ router.get('/productoEditar/:id', productsController.showProductEdit);
 /*Post guardar producto editado */
 router.post('/productoEditar/:id', upload.any(), productsController.productEdit);
 
-
+router.get('/productDelete/:id',  productsController.productDelete) 
 module.exports = router;
