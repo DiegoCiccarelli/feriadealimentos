@@ -34,16 +34,15 @@ const productsController = {
     },
 
     createProduct : function(req, res, next){
-       
-        let formData = req.body;
-        formData.imagenProducto = req.files[0].filename;
         const errors = validationResult(req);
+        let formData = req.body;
         let id = 0;
-        console.log(errors);
         if(!errors.isEmpty()){
+            console.log(errors)
             res.render("product/productCreateEdit", {errors : errors.errors})
         }
         else if(productsData[0] == undefined){
+            formData.imagenProducto = req.files[0].filename;
             productsData.push(formData);
             productsData[0].id = 1;
         } else{
@@ -52,6 +51,7 @@ const productsController = {
             id = parseInt(productsData[i].id, 10) + 1;
         }
         }
+        formData.imagenProducto = req.files[0].filename;
         formData.id = id;
         productsData.push(formData);
     }
