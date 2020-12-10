@@ -27,7 +27,7 @@ router.get('/detalleProducto/:id', productsController.productDetail);
 
 router.get('/productoNuevo', productsController.newProduct);
 
-router.post('/productoNuevo', upload.any(), productsController.createProduct);
+router.post('/productoNuevo', upload.any(),productsMiddleware.checkForm, productsController.createProduct);
 
 router.get('/listadoProductosAdmin', productsController.productListAdmin);
 
