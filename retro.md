@@ -79,3 +79,35 @@ Dejar de hacer:
     - No avisar al equipo con antelacion si no vamos a poder cumplir con una tarea.
 
 
+
+
+Retrospectiva 4to sprint:
+
+Comenzar a hacer:
+     - Unifiquemos los CSS
+     - Realizar Daily Martes 9.30hs y Viernes 11.30hs.
+     - Poner prioridades a las tareas del backlog y del To Do (usar etiquetas de color).
+     - Unificar estandares de archivos creados por diferentes integrantes del grupo.
+     
+Hacer mas:
+    - Agregar a Trello la peticion de consejos, como la unificacion de CSS, o los que necesitemos.
+    - Recurrir a los profesores - reforzar
+    - Planifiquemos las reuniones y que trataremos en cada reunion con antelacion.
+
+
+Continuar haciendo:
+    - Mejorar la planificación de contenido a tratar en reuniones del equipo.
+    - Comunicación más fluida del equipo.
+    - Mantener el Trello organizado.
+
+
+Hacer menos:
+    - Subestimar la complejidad de las tareas y del proyecto en general.
+  
+
+Dejar de hacer:
+
+    - Organizar tarde el sprint.
+
+
+
