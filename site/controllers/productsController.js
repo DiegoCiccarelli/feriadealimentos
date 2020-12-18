@@ -37,10 +37,7 @@ const productsController = {
         const errors = validationResult(req);
         let formData = req.body;
         let id = 0;
-<<<<<<< HEAD
-        //console.log(errors);
-=======
->>>>>>> 54068c28861080ef607757e5a0f22c24d9280b33
+
         if(!errors.isEmpty()){
             console.log(errors)
             res.render("product/productCreateEdit", {errors : errors.errors})
