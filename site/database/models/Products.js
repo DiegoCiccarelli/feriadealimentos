@@ -64,8 +64,14 @@ module.exports = function(sequelize, DataTypes){
     Products.associate = function(models){
         Products.belongsTo(models.Producer), {
             as: "Producer",
-            foreignKey: productor_id
+            foreignKey: "productor_id"
         }
+        Product.belongsToMany(models.Cart, {
+            as:"carts",
+            through: "carrito_producto",
+            foreignKey: "carrito_id",
+            otherKey: "producto_id"
+        })
     }
 
     // FALTAN OTRAS RELACIONES AQUI
