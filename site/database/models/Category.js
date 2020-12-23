@@ -27,7 +27,15 @@ module.exports = function(sequelize, DataTypes){
 
     let Category = sequelize.define(alias, cols, config);
 
-    // FALTAN LAS RELACIONES AQUI
+    
+    Category.associate = function(models){
+        Category.belongsToMany(models.Product, {
+            as:"products",
+            through: "categoria_producto",
+            foreignKey: "producto_id",
+            otherKey: "categoria_id"
+        });
+    };
 
     return Category;
 }

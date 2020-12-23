@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    let alias = "Products";
+    let alias = "Product";
     
     let cols = {
         id: {
@@ -50,34 +50,43 @@ module.exports = function(sequelize, DataTypes){
         created_at: {
             type: DataTypes.DATE
         },
+
         updated_at:{
             type: DataTypes.DATE
         }
     };
 
     let config = {
-        tableName: "productos"
+        tableName: "producto"
     };
 
-    let Products = sequelize.define(alias, cols, config);
+    let Product = sequelize.define(alias, cols, config);
 
-    Products.associate = function(models){
-        Products.belongsTo(models.Producer), {
-            as: "Producer",
+    Product.associate = function(models){
+        Product.belongsTo(models.Producer, {
+            as: "producers",
             foreignKey: "productor_id"
-        }
+        });
+    };
+
+    Product.associate = function(models){
         Product.belongsToMany(models.Cart, {
             as:"carts",
             through: "carrito_producto",
             foreignKey: "carrito_id",
             otherKey: "producto_id"
-        })
-    }
+        });
+    };
 
-    // FALTAN OTRAS RELACIONES AQUI
+    Products.associate = function(models){
+        Product.belongsToMany(models.Category,{
+            as: "categories",
+            through: "categoria_producto",
+            foreignKey: "categoria_id",
+            otherKey: "producto_id"
+        });
+    };
 
-    return Category;
+
+    return Product;
 }
-
-
-
