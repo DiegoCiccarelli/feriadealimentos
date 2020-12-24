@@ -57,7 +57,10 @@ module.exports = function(sequelize, DataTypes){
     };
 
     let config = {
-        tableName: "producto"
+        "tableName": "producto",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     };
 
     let Product = sequelize.define(alias, cols, config);

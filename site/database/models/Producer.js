@@ -39,9 +39,10 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let config = {
-        tableName: "productor",
-        createdAt = "created_at",
-        updatedAt = "updated_at"
+        "tableName": "productor",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     }
 
     let Producer = sequelize.define(alias, cols, config)

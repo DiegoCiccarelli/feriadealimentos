@@ -63,9 +63,10 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let config = {
-        tableName: "usuario",
-        createdAt = "created_at",
-        updatedAt = "updated_at"
+        "tableName": "usuario",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     }
 
     let User = sequelize.define(alias, cols, config)

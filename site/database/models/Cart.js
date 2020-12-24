@@ -39,8 +39,10 @@ module.exports = function(sequelize, dataTypes){
     }
 
     let config = {
-        tableName: "carrito",
-        underscored: true
+        "tableName": "carrito",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     }
 
     let Cart = sequelize.define(alias, cols, config);
