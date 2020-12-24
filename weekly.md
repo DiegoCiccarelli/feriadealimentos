@@ -53,4 +53,14 @@ Weekly 19.11.2020
        -Para el cliente, los views ,seran en español
        -Realizamos el cambio de todos los css , modificando sus nombres
 
+
+Weekly 24.12.2020
+
+- Creamos Modelos de la BD y sus relaciones.
+- Controlamos en equipo el trabajo realizado
+- Actualizamos BackLog de Trello
+- Asignamos tareas para la próxima semana.
+
+
+
        
