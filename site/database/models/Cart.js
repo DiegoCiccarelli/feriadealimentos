@@ -4,43 +4,56 @@ module.exports = function(sequelize, dataTypes){
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            "allowNull" : false
         },
         usuario_id: {
-            type: dataTypes.INTEGER().UNSIGNED
+            type: dataTypes.INTEGER().UNSIGNED,
+            "allowNull" : false
         },
         estado_carrito: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
+            "allowNull" : false
         },
         total_carrito: {
-            type: dataTypes.FLOAT()
+            type: dataTypes.FLOAT(),
+            "allowNull" : false
         },
         metodo_pago: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
+            "allowNull" : false
         },
         forma_entrega: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
+            "allowNull" : false
         },
         nodo_entrega: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
+            "allowNull" : true
         },
         domicilio_entrega: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
+            "allowNull" : true
         },
         observaciones: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING(200),
+            "allowNull" : true
         },
         created_at: {
-            type: dataTypes.DATE()
+            type: dataTypes.DATE(),
+            "allowNull" : false
         },
         updated_at: {
-            type: dataTypes.DATE()
+            type: dataTypes.DATE(),
+            "allowNull" : false
         }
     }
 
     let config = {
-        tableName: "carrito",
-        underscored: true
+        "tableName": "carrito",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     }
 
     let Cart = sequelize.define(alias, cols, config);

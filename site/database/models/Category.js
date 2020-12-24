@@ -6,23 +6,30 @@ module.exports = function(sequelize, DataTypes){
             
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            "allowNull" : false
             
         },
 
         nombre_categoria: {
-            type: DataTypes.TEXT(50)
+            type: DataTypes.TEXT(50),
+            "allowNull" : false
         },
         created_at: {
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            "allowNull" : false
         },
         updated_at:{
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            "allowNull" : false
         }
     };
 
     let config = {
-        tableName: "categoria"
+        "tableName": "categoria",
+        "underscored" : true,
+        "createdAt" : "created_at",
+        "updatedAt" : "updated_at"
     };
 
     let Category = sequelize.define(alias, cols, config);
