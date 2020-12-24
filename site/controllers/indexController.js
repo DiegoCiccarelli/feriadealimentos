@@ -1,10 +1,15 @@
 const fs = require("fs");
 const path = require("path");
-const db = require("../database/models/Cart")
+const db = require("../database/models")
 
 const indexController = {
     home : function(req, res, next){
-    return res.render("index");
+   
+        console.log("hola");
+        console.log(db.Cart);
+
+
+        return res.render("index");
     }
 };
 

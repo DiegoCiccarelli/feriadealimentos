@@ -60,5 +60,5 @@ module.exports = function(sequelize, dataTypes){
         })
     }
 
-    return Cart
+    return Cart;
     }
