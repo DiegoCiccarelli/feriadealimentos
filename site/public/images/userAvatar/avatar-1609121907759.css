@@ -1,0 +1,792 @@
+
+
+@media (max-width: 1400px) {
+    .features_slider .owl-nav .owl-prev {
+        left: -70px;
+    }
+    .features_slider .owl-nav .owl-next {
+        right: -70px;
+    }
+}
+/* End of @media (max-width: 1400px) */
+
+
+@media (max-width: 1290px) {
+    .app_core_features_area .container {
+        max-width: 900px;
+    }
+
+    .sass_a_item_two .side-img .img_one{
+        bottom: 0;
+        top: 30px;
+    }
+}
+
+
+
+@media (max-width: 1199px) {
+
+    .n_home_img {
+        padding-top: 0;
+    }
+
+    .n_home_content h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .hover_over_content {
+        -webkit-transform: translate3d(0,70%,0);
+        transform: translate3d(0,70%,0);
+        padding: 0;
+    }
+
+    .n_hover_content h3 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .n_hover_content h5 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .n_contact_form .w_50 {
+        width: 100%;
+    }
+
+    .n_contact_form .w_50 + .w_50 {
+        margin-left: 0;
+    }
+
+    .header_home_two {
+        padding-bottom: 35px;
+    }
+
+    footer, section, .n_newsletter_area {
+        padding: 100px 0;
+    }
+
+    .app_work_item_two .item img {
+        width: 100%;
+    }
+
+    .middle_item .app_work_item_two {
+        padding: 0;
+    }
+
+    .app_work_item_two {
+        padding: 0 20px;
+    }
+
+    .app_work_item_two {
+        margin-top: 50px;
+    }
+
+    .app_work_info_two .content {
+        margin-top: 80px;
+    }
+
+    .get_app_area {
+        padding-top: 65px;
+    }
+
+    .app_content {
+        padding-bottom: 50px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(2) {
+        left: -320px;
+        bottom: -85px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(3) {
+        top: 195px;
+        right: 50px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(5) {
+        bottom: -90px;
+    }
+
+    .side-img .img_one {
+        left: -230px; 
+    }
+
+    .saas-about-item svg {
+        width: 100%;
+    }
+
+    .sass_a_item_two .side-img .img_one{
+        bottom: 0;
+        max-width: 60%;
+        top: 60px;
+    }
+}
+/* End of @media (max-width: 1199px) */
+
+
+
+
+
+@media (max-width: 1024px) {
+
+    .pb_140{
+        padding-bottom: 0;
+    }
+    .sass_a_item_two .side-img .img_two {
+        bottom: 50px;
+        z-index: 1;
+    }
+
+    .saas-about-item svg {
+        width: 970px;
+    }
+
+    .saas_dashboard_features {
+        padding-top: 175px;
+    }
+
+    .saas_gallery_area {
+        padding-bottom: 75px;
+    }
+
+    .saas_priceing_area {
+        padding-top: 50px;
+    }
+
+    .mb_70 {
+        margin-bottom: 40px;
+    }
+
+    .app_banner_area {
+        height: auto;
+    }
+
+    .app_img img {
+        height: auto;
+        width: 100%;
+    }
+
+    .n_title_p:nth-child(4){
+        margin-bottom: 35px;
+    }
+
+    
+    .sass_a_item_two .side-img .img_one{
+        bottom: 0;
+        top: 75px;
+    }
+}
+
+
+
+
+@media (max-width: 991px) {
+
+    .pb_140{
+        padding: 0px;
+    }
+
+    .saas_about_content {
+        padding-top: 0;
+    }
+    .saas_price_item {
+        margin-bottom: 40px;
+    }
+
+    .saas_priceing_area {
+        padding-bottom: 40px;
+    }
+
+    .side-img {
+        padding-top: 0;
+    }
+    .w_50 {
+        width: 100%;
+    }
+
+    .side-img .img_one {
+        left: -50px; 
+    }
+
+    .saas-about-item svg {
+        width: 100%;
+    }
+
+    .saas_home_img img {
+        width: 100%;
+    }
+    
+    .saas_home_img_mobile img {
+        width: 100%;
+    }
+
+    .n_home_content {
+        padding-top: 15px;
+    }
+    .n_home_img {
+        padding-top: 15px;
+    }
+    .n_home_content h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .n_home_content h2 br {
+        display: none;
+    }
+
+    .n_work_area {
+        padding: 100px 0 0;
+    }
+
+    .n_item {
+        margin-bottom: 50px;
+    }
+
+    .n_item img {
+        width: 100%;
+    }
+
+    .n_blog-item img {
+        width: 100%;
+    }
+
+    .n_work_content {
+        margin-bottom: 50px;
+    }
+
+    .n_contact_inner {
+        margin-bottom: 50px;
+    }
+
+    .n_team_area {
+        padding-bottom: 50px;
+    }
+
+    .n_get_app_btn {
+        padding: 11px 15px
+    }
+
+    .about_widget.f_widget {
+        margin-bottom: 30px;
+    }
+
+    .f_widget {
+        margin-bottom: 40px;
+    }
+
+    .f_widget.link_widget.pd_l {
+        padding-left: 0;
+    }
+
+    .saas_footer_area .border_top {
+        margin-top: 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+        position: relative;
+        z-index: 1080;
+    }
+
+    nav .navbar-collapse.collapse {
+        display: none !important;
+        height: 0 !important;
+    }
+
+    nav .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background: #fff;
+    }
+
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        max-height: 250px;
+    }
+
+    nav .navbar-collapse.collapse.in {
+        display: block !important;
+        height: auto !important;
+        overflow-y: scroll !important;
+    }
+
+    nav .navbar-collapse .nav>li {
+        position: relative;
+        display: block;
+        float: none;
+    }
+
+    nav .navbar-collapse .navbar-right {
+        text-align: left;
+        width: 100%;
+    }
+
+    .new_header_two .navbar-collapse .navbar-right > li + li {
+        margin-left: 22px;
+    }
+
+    nav .navbar-collapse .navbar-right > li {
+        margin-left: 22px;
+    }
+
+    .new_header .navbar-collapse .navbar-right > li > a {
+        padding-bottom: 0;
+    }
+
+    nav.navbarSticky .navbar-header .navbar-toggle .icon-bar {
+        background: #c8b5ff;
+    }
+
+    .new_header.navbarSticky .navbar-collapse {
+        box-shadow: 0px 8px 30px 0px rgba(0, 36, 53, 0.1);
+        background: #fff;
+    }
+
+    .new_header.navbarSticky .navbar-collapse .navbar-right > li > a {
+        color: #afe2b2;
+    }
+
+    .n_awesome_features_area .d_flex {
+        display: block;
+    }
+    
+    .aw_right .media-left {
+        float: left;
+        padding-left: 0;
+        padding-right: 25px;
+    }
+
+    .media-body, .media-left, .media-right {
+        text-align: left;
+    }
+
+    .awesome_img {
+        padding: 30px 0;
+    }
+
+    .app_core_features_area .container {
+        max-width: 650px;
+    }
+
+    .app_core_features_area {
+        padding-bottom: 70px;
+    }
+
+    .app_banner_area {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .app_img img {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(1) {
+        top: -285px;
+        left: -70px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(2) {
+        left: -375px;
+        bottom: 170px;
+    }
+
+    .app_choose_area .app_image .item:nth-child(3) {
+        display: none;
+    }
+
+    .app_choose_area .app_image .item:nth-child(4) {
+        display: none;
+    }
+
+    .app_choose_area .app_image .item:nth-child(5) {
+        bottom: 110px;
+        left: -125px;
+    }
+
+    .app_choose_content {
+        padding: 60px 0 60px 0px;
+    }
+
+    .app_choose_content h2 br {
+        display: none;
+    }
+
+    .app_work_info .app_work_item {
+        padding: 15px;
+    }
+
+    .app_work_info .app_work_item h3 {
+        margin: 15px 0;
+    }
+
+    .new_header_two {
+        padding: 0;
+    }
+
+    .app_work_info_two .content h2 {
+        font-size: 18px;
+    }
+
+    .app_work_info_two .content p {
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    .app_work_area {
+        padding: 55px 0px 65px;
+    }
+
+    .app_core_features_area {
+        padding-top: 55px;
+    }
+
+    .app_work_area_two {
+        padding: 110px 0px 65px;
+    }
+
+    .get_app_area {
+        padding-top: 15px;
+    }
+
+    .app_subscribe_area {
+        padding: 50px 0;
+    }
+
+    .saas_footer_area {
+        padding-top: 50px;
+    }
+
+    .home_item {
+        height: 509px;
+        padding-top: 150px;
+    }
+
+    .n_round_icon {
+        width: 150px;
+        height: 150px;
+        line-height: 148px;
+    }
+
+    .n_features_item {
+        margin-top: 40px;
+    }
+
+    .n_features_area {
+        padding-bottom: 50px;
+    }
+
+    .saas-about-item {
+        margin-top: 0px;
+    }
+
+    .saas_gallery_area {
+        padding-top: 50px;
+    }
+    .saas_screen_gallery {
+        padding: 0px 100px;
+    }
+
+    .sass_a_item_two .side-img .img_one{
+        bottom: 0;
+        max-width: 65%;
+        left: 18%;
+        top: 0;
+    }
+    
+}
+/* End of @media (max-width: 991px) */
+
+
+
+
+
+@media (max-width: 880px) {
+    .side-img .img_one {
+        left: 0;
+        width: 100%;
+    }
+
+    .saas_video {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .saas_video img {
+        width: 100%;
+    }
+
+    .saas_about_area {
+        padding-bottom: 30px;
+    }
+
+    .saas_dashboard_features {
+        padding-top: 30px;
+    }
+}
+/* End of @media (max-width: 880px) */
+
+
+
+
+
+@media (max-width: 767px) {
+    .saas_home_img{
+        display: none !important;
+    }
+
+    .saas_home_img_mobile{
+        display: block;
+    }
+    .s_banner_title {
+        font-size: 36px;
+        line-height: 50px; 
+    }
+
+    .features_slider .owl-nav .owl-prev,
+    .features_slider .owl-nav .owl-next {
+        display: none;
+    }
+
+    .new_header_two {
+        padding: 0 0 10px;
+    }
+
+    nav.new_header_two .navbar-header .navbar-toggle {
+        margin-top: 18px;
+    }
+
+    .app_choose_area .app_image {
+        display: none;
+    }
+
+    .app_work_info .app_work_item {
+        margin-bottom: 30px;
+    }
+    
+    .app_work_area {
+        padding-bottom: 35px;
+    }
+
+    .middle_item .app_work_item_two {
+        margin-top: 50px;
+    }
+
+    .saas_dashboard_features {
+        padding-bottom: 50px;
+    }
+
+    .saas_newsletter_area {
+        padding: 50px 0;
+    }
+
+    .saas-contact_info {
+        padding-bottom: 50px;
+    }
+
+    
+}
+
+@media (max-width: 600px) {
+
+    
+    .saas_screen_gallery {
+        padding: 0 30px;
+    }
+    .header_home_two {
+        padding-bottom: 0;
+    }
+
+    .n_features_area {
+        padding: 80px 0 0;
+    }
+
+    .n_awesome_features_area {
+        padding: 75px 0 60px;
+    }
+
+    .n_device_area {
+        padding: 70px 0;
+    }
+
+    .new_sectitle {
+        margin-bottom: 35px;
+    }
+
+    .n_get_app_area {
+        padding: 70px 0px 20px;
+    }
+
+    .n_contact_area,
+    .n_newsletter_area,
+    .n_blog_area,
+    .n_team_area,
+    .n_work_area {
+        padding: 70px 0;
+    }
+
+    .n_work_area {
+        padding-bottom: 0;
+    }
+
+    .saas_footer_area {
+        padding-top: 60px;
+    }
+
+    .about_widget.f_widget {
+        margin-bottom: 45px;
+    }
+
+    .f_widget {
+        margin-bottom: 80px;
+    }
+    
+}
+
+
+
+@media (max-width: 540px) {
+
+    
+    .n_features_item {
+        margin-top: 70px;
+    }
+
+    .s_banner_title {
+        font-size: 30px;
+        line-height: 45px;
+    }
+
+    .s_banner_title br {
+        display: none;
+    }
+
+    .saas_footer_area .col-xs-6 {
+        width: 100%;
+    }
+
+    .f_widget {
+        text-align: center;
+    }
+
+    .n_home_img img {
+        width: 100%;
+    }
+
+    .about_widget.f_widget {
+        margin-bottom: 45px;
+    }
+
+    .h_work_img img {
+        width: 100%;
+    }
+
+    .n_work_content .n_title_color {
+        font-size: 40px;
+    }
+
+    .n_features_area {
+        padding: 0 0 50px;
+    } 
+
+    .side-img .img_two {
+        position: static;
+        width: 100%;
+    }
+
+    .side-img {
+       padding-bottom: 0px;
+    }
+
+    .sass_video_area {
+        padding-bottom: 360px;
+        padding-top: 150px;
+    }
+
+    .saas_features_item {
+        margin-top: 50px;
+    }
+
+    .saas_section_title {
+        margin-bottom: 70px;
+    }
+
+    .saas_contact_area {
+        padding: 50px 0;
+    }
+
+    .n_round_icon {
+        width: 100px;
+        height: 100px;
+        line-height: 98px;
+    }
+
+    .n_round_icon img {
+        max-width: 45px;
+    }
+}
+/* End of @media (max-width: 540px) */
+@media (max-width: 440px) {
+
+    .saas-contact_info {
+        padding-bottom: 30px;
+    }
+    .saas_contact_info {
+        padding: 25px;
+    }
+    .saas_contact_info .contact-info {
+        padding-left: 0;
+    }
+    .saas_contact_info .contact-info .icon {
+        position: static;
+        margin-bottom: 15px;
+    }
+    .app_banner_content .app_banner_btn_two {
+        margin-left: 0;
+
+    }
+
+    .app_banner_content .app_banner_btn {
+        margin-bottom: 20px;
+        margin-right: 10px;
+    }
+
+    .app_img img {
+        width: 100%;
+    }
+
+    .app_content .get_app_btn.btn_two {
+        margin-left: 0;
+    }
+
+    .app_content .get_app_btn {
+        margin-bottom: 20px;
+    }
+
+    .get_app_area img {
+        width: 100%;
+    }
+
+    .app_img {
+        margin: 0;
+    }
+    
+}
+/* End of @media (max-width: 440px) */
+
+
+

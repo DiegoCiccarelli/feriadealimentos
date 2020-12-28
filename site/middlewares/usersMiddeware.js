@@ -9,7 +9,7 @@ const usersMiddleware = {
         body("apellido", "Debe ingresar un apellido").notEmpty(),
         body("nombre", "Debe ingresar un nombre").notEmpty(),
         body("email", "Debe ingresar un email válido").notEmpty().normalizeEmail().isEmail(),
-        body("pass", "Debe ingresar una contrasena con un minimo de 8 caracteres, una minuscula y una mayuscula").notEmpty(),
+        body("pass", "Debe ingresar una contrasena con un minimo de 8 caracteres, una minuscula, una mayuscula y un caracter especial").notEmpty().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})"),
         body("repeatPass", "Las contraseñas deben coincidir").notEmpty().custom(function(value, {req}){
             if(value == req.body.pass){
                 return true
@@ -23,7 +23,7 @@ const usersMiddleware = {
         body("localidad", "Debe ingresar una localidad").notEmpty(),
         body("avatar").custom(function(value, {req}){
             if(typeof req.files[0].originalname == "undefined"){
-                return false;
+                return true;
             } else{
                 var extension = (path.extname(req.files[0].originalname)).toLowerCase();
                 switch (extension) {
