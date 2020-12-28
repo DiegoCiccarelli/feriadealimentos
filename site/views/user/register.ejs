@@ -6,7 +6,7 @@
         <div id="contenedorRegister">
         <h1>Registro de nuevo Cliente</h1>
         
-        <form>
+        <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
            
             <p>Apellido</p>
            
@@ -22,24 +22,68 @@
            
             <p>Contraseña</p>
            
-            <input type="password" name="pwd" id="pwdRegister">
+            <input type="password" name="pass" id="pwdRegister">
 
             <p>Repita Contraseña</p>
            
-            <input type="repeatPassword" name="repeatPwd" id="repeatPwdRegister">
-           
-            <div>
+            <input type="password" name="repeatPass" id="repeatPwdRegister">
+
+            <p>Telefono</p>
+
+            <input type="tel" name="telefono">
+
+            <p>DNI</p>
+
+            <input type="number" name="dni">
+
+            <p>Calle</p>
+            
+            <input type="text" name="calle">
+
+            <p>Altura</p>
+
+            <input type="text" name="altura">
+
+            <p>Piso</p>
+
+            <input type="text" name="piso">
+            
+            <p>Departamento</p>
+
+            <input type="text" name="departamento">
+
+            <p>Barrio</p>
+
+            <input type="text" name="barrio">
+
+            <p>Localidad</p>
+
+            <input type="text" name="localidad">
+
+            <p>Provincia</p>
+
+            <input type="text" name="provincia">
+
+            <p>Pais</p>
+
+            <input type="text" name="pais">
+
+            <p>Avatar</p>
+
+            <input type="file" name="avatar">
+            
+            <!-- <div>
                 
                 <label for="aceptoTerminos"><a href="#">Acepto los términos y condiciones </a>   </label>
                 <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos">
 
-            </div>
+            </div> -->
 
-            <button class="claseButton">Registrarme</button>
+            <button class="claseButton" type="submit">Registrarme</button>
 
         </form>
 
-        <a href="#">Ya tengo usuario y contraseña</a>
+        <a href="/usuarios/login">Ya tengo usuario y contraseña</a>
         
     </div>
     <%- include('../partials/footer.ejs'); %>
