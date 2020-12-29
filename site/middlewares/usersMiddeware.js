@@ -6,10 +6,10 @@ var router = express.Router();
 
 const usersMiddleware = {
     registerValidation : [
-        body("apellido", "Debe ingresar un apellido").notEmpty(),
-        body("nombre", "Debe ingresar un nombre").notEmpty(),
-        body("email", "Debe ingresar un email válido").notEmpty().normalizeEmail().isEmail(),
-        body("pass", "Debe ingresar una contrasena con un minimo de 8 caracteres, una minuscula, una mayuscula y un caracter especial").notEmpty().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})"),
+        body("apellido").notEmpty().withMessage("Debe ingresar un apellido"),
+        body("nombre").notEmpty().withMessage("Debe ingresar un nombre"),
+        body("email").notEmpty().normalizeEmail().isEmail().withMessage("Debe ingresar un email válido"),
+        body("pass").notEmpty().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})").withMessage("Debe ingresar una contraseña con un minimo de 8 caracteres, una minuscula, una mayuscula y un caracter especial"),
         body("repeatPass", "Las contraseñas deben coincidir").notEmpty().custom(function(value, {req}){
             if(value == req.body.pass){
                 return true
@@ -17,12 +17,12 @@ const usersMiddleware = {
                 return false
             }
         }),
-        body("calle", "Debe ingresar una calle").notEmpty(),
-        body("altura", "Debe ingresar una altura").notEmpty(),
-        body("barrio", "Debe ingresar un barrio").notEmpty(),
-        body("localidad", "Debe ingresar una localidad").notEmpty(),
-        body("avatar").custom(function(value, {req}){
-            if(typeof req.files[0].originalname == "undefined"){
+        body("calle").notEmpty().withMessage("Debe ingresar una calle"),
+        body("altura").notEmpty().withMessage("Debe ingresar una altura"),
+        body("barrio").notEmpty().withMessage("Debe ingresar un barrio"),
+        body("localidad").notEmpty().withMessage("Debe ingresar una localidad"),
+        body("avatar", "Debe ingresar una imagen válida").custom(function(value, {req}){
+            if(typeof req.files[0] == "undefined"){
                 return true;
             } else{
                 var extension = (path.extname(req.files[0].originalname)).toLowerCase();

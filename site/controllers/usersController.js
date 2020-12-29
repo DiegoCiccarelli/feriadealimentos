@@ -15,7 +15,10 @@ const usersController = {
             console.log(errors)
             res.render("user/register", {errors : errors.errors})
         }else{
-        let avatar = req.files[0].filename
+        let avatar = null;
+        if(typeof req.files[0] != "undefined"){
+        avatar = req.files[0].filename
+        }
         db.User.create({
             nombre_usuario: req.body.nombre,
             apellido_usuario: req.body.apellido,
@@ -32,7 +35,7 @@ const usersController = {
             provincia: req.body.provincia,
             pais: req.body.pais,
             avatar: avatar,
-            tipo_usuario: "cliente",
+            tipo_usuario: "cliente",    
         }).then(function(){
             res.send('se ha creado con exito el usuario: ' + req.body.nombre);
         })
