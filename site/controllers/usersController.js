@@ -42,7 +42,16 @@ const usersController = {
     }
     },
     login : function(req, res, next) {
+        //console.log("en get de login" + req.session.email);
         res.render('user/login');
+    },
+    createSession : function(req, res, next) {
+       //console.log("en create" + req.body.email);
+        
+        req.session.email = req.body.email;
+        res.render('user/login');
+        
+        //console.log(req.session.email);
     }
 };
 

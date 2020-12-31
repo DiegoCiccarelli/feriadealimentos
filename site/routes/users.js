@@ -20,4 +20,6 @@ router.post('/registro', upload.any(), usersMiddleware.registerValidation, users
 
 router.get('/login', usersControllers.login);
 
+router.post('/login', usersMiddleware.loginValidation, usersControllers.createSession);
+
 module.exports = router;
