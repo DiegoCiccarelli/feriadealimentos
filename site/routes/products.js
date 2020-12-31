@@ -35,7 +35,7 @@ router.get('/listadoProductosAdmin', productsController.productListAdmin);
 router.get('/productoEditar/:id', productsController.showProductEdit);
 
 /*Post guardar producto editado */
-router.post('/productoEditar/:id', upload.any(), productsController.productEdit);
+router.post('/productoEditar/:id', upload.any(), productsMiddleware.checkForm, productsController.productEdit);
 
 router.get('/productDelete/:id',  productsController.productDelete) 
 module.exports = router;
