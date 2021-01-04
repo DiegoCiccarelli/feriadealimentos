@@ -21,15 +21,22 @@
            
             <p>Apellido</p>
            
-            <input type="text" name="apellido" id="apellido">
+            <input type="text" name="apellido" id="apellido" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.apellido %>"
+            <% } %>>
+        
 
             <p>Nombre</p>
            
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.nombre %>"
+            <% } %>>
 
             <p>Email</p>
            
-            <input type="email" name="email" id="emailRegister">
+            <input type="email" name="email" id="emailRegister" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.email %>"
+            <% } %>>
            
             <p>Contraseña</p>
            
@@ -41,43 +48,63 @@
 
             <p>Telefono</p>
 
-            <input type="tel" name="telefono">
+            <input type="tel" name="telefono" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.telefono %>"
+            <% } %>>
 
             <p>DNI</p>
 
-            <input type="number" name="dni">
+            <input type="number" name="dni" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.dni %>"
+            <% } %>>
 
             <p>Calle</p>
             
-            <input type="text" name="calle">
+            <input type="text" name="calle" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.calle %>"
+            <% } %>>
 
             <p>Altura</p>
 
-            <input type="text" name="altura">
+            <input type="text" name="altura" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.altura %>"
+            <% } %>>
 
             <p>Piso</p>
 
-            <input type="text" name="piso">
+            <input type="text" name="piso" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.piso %>"
+            <% } %>>
             
             <p>Departamento</p>
 
-            <input type="text" name="departamento">
+            <input type="text" name="departamento" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.departamento %>"
+            <% } %>>
 
             <p>Barrio</p>
 
-            <input type="text" name="barrio">
+            <input type="text" name="barrio" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.barrio %>"
+            <% } %>>
 
             <p>Localidad</p>
 
-            <input type="text" name="localidad">
+            <input type="text" name="localidad" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.localidad %>"
+            <% } %>>
 
             <p>Provincia</p>
 
-            <input type="text" name="provincia">
+            <input type="text" name="provincia" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.provincia %>"
+            <% } %>>
 
             <p>Pais</p>
 
-            <input type="text" name="pais">
+            <input type="text" name="pais" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.pais %>"
+            <% } %>>
 
             <p>Avatar</p>
 
