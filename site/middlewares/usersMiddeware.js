@@ -13,11 +13,9 @@ const usersMiddleware = {
         body("nombre").notEmpty().withMessage("Debe ingresar un nombre"),
         body("email").notEmpty().normalizeEmail().isEmail().withMessage("Debe ingresar un email válido"),
         body("email").custom(function(value){
-            db.User.findOne({where : {email_usuario : value}}).then(function(resultado){
-                if(resultado == null){
-                    return true
-                }else{
-                    return false
+            return db.User.findOne({where : {email_usuario : value}}).then(function(resultado){
+                if(resultado){
+                    return Promise.reject("El email ya está en uso")
                 }
             })
         }),
