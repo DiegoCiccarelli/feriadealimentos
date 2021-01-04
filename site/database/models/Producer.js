@@ -55,8 +55,15 @@ module.exports = function(sequelize, dataTypes){
         "createdAt" : "created_at",
         "updatedAt" : "updated_at"
     }
-
     let Producer = sequelize.define(alias, cols, config)
+
+    Producer.associate = function(models){
+        Producer.hasMany(models.Product, {
+            as : "products",
+            foreignKey:"producer_id"
+        })
+    }
+
 
     return Producer
     }
