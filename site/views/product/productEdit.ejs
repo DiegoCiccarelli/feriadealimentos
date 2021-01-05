@@ -6,10 +6,10 @@
     <h1>Editar Producto</h1>
 
     <% if(typeof errors != "undefined"){%>
-        <div style="background-color: #ffcccb;">
+        <div class="errorMessageForm">
         <% errors.forEach(element => {  %>
             <%if(element.msg !== "Invalid value"){ %>
-        <p style="font-weight: bold; margin: 1vh; font-size: 0.9rem;"><%=element.msg%></p>
+        <p><%=element.msg%></p>
         <%}%>
         <% }) %>
         </div>
