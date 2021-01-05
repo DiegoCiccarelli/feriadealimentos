@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 // traemos bcrypt para validar usuario login
 const bcrypt = require("bcryptjs"); 
+const { Session } = require("inspector");
 
 
 const usersMiddleware = {
@@ -57,21 +58,25 @@ const usersMiddleware = {
         db.User.findOne({where : {email_usuario : req.body.email}}).then(function(result){
             if(result){
                 // si existe comprobamos contraseña encriptada
-               // console.log("se encontro el mail");
-                //console.log(result.contrasena);
                 let bdPassword = result.contrasena;
-                console.log(bdPassword)    
-                if(req.body.pwd == bdPassword){
-                //if(bcrypt.compareSync(req.body.pwd, bdPassword)){
-                    console.log("NEXXXT");
+                //console.log(bdPassword)    
+                if(bcrypt.compareSync(req.body.pwd, bdPassword)){
+                    
+                    req.Session.email = req.body.email;
                     next();
+               
                 }else{
-                    console.log("contraseña no válida");
-                }
-                // return true;
+                    
+                    return res.render("user/login", { errorMessage : "email o contraseña incorrecta",
+                                                datos: req.body});
+                    
+
+                };
+               
             }else{
-                console.log("no se encontro el mail");
-                return false;
+                return res.render("user/login", { errorMessage : "email o  contraseña incorrecta",
+                                                datos: req.body});
+                
             }
         })
 
