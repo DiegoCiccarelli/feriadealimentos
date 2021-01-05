@@ -65,14 +65,14 @@ const usersMiddleware = {
                
                 }else{
                     
-                    return res.render("user/login", { errorMessage : "email o contraseña incorrecta",
+                    return res.render("user/login", { errorMessage : "Email o contraseña incorrecta",
                                                 datos: req.body});
                     
 
                 };
                
             }else{
-                return res.render("user/login", { errorMessage : "email o  contraseña incorrecta",
+                return res.render("user/login", { errorMessage : "Email o  contraseña incorrecta",
                                                 datos: req.body});
                 
             }

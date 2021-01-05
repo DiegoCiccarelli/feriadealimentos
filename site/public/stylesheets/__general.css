@@ -34,7 +34,14 @@ body{
     text-decoration: none;
   }
 
-
+  .errorMessageForm{
+    background-color: #ffcccb;
+    font-weight: bold; 
+    margin: 1vh; 
+    font-size: 0.9rem;
+    padding: 0px 5px 5px 5px ;
+    margin: 0px;
+  }
  
   
   /*

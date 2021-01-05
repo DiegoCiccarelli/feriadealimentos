@@ -5,6 +5,12 @@
 
     <div id="contenedorLogin">
         <h1>Login</h1>
+
+        <% if(typeof errorMessage != "undefined"){%>
+            <div class="errorMessageForm">
+                <p><%=errorMessage%></p>
+            </div>
+        <% } %>
         
         <form action="/usuarios/login" method="POST">
            
