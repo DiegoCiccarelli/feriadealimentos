@@ -15,12 +15,10 @@ body{
     border: none;
     font-size: 1rem;
     border-radius: 2px;
-    width: 70%;
     text-decoration: none;
     color: white;
-    margin-bottom: 1vh;
     background-color: green;
-    padding: 5px 0;
+    padding: 5px 5px;
     /*min-width: 51px;*/
   }
 
@@ -42,7 +40,11 @@ body{
     padding: 0px 5px 5px 5px ;
     margin: 0px;
   }
- 
+ input{
+   background: #f1f1f1;
+   border-radius: 5px;
+   border-color: #f1f1f1;
+ }
   
   /*
   Paleta de Colores 

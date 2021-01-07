@@ -1,0 +1,25 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+<main class="contenedor">
+    <% if(typeof categoria == "undefined"){%>
+        <section>
+            <h1 style="text-align: center;">Crear categoria</h1>
+            <form style="text-align: center;" action="/productos/crearCategoria" method="POST">
+                <p>Categoria: <input type="text" name="categoria"></p>
+                <p><button style="text-align: center;" class="claseButton"type="submit">CREAR</button></p>
+            </form>
+        </section>
+        
+        <%}else{%>
+    <section>
+        <h1>Editar categoria</h1>
+        <form action="/productos/editarCategoria/<%= categoria.id %>" method="POST">
+            Categoria: <input type="text" name="categoria" value="<%= categoria.nombre_categoria%>">
+            <button class="claseButton" type="submit">EDITAR</button>
+        </form>
+    </section>
+    <%}%>
+</main>
+<%- include('../partials/footer.ejs'); %>

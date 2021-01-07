@@ -1,0 +1,38 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px;
+    
+}
+#crearCategoria{
+  display: flex;
+  justify-content: right;
+
+}
+tr:hover {
+background-color: #F5E8D1;
+}
+td {    
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+
+  td .claseButton{
+    width: 30%;
+  }
+
+  @media only screen and (max-width: 760px){
+    td .claseButton{
+      width: 40%;
+    }
+  }
+  @media only screen and (max-width: 620px){
+    td .claseButton{
+      width: 55%;
+    }
+  }
+  @media only screen and (max-width: 460px){
+    td .claseButton{
+      width: 70%;
+    }
+  }
