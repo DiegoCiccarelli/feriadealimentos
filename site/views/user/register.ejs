@@ -7,14 +7,14 @@
         <h1>Registro de nuevo Cliente</h1>
         
         <% if(typeof errors != "undefined"){%>
-        <div style="background-color: #ffcccb;">
-        <% errors.forEach(element => {  %>
-            <%if(element.msg !== "Invalid value"){ %>
-        <p style="font-weight: bold; margin: 1vh; font-size: 0.9rem;"><%=element.msg%></p>
-        <%}%>
-        <% }) %>
-        </div>
-        <%}%>
+            <div class="errorMessageForm">
+            <% errors.forEach(element => {  %>
+                <%if(element.msg !== "Invalid value"){ %>
+            <p><%=element.msg%></p>
+            <%}%>
+            <% }) %>
+            </div>
+            <%}%>
         
         
         <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">

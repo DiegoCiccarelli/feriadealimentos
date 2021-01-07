@@ -1,0 +1,43 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+<main class="contenedor">
+    <h1 style="text-align: center;">LISTADO CATEGORIAS</h1>
+    
+    <table>
+        <section>
+        <button class="claseButton" id="crearCategoria"><a href="/productos/crearCategoria">NUEVA CATEGORIA</a></button>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CATEGORIA</th>
+                <th colspan="2">MODIFICAR</th>
+            </tr>
+        </thead>
+        <article>
+            <tbody>    
+                
+                    <% if(typeof categoria[0] == "undefined"){%>
+                    <tr>
+                        <td colspan="3"><p>No se han encontrado categorias</p> </td>
+                    </tr>
+                    <%}else{%>
+                    <% for(let i = 0; i < categoria.length; i++){ %>
+                    <tr>
+                        <td><p><%= categoria[i].id %></p></td>
+                        <td><p><%= categoria[i].nombre_categoria %></p></td>
+                        <td><button class="claseButton"><a href="/productos/editarCategoria/<%= categoria[i].id %>">EDITAR</a></button></td>
+                        <td><button class="claseButton"><a href="/productos/eliminarCategoria/<%= categoria[i].id %>">BORRAR</a></button></td>
+                    </tr>
+                    <% }%>
+                    <%}%>
+                
+            </tbody>
+        </article>
+        
+    </section>
+    </table>
+    </main>
+
+    <%- include('../partials/footer.ejs'); %>

@@ -3,7 +3,7 @@ const path = require("path");
 const {check, body, validationResult} = require("express-validator");
 let productsDirname = path.join(__dirname, "/../data/productsData.json");
 let productsData = JSON.parse(fs.readFileSync(productsDirname, "utf-8"));
-let db = require("../database/models/index")
+let db = require("../database/models/index");
 
 const productsController = {
 
@@ -117,6 +117,41 @@ const productsController = {
     } else {
         return res.send("El producto con el id: " + idProduct + " no se ha encontrado")
     }
+    },
+    viewCreateCategory : function(req, res){
+        if(req.params.id){
+            db.Category.findOne({where: {id:req.params.id}}).then(resultado => {
+                if(!resultado){
+                res.send("No se ha encontrado un usuario con el id " + req.params.id)
+                }else{
+                res.render("product/createCategory", {categoria:resultado})
+            }})
+        } else{
+            res.render("product/createCategory")
+        }
+    },
+    createCategory : function(req,res){
+        if(req.params.id){
+            db.Category.update({nombre_categoria : req.body.categoria}, {where : {id:req.params.id}}).then(()=>{
+                res.redirect('/productos/listadoCategorias')
+            })
+        }else{
+            db.Category.create({nombre_categoria : req.body.categoria}).then(()=>{
+                res.redirect('/productos/listadoCategorias')
+            })
+        }
+    },
+    deleteCategory : function(req, res){
+        db.Category.destroy({where:{id:req.params.id}}).then(
+            res.redirect('/productos/listadoCategorias')
+        )
+    },
+    listadoCategorias : function(req,res){
+        db.Category.findAll().then(resultado => {
+            console.log(resultado)
+            res.render("product/categoryList", {categoria:resultado})
+        })
     }
+
 }
 module.exports = productsController; 

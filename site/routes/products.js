@@ -39,4 +39,11 @@ router.get('/productoEditar/:id', productsController.showProductEdit);
 router.post('/productoEditar/:id', upload.any(), productsMiddleware.checkForm, productsController.productEdit);
 
 router.get('/productDelete/:id',  productsController.productDelete) 
+
+router.get("/listadoCategorias", productsController.listadoCategorias)
+router.get('/crearCategoria', productsController.viewCreateCategory)
+router.post('/crearCategoria', productsController.createCategory)
+router.get('/editarCategoria/:id', productsController.viewCreateCategory)
+router.post('/editarCategoria/:id', productsController.createCategory)
+router.get('/eliminarCategoria/:id', productsController.deleteCategory)
 module.exports = router;

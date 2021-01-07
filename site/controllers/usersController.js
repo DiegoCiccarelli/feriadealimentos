@@ -39,7 +39,7 @@ const usersController = {
             avatar: avatar,
             tipo_usuario: "cliente",    
         }).then(function(){
-            res.send('se ha creado con exito el usuario: ' + req.body.nombre);
+            res.redirect('/usuarios/login');
         })
     }
     },
