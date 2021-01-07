@@ -57,8 +57,9 @@ const productsController = {
         formData.id = id;
         productsData.push(formData);
     }
-        let productsDataJSON = JSON.stringify(productsData);
-        fs.writeFileSync(productsDirname, productsDataJSON);
+       
+        // let productsDataJSON = JSON.stringify(productsData);
+       //fs.writeFileSync(productsDirname, productsDataJSON);
         res.send("Se ha creado con exito el producto: " + req.body.nombre)
     },
     

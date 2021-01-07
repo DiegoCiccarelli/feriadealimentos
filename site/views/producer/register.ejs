@@ -1,0 +1,75 @@
+
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+    
+        <div id="contenedorRegister">
+        <h1>Registro de nuevo Productor</h1>
+        
+        <% if(typeof errors != "undefined"){%>
+        <div class="errorMessageForm">
+        <% errors.forEach(element => {  %>
+            <%if(element.msg !== "Invalid value"){ %>
+        <p><%=element.msg%></p>
+        <%}%>
+        <% }) %>
+        </div>
+        <%}%>
+        
+        
+        <form action="/productores/registro" method="POST" enctype="multipart/form-data">
+           
+            <p>Apellido</p>
+           
+            <input type="text" name="apellido" id="apellido" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.apellido %>"
+            <% } %>>
+        
+
+            <p>Nombre</p>
+           
+            <input type="text" name="nombreProductor" id="nombre" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.nombre %>"
+            <% } %>>
+
+            <p>Email</p>
+           
+            <input type="email" name="email" id="emailRegister" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.email %>"
+            <% } %>>
+           
+            <p>Telefono</p>
+
+            <input type="tel" name="telefono" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.telefono %>"
+            <% } %>>
+
+            <p>Domicilio</p>
+            
+            <input type="text" name="domicilio" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.domicilio %>"
+            <% } %>>
+
+            <p>Nombre Emprendimiento</p>
+            
+            <input type="text" name="nombreEmprendimiento" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.nombreEmprendimiento %>"
+            <% } %>>
+
+            <p>Descripción Emprendimiento</p>
+            
+            <input type="text" name="descripcion" <% if(typeof datos != "undefined"){ %>
+                value="<%= datos.nombreEmprendimiento %>"
+            <% } %>>
+
+            <p>Logotipo</p>
+
+            <input type="file" name="logotipo">
+
+            <button class="claseButton" type="submit">Registrar Productor</button>
+
+        </form>
+
+        
+    </div>
+    <%- include('../partials/footer.ejs'); %>

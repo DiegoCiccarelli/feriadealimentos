@@ -5,8 +5,9 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
 
+
 const usersController = {
-    verRegister : function(req, res, next){
+    viewRegister : function(req, res, next){
         res.render('user/register');
     },
     register : function(req, res, next){
@@ -42,18 +43,49 @@ const usersController = {
         })
     }
     },
-    login : function(req, res, next) {
+    
+    viewLogin : function(req, res, next) {
         //console.log("en get de login" + req.session.email);
         res.render('user/login');
+
     },
-    createSession : function(req, res, next) {
-       //console.log("en create" + req.body.email);
-        
-        req.session.email = req.body.email;
-        res.render('user/login');
-        
-        //console.log(req.session.email);
-    }
+    //Login de Usuario
+    login: function(req, res, next){
+        //buscamos si el mail existe o sea el usuario en BD
+        db.User.findOne({where : {email_usuario : req.body.email}}).then(function(result){
+            if(result){
+                // si existe comprobamos contraseña encriptada
+                
+                if(bcrypt.compareSync(req.body.pwd, result.contrasena)){
+                    
+                    //creamos la session
+                    req.session.email = req.body.email;
+                    
+                    // si eligió recuérdame seteamos la cookie
+                    if(req.body.rememberMe){
+                        //seteo cookie a un año
+                        res.cookie("userFeria", req.body.email, { expires: new Date(Date.now() + 31536000000)});
+                    };
+
+                    res.redirect("/");
+               
+                }else{
+                    
+                    return res.render("user/login", { errorMessage : "Email o contraseña incorrecta",
+                                                datos: req.body});
+                    
+
+                };
+               
+            }else{
+                return res.render("user/login", { errorMessage : "Email o  contraseña incorrecta",
+                                                datos: req.body});
+                
+            }
+        })
+
+    },
+
 };
 
 module.exports = usersController;

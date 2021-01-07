@@ -16,18 +16,21 @@
            
             <p>Email</p>
            
-            <input type="email" name="email" id="emailLogin">
+            <input type="email" name="email" id="emailLogin" <% if(typeof datos != "undefined"){%> value="<%=datos.email%>" <% } %> >
            
             <p>Contraseña</p>
            
             <input type="password" name="pwd" id="pwdLogin">
            
+            <p>Recordarme en esta pc</p>
+            <input type="checkbox" name="rememberMe" id="rememberMe">
+
             <button class="claseButton">Ingresar</button>
 
         </form>
 
-        <a href="#">Olvidé mi contraseña</a>```-
-        <a href="#">Registro nuevo usuario</a>
+        <a href="#">Olvidé mi contraseña</a>
+        <a href="/usuarios/registro">Registro nuevo usuario</a>
     </div>
 
 <%- include('../partials/footer.ejs'); %>    

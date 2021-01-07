@@ -5,5 +5,11 @@
 <div class="contenedor">
     <h1>Algo salió mal / Página no encontrada</h1>
     <a href="/"><h2>Volver al Home</h2></a>
+
+    <h1><%= error.message%></h1>
+<h2><%=error.status%></h2>
+<pre><%=error.stack%></pre>
+
+
 </div>
 <%- include('./partials/footer.ejs'); %>

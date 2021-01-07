@@ -3,8 +3,6 @@ const path = require("path");
 const db = require("../database/models/index")
 var express = require('express');
 var router = express.Router();
-// traemos bcrypt para validar usuario login
-const bcrypt = require("bcryptjs"); 
 const { Session } = require("inspector");
 
 
@@ -51,40 +49,23 @@ const usersMiddleware = {
         })
     ],
 
-    loginValidation: function(req, res, next){
-        //buscamos si el mail existe o sea el usuario en BD
-        db.User.findOne({where : {email_usuario : req.body.email}}).then(function(result){
-            if(result){
-                // si existe comprobamos contraseña encriptada
-                let bdPassword = result.contrasena;
-                //console.log(bdPassword)    
-                if(bcrypt.compareSync(req.body.pwd, bdPassword)){
-                    
-                    req.Session.email = req.body.email;
-                    next();
-               
-                }else{
-                    
-                    return res.render("user/login", { errorMessage : "Email o contraseña incorrecta",
-                                                datos: req.body});
-                    
+    isLogged: function (req, res, next){
 
-                };
-               
-            }else{
-                return res.render("user/login", { errorMessage : "Email o  contraseña incorrecta",
-                                                datos: req.body});
-                
-            }
-        })
+                                console.log(req.session.email);
+
+                                if (req.session.email != undefined){
+
+                                    return next();
+
+                                }else{
+
+                                    return res.render("user/login");                                    
+
+                                };
 
     }
-        
-        
-       
-    ,
-
 }
+
 
 
 module.exports = usersMiddleware;

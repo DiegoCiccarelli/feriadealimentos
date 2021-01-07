@@ -6,6 +6,7 @@ const {check, body, validationResult} = require("express-validator");
 
 const path = require("path");
 const multer = require('multer');
+const usersMiddleware = require('../middlewares/usersMiddeware');
 var storage = multer.diskStorage({
 	  destination:(req,file,cb)=>{
 		  cb(null,'public/images/productsImages');
@@ -20,7 +21,7 @@ var upload = multer({storage:storage});
 router.get('/listadoProductos', productsController.productList);
 
   /* GET Carrito. */
-router.get('/carrito', productsController.cart);
+router.get('/carrito', usersMiddleware.isLogged, productsController.cart);
 
 /* GET detalle de un producto */
 router.get('/detalleProducto/:id', productsController.productDetail);
