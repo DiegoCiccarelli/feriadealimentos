@@ -15,9 +15,21 @@ var storage = multer.diskStorage({
     });
 var upload = multer({storage:storage});
 
+//Listar productores
+router.get('/listado', producersController.list)
+
+
+//Mostrar para crear
 router.get('/registro', producersController.viewRegister);
 
+//Guardar Productor
 router.post('/registro', upload.any(), producersMiddleware.registerValidation, producersController.register);
+
+//Mostrar para editar
+router.get('/editar/:id', producersController.viewEditRegister);
+
+//Editar productor
+router.post('/editar/:id', upload.any(), producersMiddleware.registerValidation, producersController.register);
 
 
 module.exports = router;

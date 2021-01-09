@@ -1,0 +1,44 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+<main class="contenedor">
+    <h1 style="text-align: center;">LISTADO PRODUCTORES</h1>
+    
+<table>
+        <section>
+        <button class="claseButton"><a href="/productores/registro">Nuevo Productor</a></button>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Productor</th>
+                <th colspan="2">Modificar</th>
+            </tr>
+        </thead>
+        <article>
+            <tbody>    
+                
+                    <% if(typeof producer[0] == "undefined"){%>
+                    <tr>
+                        <td colspan="3"><p>No se han encontrado productores</p> </td>
+                    </tr>
+                    <%}else{%>
+                    <% for(let i = 0; i < producer.length; i++){ %>
+                    <tr>
+                        <td><p><%= producer[i].id %></p></td>
+                        <td><p><%= producer[i].nombre_productor %></p></td>
+                        <td><button class="claseButton"><a href="/productores/editar/<%= producer[i].id %>">Editar</a></button></td>
+                        <td><button class="claseButton"><a href="/productores/eliminar/<%= producer[i].id %>">Eliminar</a></button></td>
+                    </tr>
+                    <% }%>
+                    <%}%>
+                
+            </tbody>
+        </article>
+        
+     </section>
+    </table>
+    </main>
+
+
+    <%- include('../partials/footer.ejs'); %>
