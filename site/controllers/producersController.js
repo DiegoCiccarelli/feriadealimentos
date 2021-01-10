@@ -16,7 +16,7 @@ const producersController = {
             if(resultado == null){
                 res.send("No se ha encontrado un productor con el id: " + req.params.id)
             } else{
-                res.render('/producer/producerEdit', {producer: resultado})
+                res.render('producer/producerEdit', {producer: resultado})
             }
         })
     },
@@ -25,7 +25,7 @@ const producersController = {
         const errors = validationResult(req)
         if(!errors.isEmpty()){
 
-            console.log(errors)
+            //console.log(errors)
             res.render("producer/register", {errors : errors.errors, datos : req.body})
 
         }else{
@@ -56,8 +56,44 @@ const producersController = {
             console.log(resultado)
             res.render("producer/producerList", {producer : resultado})
         })
-    }
-    
+    },
+
+    edit: function(req, res){
+        const errors = validationResult(req)
+        if(!errors.isEmpty()){
+
+            //console.log(errors)
+            console.log("producer/edit/" + req.params.id);
+            res.render("producer/producerEdit", {errors : errors.errors, datos : req.body})
+
+        }else{
+            let logotipo = null;
+            if(typeof req.files[0] != "undefined"){
+            logotipo = req.files[0].filename
+        
+            }
+        
+
+        db.Producer.update({
+            nombre_productor: req.body.nombreProductor,
+            apellido_productor: req.body.apellido,
+            email_productor: req.body.email,
+            domicilio_productor: req.body.domicilio,
+            logotipo: logotipo,
+            telefono_productor: req.body.telefono,
+            nombre_emprendimiento: req.body.nombreEmprendimiento,
+            descripcion_productor: req.body.descripcion
+        }, {where : {id:req.params.id}}).then(()=>{
+            res.redirect('/productores/listado')
+        });
+
+        }
+    },
+
+    delete: function(req, res){
+    db.Producer.destroy({where:{id:req.params.id}}).then(
+        res.redirect('/productores/listado')
+    )}
     
 
 };
