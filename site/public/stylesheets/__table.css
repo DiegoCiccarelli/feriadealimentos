@@ -4,10 +4,15 @@ table{
     margin: 5px;
     
 }
-#crearCategoria{
-  display: flex;
-  justify-content: right;
 
+#menuAdmin{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start
+}
+
+#menuAdmin button{
+  margin: 1vh;
 }
 tr:hover {
 background-color: #F5E8D1;
@@ -29,6 +34,10 @@ td {
   @media only screen and (max-width: 620px){
     td .claseButton{
       width: 55%;
+    }
+
+    #menuAdmin{
+      justify-content: center;
     }
   }
   @media only screen and (max-width: 460px){

@@ -2,12 +2,16 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<main class="contenedor">
-    <h1 style="text-align: center;">LISTADO CATEGORIAS</h1>
-    
+<main>
+
+    <h1 style="text-align: center;"">LISTADO CATEGORIAS</h1>
+    <div id="menuAdmin">
+    <BUTton class="claseButton"><a href="">MENU ADMIN</a></BUTton>
+    <button class="claseButton"><a href="/productos/crearCategoria">NUEVA CATEGORIA</a></button>
+    </div>
     <table>
         <section>
-        <button class="claseButton" id="crearCategoria"><a href="/productos/crearCategoria">NUEVA CATEGORIA</a></button>
+        
         <thead>
             <tr>
                 <th>ID</th>

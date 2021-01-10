@@ -15,6 +15,8 @@ var storage = multer.diskStorage({
     });
 var upload = multer({storage:storage});
 
+router.get("/menuAdmin", (req, res) => res.render("user/menuAdmin"))
+
 router.get('/registro', usersController.viewRegister);
 router.post('/registro', upload.any(), usersMiddleware.registerValidation, usersController.register);
 

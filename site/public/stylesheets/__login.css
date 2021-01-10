@@ -16,6 +16,14 @@
     
 
 }
+#contenedorLogin input{
+    background: #f1f1f1;
+    width: 80%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 0px;
+    text-align: center;
+   }
 
 #contenedorLogin form{
     display: flex;
@@ -26,7 +34,7 @@
     
 }
 
- #contenedorLogin h1{
+#contenedorLogin h1{
 
     background-color: green;
     align-self: stretch;
@@ -37,7 +45,7 @@
     border-top-right-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-} 
+  } 
 
 #contenedorLogin hr{
     width: 80%;
@@ -48,19 +56,6 @@
     background-color: green;
 }
 
-#contenedorLogin input{
-
-    padding-right: 10px;
-    padding-left: 10px;
-    margin: 10px 0 20px 0;
-    background: #f1f1f1;
-    width: 100%;
-    font-size: 1.2rem;
-    height: 40px;
-    border-radius: 5px;
-    border: 0px;
-    
-}
 
 #contenedorLogin p{
     margin: 0;
