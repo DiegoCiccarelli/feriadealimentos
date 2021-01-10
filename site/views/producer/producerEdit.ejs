@@ -17,56 +17,79 @@
         <%}%>
         
         
-        <form action="/productores/registro" method="POST" enctype="multipart/form-data">
+        <form action="/productores/editar/<% if(typeof producer != "undefined"){%><%= producer.id %>
+        <%}else if(typeof datos != "undefined"){ %>
+            <%= datos.id %>
+        <% } %>"
+         method="POST" enctype="multipart/form-data">
            
             <p>Apellido</p>
            
-            <input type="text" name="apellido" id="apellido" <% if(typeof datos != "undefined"){ %>
+            <input type="text" name="apellido" id="apellido" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.apellido_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
                 value="<%= datos.apellido %>"
             <% } %>>
         
 
             <p>Nombre</p>
            
-            <input type="text" name="nombreProductor" id="nombre" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.nombre %>"
+            <input type="text" name="nombreProductor" id="nombre" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.nombre_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
+                value="<%= datos.nombreProductor %>"
             <% } %>>
 
             <p>Email</p>
            
-            <input type="email" name="email" id="emailRegister" <% if(typeof datos != "undefined"){ %>
+            <input type="email" name="email" id="emailRegister" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.email_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
                 value="<%= datos.email %>"
             <% } %>>
            
             <p>Telefono</p>
 
-            <input type="tel" name="telefono" <% if(typeof datos != "undefined"){ %>
+            <input type="tel" name="telefono" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.telefono_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
                 value="<%= datos.telefono %>"
             <% } %>>
 
             <p>Domicilio</p>
             
-            <input type="text" name="domicilio" <% if(typeof datos != "undefined"){ %>
+            <input type="text" name="domicilio" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.domicilio_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
                 value="<%= datos.domicilio %>"
             <% } %>>
 
             <p>Nombre Emprendimiento</p>
             
-            <input type="text" name="nombreEmprendimiento" <% if(typeof datos != "undefined"){ %>
+            <input type="text" name="nombreEmprendimiento" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.nombre_emprendimiento %>"
+            <%}else if(typeof datos != "undefined"){ %>
                 value="<%= datos.nombreEmprendimiento %>"
             <% } %>>
 
             <p>Descripción Emprendimiento</p>
             
-            <input type="text" name="descripcion" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.nombreEmprendimiento %>"
+            <input type="text" name="descripcion" <% if(typeof producer != "undefined"){%>
+                value="<%= producer.descripcion_productor %>"
+            <%}else if(typeof datos != "undefined"){ %>
+                value="<%= datos.descripcion %>"
             <% } %>>
 
             <p>Logotipo</p>
 
             <input type="file" name="logotipo">
+            <% if(typeof producer != "undefined"){%>
+                <% if (producer.logotipo != null){ %>
+                     <img class="thumbnailImage" src="/images/producersLogos/<%= producer.logotipo %>">
+                <% } %>    
+            <% } %>
 
-            <button class="claseButton" type="submit">Registrar Productor</button>
+            <button class="claseButton" type="submit">Confirmar Cambios</button>
 
         </form>
 

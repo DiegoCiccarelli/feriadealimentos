@@ -35,32 +35,41 @@ const productsController = {
     },
 
     createProduct : function(req, res, next){
-        const errors = validationResult(req);
-        let formData = req.body;
-        let id = 0;
-
+        const errors = validationResult(req)
         if(!errors.isEmpty()){
-            console.log(errors)
-            res.render("product/productCreateEdit", {errors : errors.errors})
+
+            //console.log(errors)
+            res.render("product/productCreateEdit", {errors : errors.errors, datos : req.body})
+
+        }else{
+            let avatar = null;
+            if(typeof req.files[0] != "undefined"){
+            avatar = req.files[0].filename;
         }
-        else if(productsData[0] == undefined){
-            formData.imagenProducto = req.files[0].filename;
-            productsData.push(formData);
-            productsData[0].id = 1;
-        } else{
-        for(let i = 0; i < productsData.length; i++){
-        if(!productsData[i+1]){
-            id = parseInt(productsData[i].id, 10) + 1;
+        
+        db.Product.create({
+            nombre_producto: req.body.nombre,
+            descripcion_corta: req.body.descripcion_corta,
+            descripcion_larga : req.body.descripcion_larga,
+            precio: req.body.precio,
+            imagen: imagen,
+            estado_producto: req.body.estado,
+            variacion: req.body.variacion,
+            tamano: req.body.tamano
+            //productor_id: req.body.producto
+            
+        }).then(function(){
+            res.send('se ha creado con exito el producto: ' + req.body.nombre);
+            //res.redirect('/productos/listado');
+            })
         }
-        }
-        formData.imagenProducto = req.files[0].filename;
-        formData.id = id;
-        productsData.push(formData);
-    }
-       
-        // let productsDataJSON = JSON.stringify(productsData);
-       //fs.writeFileSync(productsDirname, productsDataJSON);
-        res.send("Se ha creado con exito el producto: " + req.body.nombre)
+    },
+    
+    list : function(req,res){
+        db.Producer.findAll().then(resultado => {
+            console.log(resultado)
+            res.render("producer/producerList", {producer : resultado})
+        })
     },
     
     productListAdmin : function(req, res, next) {

@@ -45,6 +45,11 @@ body{
 
 
   
+ .thumbnailImage{
+   width: 200px;
+   height: auto;
+   margin: 20px;
+ }
   /*
   Paleta de Colores 
   .paleta { color: #558C03; }
