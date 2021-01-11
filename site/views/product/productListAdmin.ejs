@@ -2,25 +2,47 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<main class="contenedor">
+<main>
 
-    <section class="contenedorCarrito">
-        <% for(let i = 0; i < productsData.length; i++){ %>
-        <article class="productoCarrito">
-            <div class="imagenCarrito">
-                <img src="../images/productsImages/<%= productsData[i].imagenProducto %>" alt="">
-            </div>
-            <div class="informacionProducto">
-                <p><%= productsData[i].nombre %></p>
-                <p><%= productsData[i].estado %></p>
-                <p><%= productsData[i].categoria %></p>
-                <p>$<%= productsData[i].precioProducto %></p>
-                <button class="claseButton"><a href="/products/productoEditar/<%= productsData[i].id %>">EDITAR</a></button>
-                <button class="claseButton"><a href="/products/productDelete/<%= productsData[i].id %>">BORRAR</a></button>
-            </div>
+    <h1 style="text-align: center;"">LISTADO PRODUCTOS</h1>
+    <div id="menuAdmin">
+    <BUTton class="claseButton"><a href="">MENU ADMIN</a></BUTton>
+    <button class="claseButton"><a href="/productos/crearCategoria">NUEVA PRODUCTO</a></button>
+    </div>
+    <table>
+        <section>
+        
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th colspan="2">MODIFICAR</th>
+            </tr>
+        </thead>
+        <article>
+            <tbody>    
+                
+                    <% if(typeof product[0] == "undefined"){%>
+                    <tr>
+                        <td colspan="3"><p>No se han encontrado productos</p> </td>
+                    </tr>
+                    <%}else{%>
+                    <% for(let i = 0; i < product.length; i++){ %>
+                    <tr>
+                        <td><p><%= product[i].id %></p></td>
+                        <td><p><%= product[i].nombre_producto %></p></td>
+                        <td><button class="claseButton"><a href="/productos/editarCategoria/<%= product[i].id %>">EDITAR</a></button></td>
+                        <td><button class="claseButton"><a href="/productos/eliminarCategoria/<%= product[i].id %>">BORRAR</a></button></td>
+                    </tr>
+                    <% }%>
+                    <%}%>
+                
+            </tbody>
         </article>
-        <%}%>
+        
     </section>
+    </table>
     </main>
-    
-<%- include('../partials/footer.ejs'); %>
+
+    <%- include('../partials/footer.ejs'); %>
+

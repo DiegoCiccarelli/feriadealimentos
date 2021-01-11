@@ -67,27 +67,29 @@ const productsController = {
     
     list : function(req,res){
         db.Producer.findAll().then(resultado => {
-            console.log(resultado)
             res.render("producer/producerList", {producer : resultado})
         })
     },
     
     productListAdmin : function(req, res, next) {
         db.Product.findAll().then(resultado =>{
-            res.render('product/productListAdmin', {productsData:resultado});
+            res.render("product/productListAdmin", {product:resultado});
         })
-        
     },
     
     showProductEdit : function(req, res, next) {
         
-        db.Product.findOne({where : {id:req.params.id}}).then(resultado => {
-            if(resultado == null){
-                res.send("No se ha encontrado un usuario con el id: " + req.params.id)
-            } else{
-                res.render(`/productos/productoEditar/${req.params.id}`, {product: resultado})
-            }
-        })
+    let busquedaProducto = db.Product.findByPk(req.params.id, {include:[{association:"producers"}, {association:"categories"}]})
+    let busquedaCategorias = db.Category.findAll();
+
+    Promise.all([busquedaProducto, busquedaCategorias]).then(([producto, categorias]) => {
+        if(!producto){
+            res.send("No se ha encontrado un producto con el id " + req.params.id)
+        } else{
+            console.log(categorias)
+            res.render("product/productEdit", {product:producto, categories:categorias})
+        }
+    })
     
         
     },
@@ -95,7 +97,7 @@ const productsController = {
     productEdit : function(req, res, next) {
        if(!errors.isEmpty()){
         console.log(errors)
-        res.render(`/productos/productoEditar/${req.params.id}`, {errors : errors.errors})
+        res.render("product/productEdit", {errors : errors.errors, product:req.body})
     }else{
         let imagen = req.files[0].filename;
         db.Product.update(

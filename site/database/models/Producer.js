@@ -60,7 +60,7 @@ module.exports = function(sequelize, dataTypes){
     Producer.associate = function(models){
         Producer.hasMany(models.Product, {
             as : "products",
-            foreignKey:"producer_id"
+            foreignKey:"productor_id"
         })
     }
 

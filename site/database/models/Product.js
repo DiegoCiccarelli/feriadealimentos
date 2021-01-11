@@ -82,23 +82,19 @@ module.exports = function(sequelize, DataTypes){
             as: "producers",
             foreignKey: "productor_id"
         });
-    };
 
-    Product.associate = function(models){
         Product.belongsToMany(models.Cart, {
             as:"carts",
             through: "carrito_producto",
             foreignKey: "carrito_id",
             otherKey: "producto_id"
         });
-    };
 
-    Product.associate = function(models){
         Product.belongsToMany(models.Category,{
             as: "categories",
             through: "categoria_producto",
-            foreignKey: "categoria_id",
-            otherKey: "producto_id"
+            foreignKey: "producto_id",
+            otherKey: "categoria_id"
         });
     };
 

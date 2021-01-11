@@ -21,44 +21,29 @@
     <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precio %>">
 
     <select name="estado" id="estado">
-        <option value="Estado" >Estado</option>
         
-        <% if(product.estado_producto=="activo"){%>
-            <option value="Activo" selected >Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        <%}else{%>
-            <option value="Activo">Activo</option>
-            <option value="Inactivo" selected >Inactivo</option>
-        <%}%>
+        <option value= 1 <% if(product.estado_producto== 1){%>
+            selected
+        <%}%>>Activo</option>
+        <option value= 0 <% if(product.estado_producto== 0){%>
+            selected
+        <%}%>>Inactivo</option>
+    </select>
+
    
-        
-    </select>
+        <% for(let i = 0; i < categories.length; i++) {%>
+            <input type="checkbox" name="category" value="<%= categories[i].id%>" <% for(let j = 0; j < product.categories.length; j++){%>
+                <%  if(product.categories[j].id === categories[i].id){%>
+                    checked
+                <%}%>
+                <%}%>>
+            <%= categories[i].nombre_categoria%>
 
-    <select name="categoria" id="categoria"> 
-        <% if(product.categoria=="default"){%>
-            <option value="default" selected>Categoria</option>
-            <option value="Dulces Caseros">Dulces Caseros</option>
-            <option value="Merienda">Merienda</option>
-            <option value="Artesanias">Artesanias</option>
-        <%}else if(product.categoria=="Dulces Caseros"){%>
-            <option value="default" >Categoria</option>
-            <option value="Dulces Caseros" selected>Dulces Caseros</option>
-            <option value="Merienda">Merienda</option>
-            <option value="Artesanias">Artesanias</option>
-        <%}else if(product.categoria=="Merienda"){%>
-            <option value="default" >Categoria</option>
-            <option value="Dulces Caseros">Dulces Caseros</option>
-            <option value="Merienda" selected>Merienda</option>
-            <option value="Artesanias">Artesanias</option>
-        <%}else if(product.categoria=="Artesanias"){%>
-            <option value="default" >Categoria</option>
-            <option value="Dulces Caseros" >Dulces Caseros</option>
-            <option value="Merienda" >Merienda</option>
-            <option value="Artesanias" selected>Artesanias</option>
-        
         <%}%>
+        
 
-    </select>
+
+   
 
     <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><%= product.descripcion_corta %></textarea>
             <span></span>
