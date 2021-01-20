@@ -46,16 +46,17 @@ const productsController = {
             if(typeof req.files[0] != "undefined"){
             avatar = req.files[0].filename;
         }
-        
+        console.log(req.body);
         db.Product.create({
-            nombre_producto: req.body.nombre,
-            descripcion_corta: req.body.descripcion_corta,
-            descripcion_larga : req.body.descripcion_larga,
-            precio: req.body.precio,
-            imagen: imagen,
-            estado_producto: req.body.estado,
-            variacion: req.body.variacion,
-            tamano: req.body.tamano
+           
+            // nombre_producto: req.body.nombre,
+            // descripcion_corta: req.body.descripcion_corta,
+            // descripcion_larga : req.body.descripcion_larga,
+            // precio: req.body.precio,
+            // imagen: imagen,
+            // estado_producto: req.body.estado,
+            // variacion: req.body.variacion,
+            // tamano: req.body.tamano
             //productor_id: req.body.producto
             
         }).then(function(){
@@ -117,13 +118,8 @@ const productsController = {
 
     },
     productDelete : function(req,res,next){
-        var idProduct = req.params.id;
-        var productDelete = productsData.filter(function(product){
-        return product.id != idProduct;  
-        })
-        if(productDelete.length != productsData.length){
-        productDeleteJSON = JSON.stringify(productDelete);
-        fs.writeFileSync(productsDirname ,productDeleteJSON);
+    if(req.params.id){
+        
         return res.send("El producto  con el id " + req.params.id + " ha sido eliminado");
     } else {
         return res.send("El producto con el id: " + idProduct + " no se ha encontrado")
