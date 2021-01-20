@@ -15,7 +15,7 @@
         </div>
         <%}%>
     
-<form action="/products/productoEditar/<%= product.id %>" method="POST" enctype="multipart/form-data">
+<form action="/productos/productoEditar/<%= product.id %>" method="POST" enctype="multipart/form-data">
     <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" value="<%= product.nombre_producto %>">
                
     <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precio %>">
@@ -40,6 +40,14 @@
             <%= categories[i].nombre_categoria%>
 
         <%}%>
+        <select name="productor">
+        <% for(let i = 0; i < producers.length; i++) {%>
+        <option value="<%= producers[i].id%>" 
+        <% if(producers[i].nombre_productor == product.producers.nombre_productor){ %>
+            selected
+        <% } %>><%= producers[i].nombre_productor %></option>
+        <%}%>
+        </select>
         
 
 
