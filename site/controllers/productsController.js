@@ -80,14 +80,14 @@ const productsController = {
     showProductEdit : function(req, res, next) {
         
     let busquedaProducto = db.Product.findByPk(req.params.id, {include:[{association:"producers"}, {association:"categories"}]})
+    let busquedaProductores = db.Producer.findAll()
     let busquedaCategorias = db.Category.findAll();
 
-    Promise.all([busquedaProducto, busquedaCategorias]).then(([producto, categorias]) => {
+    Promise.all([busquedaProducto, busquedaProductores, busquedaCategorias]).then(([producto, productores, categorias]) => {
         if(!producto){
             res.send("No se ha encontrado un producto con el id " + req.params.id)
         } else{
-            console.log(categorias)
-            res.render("product/productEdit", {product:producto, categories:categorias})
+            res.render("product/productEdit", {product:producto, producers:productores, categories:categorias})
         }
     })
     
@@ -95,26 +95,72 @@ const productsController = {
     },
 
     productEdit : function(req, res, next) {
-       if(!errors.isEmpty()){
-        console.log(errors)
-        res.render("product/productEdit", {errors : errors.errors, product:req.body})
-    }else{
-        let imagen = req.files[0].filename;
-        db.Product.update(
-            {
-                nombre_producto: req.body.nombre,
-                descripcion_corta: req.body.descripcion_corta,
-                descripcion_larga : req.body.descripcion_larga,
-                precio: req.body.precio,
-                imagen: imagen,
-                estado_producto: req.body.estado,
-                variacion: req.body.variacion,
-                tamano: req.body.tamano
-        },{where:{id:req.params.id}}).then(() => {
-            res.render("/productos/listadoProductosAdmin")
-        })
-    }
-
+        let errors = validationResult(req)
+        /* Chequeamos que no haya errores de validacion*/
+        if(!errors.isEmpty()){
+            res.send(errors)
+        /* Si no hay errores procedemos a actualizar: */
+        }else{
+                /* Si no carga una imagen mantenemos la que está guardada en la base de datos, si lo hace, subimos la imagen*/
+                if(typeof req.files !== "undefined"){
+                    db.Product.update({
+                    imagen: req.files[0].filename
+                    }, 
+                    {
+                        where : {id:req.params.id}
+                    }).then( () => Promise.resolve("Se ha subido la imagen"))
+                }
+            
+            /* Eliminamos todas las relaciones que el producto tenga para subir las actualizadas*/
+            db.CategoryProduct.destroy({where: {producto_id : req.params.id}})
+            /* Subimos las nuevas categorias que el admin ha seleccionado a la tabla pivot*/
+            .then( () => {
+                
+                /* Chequeamos si req.body.category es un array (es decir, si se selecciono mas de una categoria), si lo es recorremos el array y creamos una relacion en la tabla pivot por cada categoria que haya en el array)*/
+                if(Array.isArray(req.body.category)){
+                    for(let categoria of req.body.category){
+                        db.CategoryProduct.create({
+                            
+                            producto_id : req.params.id,
+                            categoria_id : categoria
+                        
+                            })
+                        }
+                /* Si solo se selecciono una categoria entonces realizo un solo create con la categoria seleccionada */ 
+                }else{
+                    db.CategoryProduct.create({
+                            
+                            producto_id : req.params.id,
+                            categoria_id : req.body.category
+                    
+                        })
+                    }
+                }
+            )
+            /* Actualizamos el resto de las columnas del producto */
+            .then( () => {
+            db.Product.update(
+                    {
+                        nombre_producto: req.body.nombre,
+                        descripcion_corta: req.body.descripcionCorta,
+                        descripcion_larga : req.body.descripcionLarga,
+                        precio: req.body.precioProducto,
+                        estado_producto: req.body.estado,
+                        variacion: req.body.variacion,
+                        tamano: req.body.tamano,
+                        productor_id : req.body.productor,
+                    },
+                    {
+                        where:{id:req.params.id},
+                        include: [{association:"producers"}]
+                    })
+                }
+            )
+            /* Una vez todo actualizado redirigimos a la tabla de productos */
+            .then(() => {
+                return res.redirect("/productos/listadoProductosAdmin")
+            })
+        }
     },
     productDelete : function(req,res,next){
         var idProduct = req.params.id;
