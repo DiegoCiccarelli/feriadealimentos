@@ -193,18 +193,25 @@ const productsController = {
                 res.redirect('/productos/listadoCategorias')
             })
         }else{
-            db.Category.create({nombre_categoria : req.body.categoria}).then(()=>{
+            db.Category.create({nombre_categoria : req.body.categoria, estado_categoria: 1}).then(()=>{
                 res.redirect('/productos/listadoCategorias')
             })
         }
     },
     deleteCategory : function(req, res){
-        db.Category.destroy({where:{id:req.params.id}}).then(
+        db.Category.update({
+            estado_categoria : 0
+        },{
+            where:
+            {
+                id:req.params.id
+            }
+        }).then(
             res.redirect('/productos/listadoCategorias')
         )
     },
     listadoCategorias : function(req,res){
-        db.Category.findAll().then(resultado => {
+        db.Category.findAll({where : {estado_categoria : 1}}).then(resultado => {
             console.log(resultado)
             res.render("product/categoryList", {categoria:resultado})
         })
