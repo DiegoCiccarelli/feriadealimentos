@@ -1,0 +1,114 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+
+<div id="contenedorProductCreateEdit">
+    <h1>Nuevo Producto</h1>
+
+    <% if(typeof errors != "undefined"){%>
+        <div class="errorMessageForm">
+        <% errors.forEach(element => {  %>
+            <%if(element.msg !== "Invalid value"){ %>
+        <p><%=element.msg%></p>
+        <%}%>
+        <% }) %>
+        </div>
+        <%}%>
+    
+<form action="/productos/productonuevo" method="POST" enctype="multipart/form-data">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" <% if(typeof(product) != "undefined"){ %> value="<%= product.nombre_producto %>"><%}%>
+               
+    
+    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precio %>">
+
+    <select name="estado" id="estado">
+        
+        <% if(typeof(product) != "undefined"){ %>
+                
+            <option value= 1 <% if(product.estado_producto== 1){%> selected <%}%>>Activo</option>
+            <option value= 0 <% if(product.estado_producto== 0){%> selected <%}%>>Inactivo</option>
+
+        <% }else{ %> 
+
+            <option value=1 selected>Activo</option>
+            <option value=0 >Inactivo</option>
+            
+        <%}%>    
+
+    </select>
+
+   
+        <% for(let i = 0; i < categories.length; i++) {%>
+            <input type="checkbox" name="category" value="<%= categories[i].id%>" 
+                
+                <% if(typeof(product)!= "undefined"){%>
+                    <% for(let j = 0; j < product.categories.length; j++){%>
+                        <%  if(product.categories[j].id === categories[i].id){%>
+                                checked
+                            <%}%>
+                    <%}%>
+                <% } %>>
+
+            <%= categories[i].nombre_categoria%>
+
+        <%}%>
+        <select name="productor">
+            
+            <% if (typeof(product)!= "undefined"){ %>
+
+                <% for(let i = 0; i < producers.length; i++) {%>
+                    <option value="<%= producers[i].id%>" 
+                        
+                        <% if(producers[i].id == product.producers.id){ %> 
+                            selected 
+                        <% } %>> 
+
+                    <%= producers[i].nombre_productor %>
+                    </option>
+                <% } %> 
+            
+            <%}else{%>
+
+                <% for(let i = 0; i < producers.length; i++) {%>
+                    <option value="<%= producers[i].id%>"> 
+                        <%= producers[i].nombre_productor %>
+                    </option>
+                <%}%>
+
+            <% } %> 
+
+        </select>
+        
+
+
+   
+
+    <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta">
+        <% if (typeof(product)!= "undefined"){ %>
+            <%= product.descripcion_corta %>
+        <%}%>
+    </textarea>
+
+    <span></span>
+    
+    <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga">
+        <% if (typeof(product)!= "undefined"){ %>
+            <%= product.descripcion_larga %>
+        <%}%> 
+    </textarea>
+
+    <span></span>
+
+    <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+    <% if(typeof product != "undefined"){%>
+        <% if (product.imagenProducto != null){ %>
+             <img class="thumbnailImage" src="/images/productsImages/<%= producer.logotipo %>">
+        <% } %>    
+    <% } %>
+            
+    <button class="claseButton" type="submit">Guardar Cambios</button>
+</form>
+
+</div>
+
+    <%- include('../partials/footer.ejs'); %>

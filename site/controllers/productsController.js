@@ -31,15 +31,54 @@ const productsController = {
 
     newProduct : function(req, res, next) {
 
-       return res.render('product/productCreateEdit');
+        let allCategories = db.Category.findAll();
+        let allProducers = db.Producer.findAll();
+        let categories;
+        let producers;
+
+        //Traer todas categorias y productores para enviar a la vista
+            Promise.all([allCategories, allProducers]).then(([categories, producers]) =>{
+
+                //console.log(categories, producers);
+                // renderizamos la vista y le enviamos categorias y productores
+                 return res.render('product/productCreate', {categories: categories,
+                 producers: producers});
+
+        });
+        
+
+
     },
 
     createProduct : function(req, res, next){
+        
+        let allCategories = db.Category.findAll();
+        let allProducers = db.Producer.findAll();
+        let categories;
+        let producers;
+
         const errors = validationResult(req)
+        console.log(errors);
         if(!errors.isEmpty()){
 
-            //console.log(errors)
-            res.render("product/productCreateEdit", {errors : errors.errors, datos : req.body})
+            let allCategories = db.Category.findAll();
+            let allProducers = db.Producer.findAll();
+            let categories;
+            let producers;
+             //Traer todas categorias y productores para enviar a la vista
+            Promise.all([allCategories, allProducers]).then(([categories, producers]) =>{
+
+                //console.log(categories, producers);
+                // renderizamos la vista y le enviamos categorias y productores
+                console.log(errors);
+                console.log(categories);
+                console.log(producers)
+    
+                res.render("product/productCreate", {errors : errors.errors, datos : req.body, categories: categories, producers: producers});
+               
+            });
+        
+          
 
         }else{
             let avatar = null;
