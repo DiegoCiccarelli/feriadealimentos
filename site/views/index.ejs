@@ -16,84 +16,17 @@
 				
 			<!--PRODUCTOS DESTACADOS-->
 
-		<h2>Productos Destacados</h2>
+		<h2>¡Explorá nuestros productos!</h2>
 
-		<div class="contenedorProductos">
-
-			
-			<div class="producto">
-				<img src="./images/imagen-producto1.jpg" alt="imagen">
-				<p class="productoNombre">Miel de pradera - dias de Miel</p>
-				<p class="productoPrecio">$ 259</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
+		<section class="contenedorGrid">
+			<div class="gridCategorias">
+			<%	for(let categoria of categories){ %>
+				<button class="claseButton"><%=categoria.nombre_categoria%></button>
+			<%	} %>
 			</div>
+		</section>
 
-			<div class="producto">
-				<img src="./images/imagen-producto2.jpg" alt="imagen">
-				<p class="productoNombre">Budin con frutos secos</p>
-				<p class="productoPrecio">$ 90</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
 
-			<div class="producto">
-				<img src="./images/imagen-producto3.jpg" alt="imagen">
-				<p class="productoNombre">Pasta frola de batata</p>
-				<p class="productoPrecio">$ 160</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-
-			<div class="producto">
-				<img src="./images/imagen-producto4.jpg" alt="imagen">
-				<p class="productoNombre">Aceite de oliva</p>
-				<p class="productoPrecio">$300</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-		</div>
-
-			<!--COMBOS-->
-			
-		<h2>Combos</h2>
-
-		<div class="contenedorProductos">
-
-			
-
-			<div class="producto">
-				<img src="./images/imagen-producto5.jpg" alt="imagen">
-				<p class="productoNombre">Frasco de aceitunas</p>
-				<p class="productoPrecio">$ 210</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-
-			<div class="producto">
-				<img src="./images/imagen-producto6.jpg" alt="imagen">
-				<p class="productoNombre">Ravioles rellenos de ricota</p>
-				<p class="productoPrecio">$ 110</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-
-			<div class="producto">
-				<img src="./images/imagen-producto7.jpg" alt="imagen">
-				<p class="productoNombre">Sándwiches de miga de jamon y queso</p>
-				<p class="productoPrecio">$ 320</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-
-			<div class="producto">
-				<img src="./images/imagen-producto2.jpg" alt="imagen">
-				<p class="productoNombre">Budin con frutos secos</p>
-				<p class="productoPrecio">$ 90</p>
-				<button class="claseButton"><a href="">Agregar al carrito</a></button>
-				<button class="claseButton"><a href="">Ver detalle</a></button>
-			</div>
-		</div>
 
 		<h2>¿Como trabajamos?</h2>
 
@@ -113,7 +46,7 @@
 			
 			<div class="iconos">
 				<i class="fas fa-truck fa-6x"></i>
-				<p>¿Te lo llevamos a tu casa o lo pasas a buscar por alguno de nuestros puntos de retira? ¡Tú decisión!</p>
+				<p>¿Te lo llevamos a tu casa o lo pasas a buscar por alguno de nuestros puntos de retiro? ¡Tú decisión!</p>
 			</div>
 		
 		</div>

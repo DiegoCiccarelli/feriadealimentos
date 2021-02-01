@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.TEXT(50),
             "allowNull" : false
         },
+        estado_categoria: {
+            type: DataTypes.BOOLEAN,
+            "allowNull" : false
+        },
         created_at: {
             type: DataTypes.DATE,
             "allowNull" : false

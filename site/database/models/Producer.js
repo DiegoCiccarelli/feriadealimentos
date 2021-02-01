@@ -39,6 +39,11 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(100),
             "allowNull" : true
         },
+
+        estado_productor: {
+            type: dataTypes.BOOLEAN,
+            "allowNull" : false
+        },
         created_at: {
             type: dataTypes.DATE(),
             "allowNull" : false

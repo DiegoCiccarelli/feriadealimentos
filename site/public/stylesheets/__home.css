@@ -35,7 +35,30 @@
     color: #F2E2C4;
   }
   
-  /** PRODUCTOS DESTACADOS y COMBOS**/
+  /**  **/
+
+  .contenedorGrid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gridCategorias{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.2vw;
+      justify-items: center
+  }
+
+  .gridCategorias button {
+    width: 150px;
+    height: 30px;
+  }
+
+
+
+
+  /** COMBOS**/
+
   
   .contenedorProductos{
     display: flex;
@@ -160,6 +183,13 @@
                       /** CELULAR **/
   @media only screen and (max-width: 480px) {
   
+  /** CATEGORIAS **/
+
+  .gridCategorias{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  
   /** PRODUCTOS/COMBOS **/
   .banner{
     display: none;
@@ -190,6 +220,10 @@
   }
                       /** TABLET CHICA**/
    @media only screen and (max-width: 699px) and (min-width: 481px){
+
+    .gridCategorias{
+      grid-template-columns: repeat(3, 1fr);
+    }
   
   .banner{
 
