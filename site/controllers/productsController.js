@@ -8,7 +8,10 @@ let db = require("../database/models/index");
 const productsController = {
 
     productList : function(req, res, next) {
+        db.Product.findAll({where:{estado_producto : 1}})
+        .then( (productsData) => {
         res.render('product/productList', {productsData});
+        })
     },
 
     cart : function(req, res, next){
@@ -16,17 +19,14 @@ const productsController = {
     },
 
     productDetail : function(req, res, next) {
-              console.log(productsData)
-        let product = productsData.find(p => parseInt(req.params.id)==p.id);
-        console.log(product)
-        
-        if (product){
-            return res.render('product/productDetail', {product: product});
-            console.log(product);
-        }else{
-            return res.send("Error no se encuentra el producto");
-        }
-
+        db.Product.findByPk(req.params.id, {where:{estado_producto : 1}})
+        .then( (productData) => {
+            if (productData){
+                return res.render('product/productDetail', {productData});
+            }else{
+                return res.send("Error no se encuentra el producto");
+            }
+        })
     },
 
     newProduct : function(req, res, next) {
@@ -65,11 +65,11 @@ const productsController = {
         }
     },
     
-    list : function(req,res){
-        db.Producer.findAll().then(resultado => {
-            res.render("producer/producerList", {producer : resultado})
-        })
-    },
+    // list : function(req,res){
+    //     db.Producer.findAll().then(resultado => {
+    //         res.render("producer/producerList", {producer : resultado})
+    //     })
+    // },
     
     productListAdmin : function(req, res, next) {
         db.Product.findAll().then(resultado =>{
@@ -79,9 +79,9 @@ const productsController = {
     
     showProductEdit : function(req, res, next) {
         
-    let busquedaProducto = db.Product.findByPk(req.params.id, {include:[{association:"producers"}, {association:"categories"}]})
-    let busquedaProductores = db.Producer.findAll()
-    let busquedaCategorias = db.Category.findAll();
+    let busquedaProducto = db.Product.findByPk(req.params.id, {where : {estado_producto:1},include:[{association:"producers"}, {association:"categories"}]})
+    let busquedaProductores = db.Producer.findAll({where:{estado_productor : 1}})
+    let busquedaCategorias = db.Category.findAll({where:{estado_categoria : 1}});
 
     Promise.all([busquedaProducto, busquedaProductores, busquedaCategorias]).then(([producto, productores, categorias]) => {
         if(!producto){

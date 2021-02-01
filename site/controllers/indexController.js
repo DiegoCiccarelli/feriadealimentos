@@ -5,7 +5,15 @@ const db = require("../database/models")
 
 const indexController = {
     home : function(req, res, next){
-     return res.render("index");
+    db.Category.findAll(
+        {where : 
+            {
+                estado_categoria : 1
+            }
+        })
+    .then( resultado => {
+        res.render("index", {categories : resultado})
+    })
     }
 };
 

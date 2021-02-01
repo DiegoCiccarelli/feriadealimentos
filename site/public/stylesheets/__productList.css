@@ -75,11 +75,8 @@ text-align: center;
 }
 
 .listadoProductos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 1vh;
 }
 
@@ -98,7 +95,6 @@ text-align: center;
     max-width: 250px;
     background-color: white;
     transition: 0.5s;
-    margi
 }
 
 .productoListado:hover{
@@ -164,7 +160,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 100%;
     max-width: 1400px;
     }
 

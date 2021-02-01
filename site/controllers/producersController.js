@@ -12,7 +12,7 @@ const producersController = {
     },
 
     viewEditRegister : function(req, res, next){
-        db.Producer.findOne({where : {id:req.params.id}}).then(resultado => {
+        db.Producer.findOne({where : {id:req.params.id, estado_productor : 1}}).then(resultado => {
             if(resultado == null){
                 res.send("No se ha encontrado un productor con el id: " + req.params.id)
             } else{
@@ -42,8 +42,8 @@ const producersController = {
             logotipo: logotipo,
             telefono_productor: req.body.telefono,
             nombre_emprendimiento: req.body.nombreEmprendimiento,
-            descripcion_productor: req.body.descripcion
-            
+            descripcion_productor: req.body.descripcion,
+            estado_productor: 1
         }).then(function(){
             //res.send('se ha creado con exito el productor: ' + req.body.nombreProductor);
             res.redirect('/productores/listado');
@@ -52,7 +52,7 @@ const producersController = {
     },
     
     list : function(req,res){
-        db.Producer.findAll().then(resultado => {
+        db.Producer.findAll({where : {estado_productor : 1}}).then(resultado => {
             console.log(resultado)
             res.render("producer/producerList", {producer : resultado})
         })
@@ -91,7 +91,8 @@ const producersController = {
     },
 
     delete: function(req, res){
-    db.Producer.destroy({where:{id:req.params.id}}).then(
+    db.Producer.update({estado_productor : 0},{where:{id:req.params.id}})
+    .then(
         res.redirect('/productores/listado')
     )}
     
