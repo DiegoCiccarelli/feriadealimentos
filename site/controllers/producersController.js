@@ -24,10 +24,7 @@ const producersController = {
     register : function(req, res, next){
         const errors = validationResult(req)
         if(!errors.isEmpty()){
-
-            //console.log(errors)
-            res.render("producer/register", {errors : errors.errors, datos : req.body})
-
+            res.render("producer/register", {errors : errors.errors, data : req.body})
         }else{
             let logotipo = null;
             if(typeof req.files[0] != "undefined"){
@@ -61,10 +58,8 @@ const producersController = {
     edit: function(req, res){
         const errors = validationResult(req)
         if(!errors.isEmpty()){
-
-            //console.log(errors)
-            console.log("producer/edit/" + req.params.id);
-            res.render("producer/producerEdit", {errors : errors.errors, datos : req.body})
+            req.body.id = req.params.id
+            res.render("producer/producerEdit", {errors : errors.errors, data : req.body})
 
         }else{
             let logotipo = null;

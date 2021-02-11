@@ -13,8 +13,6 @@ const usersController = {
     register : function(req, res, next){
         const errors = validationResult(req)
         if(!errors.isEmpty()){
-
-            console.log(errors)
             res.render("user/register", {errors : errors.errors, datos : req.body})
         }else{
         let avatar = null;
