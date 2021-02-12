@@ -7,7 +7,7 @@
     <h1 style="text-align: center;"">LISTADO PRODUCTOS</h1>
     <div id="menuAdmin">
     <BUTton class="claseButton"><a href="">MENU ADMIN</a></BUTton>
-    <button class="claseButton"><a href="/productos/crearCategoria">NUEVA PRODUCTO</a></button>
+    <button class="claseButton"><a href="/productos/productoNuevo">NUEVA PRODUCTO</a></button>
     </div>
     <table>
         <section>
@@ -32,7 +32,7 @@
                         <td><p><%= product[i].id %></p></td>
                         <td><p><%= product[i].nombre_producto %></p></td>
                         <td><button class="claseButton"><a href="/productos/productoEditar/<%= product[i].id %>">EDITAR</a></button></td>
-                        <td><button class="claseButton"><a href="/productos/eliminarCategoria/<%= product[i].id %>">BORRAR</a></button></td>
+                        <td><button class="claseButton"><a href="/productos/productoElimina<%= product[i].id %>">BORRAR</a></button></td>
                     </tr>
                     <% }%>
                     <%}%>

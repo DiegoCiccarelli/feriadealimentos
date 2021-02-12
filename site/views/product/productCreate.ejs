@@ -16,26 +16,17 @@
         <%}%>
     
 <form action="/productos/productonuevo" method="POST" enctype="multipart/form-data">
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" <% if(typeof(product) != "undefined"){ %> value="<%= product.nombre_producto %>"><%}%>
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" 
+    <% if(typeof(product) != "undefined"){ %> 
+        value="<%= product.nombre_producto %>"
+    
+    <%}%>
+    >
                
     
-    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" value="<%= product.precio %>">
+    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" <% if(typeof(product) != "undefined"){ %> value="<%= product.precio %>"<% } %> >
 
-    <select name="estado" id="estado">
-        
-        <% if(typeof(product) != "undefined"){ %>
-                
-            <option value= 1 <% if(product.estado_producto== 1){%> selected <%}%>>Activo</option>
-            <option value= 0 <% if(product.estado_producto== 0){%> selected <%}%>>Inactivo</option>
-
-        <% }else{ %> 
-
-            <option value=1 selected>Activo</option>
-            <option value=0 >Inactivo</option>
-            
-        <%}%>    
-
-    </select>
+   
 
    
         <% for(let i = 0; i < categories.length; i++) {%>
@@ -70,9 +61,7 @@
             <%}else{%>
 
                 <% for(let i = 0; i < producers.length; i++) {%>
-                    <option value="<%= producers[i].id%>"> 
-                        <%= producers[i].nombre_productor %>
-                    </option>
+                    <option value="<%= producers[i].id%>"><%= producers[i].nombre_productor %></option>
                 <%}%>
 
             <% } %> 

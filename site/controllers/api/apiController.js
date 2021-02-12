@@ -4,9 +4,23 @@ const apiController = {
     usersQuantity : (req, res) =>{
         db.User.findAll({where : {tipo_usuario : "cliente"}})
         .then((data) => {
-            res.json({length : data.length});
+            let usersData = {
+                meta: {
+                    url: "http://localhost:3500/api/usersQuantity",
+                    status: 200,
+                    state: "Ok"
+
+                },
+
+                data: {
+                    usersQuantity: data.length,
+
+                }
+            }
+            res.json(usersData);
         })
     },
+    
     productsQuantity : (req, res) => {
         db.Product.findAll({where:{estado_producto : 1}})
         .then( (data) => {

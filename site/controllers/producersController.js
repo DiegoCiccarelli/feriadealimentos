@@ -63,8 +63,8 @@ const producersController = {
         if(!errors.isEmpty()){
 
             //console.log(errors)
-            console.log("producer/edit/" + req.params.id);
-            res.render("producer/producerEdit", {errors : errors.errors, datos : req.body})
+           // console.log("producer/edit/" + req.params.id);
+            res.render("producer/producerEdit" + req.params.id, {errors : errors.errors, datos : req.body})
 
         }else{
             let logotipo = null;
