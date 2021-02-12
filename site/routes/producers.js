@@ -30,7 +30,7 @@ router.post('/registro', upload.any(), producersMiddleware.registerValidation, p
 router.get('/editar/:id', producersController.viewEditRegister);
 
 //Editar productor
-router.post('/editar/:id', upload.any(), producersMiddleware.registerValidation, producersController.edit);
+router.post('/editar/:id', upload.any(), producersMiddleware.producerEditCheck, producersController.edit);
 
 //Eliminar productor
 router.get('/eliminar/:id', producersController.delete)

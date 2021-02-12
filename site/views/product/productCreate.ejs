@@ -15,89 +15,58 @@
         </div>
         <%}%>
     
-<form action="/productos/productonuevo" method="POST" enctype="multipart/form-data">
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" 
-    <% if(typeof(product) != "undefined"){ %> 
-        value="<%= product.nombre_producto %>"
-    
-    <%}%>
-    >
-               
-    
-    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" <% if(typeof(product) != "undefined"){ %> value="<%= product.precio %>"<% } %> >
+        <form action="/productos/productoNuevo" method="POST" enctype="multipart/form-data">
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" 
+        <% if(typeof data != "undefined"){ %>
+            value="<%= data.nombre %>"
+        <% } %>>
+                   
+        <input type="number" name ="precioProducto" id="precio" placeholder="Precio" 
+        <% if(typeof data != "undefined"){ %>
+            value="<%= data.precioProducto %>"
+        <% } %>>
 
-   
-
-   
-        <% for(let i = 0; i < categories.length; i++) {%>
-            <input type="checkbox" name="category" value="<%= categories[i].id%>" 
-                
-                <% if(typeof(product)!= "undefined"){%>
-                    <% for(let j = 0; j < product.categories.length; j++){%>
-                        <%  if(product.categories[j].id === categories[i].id){%>
-                                checked
+            <% for(let i = 0; i < categories.length; i++) {%>
+                <input type="checkbox" name="category" value="<%= categories[i].id%>"%> 
+                <% if(typeof data != "undefined"){ %>
+                    <% if(Array.isArray(data.category)){%>
+                        <% for(let j = 0; j < data.category.length; j++){%>
+                            <%  if(data.category[j] == categories[i].id){%>
+                                    checked
                             <%}%>
+                        <%}%>
+                    <%} else { %>
+                        <%  if(data.category == categories[i].id){%>
+                                checked
+                        <%}%>
                     <%}%>
-                <% } %>>
+                <%}%>>
+                <%= categories[i].nombre_categoria%>
+            <%}%>
 
-            <%= categories[i].nombre_categoria%>
+            <select name="productor">
+            <% for(let i = 0; i < producers.length; i++) {%>
+            <option value="<%= producers[i].id%>" 
+                <% if(typeof data != "undefined"){ %>
+                    <%if(data.productor == producers[i].id){%>
+                        selected
+                    <%}%>
+                <%}%>>
+                <%= producers[i].nombre_productor %>
+            </option>
+            <%}%>
+            </select>
 
-        <%}%>
-        <select name="productor">
-            
-            <% if (typeof(product)!= "undefined"){ %>
+            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><% if(typeof data != "undefined"){%><%= data.descripcionCorta %><% } %></textarea>
+            <span></span>
+            <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><% if(typeof data != "undefined"){ %><%= data.descripcionLarga %><% } %></textarea>
+            <span></span>
 
-                <% for(let i = 0; i < producers.length; i++) {%>
-                    <option value="<%= producers[i].id%>" 
-                        
-                        <% if(producers[i].id == product.producers.id){ %> 
-                            selected 
-                        <% } %>> 
-
-                    <%= producers[i].nombre_productor %>
-                    </option>
-                <% } %> 
-            
-            <%}else{%>
-
-                <% for(let i = 0; i < producers.length; i++) {%>
-                    <option value="<%= producers[i].id%>"><%= producers[i].nombre_productor %></option>
-                <%}%>
-
-            <% } %> 
-
-        </select>
-        
-
-
-   
-
-    <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta">
-        <% if (typeof(product)!= "undefined"){ %>
-            <%= product.descripcion_corta %>
-        <%}%>
-    </textarea>
-
-    <span></span>
+                <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
     
-    <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga">
-        <% if (typeof(product)!= "undefined"){ %>
-            <%= product.descripcion_larga %>
-        <%}%> 
-    </textarea>
-
-    <span></span>
-
-    <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
-    <% if(typeof product != "undefined"){%>
-        <% if (product.imagenProducto != null){ %>
-             <img class="thumbnailImage" src="/images/productsImages/<%= producer.logotipo %>">
-        <% } %>    
-    <% } %>
-            
-    <button class="claseButton" type="submit">Guardar Cambios</button>
-</form>
-
-</div>
+        <button class="claseButton" type="submit">Guardar Cambios</button>
+    </form>
+    
+    </div>
 
     <%- include('../partials/footer.ejs'); %>
