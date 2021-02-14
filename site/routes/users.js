@@ -23,4 +23,7 @@ router.get('/login', usersController.viewLogin);
 
 router.post('/login', usersController.login);
 
+router.get('/perfil', usersMiddleware.isLogged, usersController.viewEdit);
+router.post('/perfil', upload.any(), usersMiddleware.editValidation, usersController.edit);
+
 module.exports = router;

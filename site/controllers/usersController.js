@@ -84,6 +84,58 @@ const usersController = {
 
     },
 
+    viewEdit: function(req, res, next){
+
+        //console.log("llego");
+       //console.log(req.session.email);
+        db.User.findOne({where : {email_usuario: req.session.email}}).then(function(result){
+            //console.log(result);
+            if(result == null){
+                 return res.send("Algo salio mal: ")
+              } else{
+                 console.log("else!!");
+                 return res.render('user/userViewEdit', {user: result})
+             }
+        })
+    },
+
+    edit: function(req, res, next){
+        const errors = validationResult(req)
+        if(!errors.isEmpty()){
+            res.render("user/userViewEdit", {errors : errors.errors, data : req.body})
+        }else{
+            
+            let avatar = null;
+            
+            if(typeof req.files[0] != "undefined"){
+                avatar = req.files[0].filename
+            }
+
+            db.User.update({
+                nombre_usuario: req.body.nombre,
+                apellido_usuario: req.body.apellido,
+                email_usuario: req.body.email,
+                telefono_usuario: req.body.telefono,
+                //contrasena: bcrypt.hashSync(req.body.pass,10),
+                dni: req.body.dni,
+                calle: req.body.calle,
+                altura: req.body.altura,
+                piso: req.body.piso,
+                departamento: req.body.departamento,
+                barrio: req.body.barrio,
+                localidad: req.body.localidad,
+                provincia: req.body.provincia,
+                pais: req.body.pais,
+                avatar: avatar,
+                tipo_usuario: "cliente",    
+            }, {where : {email_usuario : req.session.email}}).then(function(){
+
+                res.redirect('/usuarios/perfil');
+            
+            })
+        }
+    }
+
 };
 
 module.exports = usersController;

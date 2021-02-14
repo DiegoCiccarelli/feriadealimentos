@@ -1,0 +1,114 @@
+
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+    
+        <div id="contenedorRegister">
+        <h1>Mi perfil</h1>
+        
+        <% if(typeof errors != "undefined"){%>
+        <div class="errorMessageForm">
+        <% errors.forEach(element => {  %>
+            <%if(element.msg !== "Invalid value"){ %>
+        <p><%=element.msg%></p>
+        <%}%>
+        <% }) %>
+        </div>
+        <%}%>
+        
+        
+        <form method="POST" enctype="multipart/form-data" action="/usuarios/perfil">
+            
+           
+            <p>Apellido</p>
+           
+            <input disabled type="text" name="apellido" id="apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>value="<%=user.apellido_usuario%>"<%_}_%>
+            >
+        
+
+            <p>Nombre</p>
+           
+            <input disabled type="text" name="nombreUsuario" id="nombreUsuario" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreusuario%>"<%_ }else{_%>value="<%=user.nombre_usuario%>"<%_}_%>
+            >
+
+            <p>Email</p>
+           
+            <input disabled type="email" name="emailRegister" id="emailRegister" <%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%>value="<%=user.email_usuario%>"<%_}_%>
+            >
+           
+            <p>Telefono</p>
+
+            <input disabled type="tel" name="telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>value="<%=user.telefono_usuario%>"<%_}_%>
+            >
+
+
+            <!-- VER SI CORRESPONDE PODER CAMBIAR LA CONTRASEÑA ACA O EN UNA VISTA APARTE 
+                <p id="pContrasena">Contraseña</p>
+           
+            <input disabled type="password" name="pass" id="pwdRegister">
+
+            <p id="pRepitaContrasena">Repita Contraseña</p>
+           
+            <input disabled type="password" name="repeatPass" id="repeatPwdRegister"> -->
+
+           
+
+            <p>DNI</p>
+
+            <input disabled type="number" name="dni"<%_ if(typeof data != "undefined"){ _%>value="<%=data.dni%>"<%_ }else{_%>value="<%=user.dni%>"<%_}_%>>
+
+            <p>Calle</p>
+            
+            <input disabled type="text" name="calle" <%_ if(typeof data != "undefined"){ _%>value="<%=data.calle%>"<%_ }else{_%>value="<%=user.calle%>"<%_}_%>>
+
+            <p>Altura</p>
+
+            <input disabled type="text" name="altura" <%_ if(typeof data != "undefined"){ _%>value="<%=data.altura%>"<%_ }else{_%>value="<%=user.altura%>"<%_}_%>>
+
+            <p>Piso</p>
+
+            <input disabled type="text" name="piso" <%_ if(typeof data != "undefined"){ _%>value="<%=data.piso%>"<%_ }else{_%>value="<%=user.piso%>"<%_}_%>>
+            
+            <p>Departamento</p>
+
+            <input disabled type="text" name="departamento" <%_ if(typeof data != "undefined"){ _%>value="<%=data.departamento%>"<%_ }else{_%>value="<%=user.departamento%>"<%_}_%>>
+
+            <p>Barrio</p>
+
+            <input disabled type="text" name="barrio" <%_ if(typeof data != "undefined"){ _%>value="<%=data.barrio%>"<%_ }else{_%>value="<%=user.barrio%>"<%_}_%>>
+
+            <p>Localidad</p>
+
+            <input disabled type="text" name="localidad" <%_ if(typeof data != "undefined"){ _%>value="<%=data.localidad%>"<%_ }else{_%>value="<%=user.localidad%>"<%_}_%>>
+
+            <p>Provincia</p>
+
+            <input disabled type="text" name="provincia" <%_ if(typeof data != "undefined"){ _%>value="<%=data.provincia%>"<%_ }else{_%>value="<%=user.provincia%>"<%_}_%>>
+
+            <p>Pais</p>
+
+            <input disabled type="text" name="pais"<%_ if(typeof data != "undefined"){ _%>value="<%=data.pais%>"<%_ }else{_%>value="<%=user.pais%>"<%_}_%>>
+
+            <p>Avatar</p>
+
+            <input disabled type="file" name="avatar">
+            
+            <!-- <div>
+                
+                <label for="aceptoTerminos"><a href="#">Acepto los términos y condiciones </a>   </label>
+                <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos">
+
+            </div> -->
+
+            <button id="submitButton" class="claseButton" type="submit">Registrarme</button>
+           
+
+        </form>
+
+        <button id="editButton" class="claseButton" >Editar mi perfil</button>
+
+        
+    </div>
+
+    <script src="/js/userViewEdit.js"></script>
+    <%- include('../partials/footer.ejs'); %>
