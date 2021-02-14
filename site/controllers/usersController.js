@@ -102,13 +102,20 @@ const usersController = {
     edit: function(req, res, next){
         const errors = validationResult(req)
         if(!errors.isEmpty()){
+            req.body.email = req.session.email;
+            console.log(req.body);
             res.render("user/userViewEdit", {errors : errors.errors, data : req.body})
         }else{
             
-            let avatar = null;
+            //let avatar = null;
             
-            if(typeof req.files[0] != "undefined"){
-                avatar = req.files[0].filename
+            if(typeof req.files[0] !== "undefined"){
+                db.User.update({
+                avatar: req.files[0].filename
+                }, 
+                {
+                    where : {email_usuario : req.session.email}
+                }).then( () => Promise.resolve("Se ha subido la imagen"))
             }
 
             db.User.update({
@@ -126,7 +133,7 @@ const usersController = {
                 localidad: req.body.localidad,
                 provincia: req.body.provincia,
                 pais: req.body.pais,
-                avatar: avatar,
+                //avatar: avatar,
                 tipo_usuario: "cliente",    
             }, {where : {email_usuario : req.session.email}}).then(function(){
 

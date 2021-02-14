@@ -22,23 +22,23 @@
            
             <p>Apellido</p>
            
-            <input disabled type="text" name="apellido" id="apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>value="<%=user.apellido_usuario%>"<%_}_%>
+            <input type="text" name="apellido" id="apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>disabled value="<%=user.apellido_usuario%>"<%_}_%>
             >
         
 
             <p>Nombre</p>
            
-            <input disabled type="text" name="nombreUsuario" id="nombreUsuario" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreusuario%>"<%_ }else{_%>value="<%=user.nombre_usuario%>"<%_}_%>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreusuario%>"<%_ }else{_%>disabled value="<%=user.nombre_usuario%>"<%_}_%>
             >
 
             <p>Email</p>
            
-            <input disabled type="email" name="emailRegister" id="emailRegister" <%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%>value="<%=user.email_usuario%>"<%_}_%>
+            <input disabled type="email" name="emailRegister" id="emailRegister" <%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%> value="<%=user.email_usuario%>"<%_}_%>
             >
            
             <p>Telefono</p>
 
-            <input disabled type="tel" name="telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>value="<%=user.telefono_usuario%>"<%_}_%>
+            <input type="tel" name="telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>disabled value="<%=user.telefono_usuario%>"<%_}_%>
             >
 
 
@@ -55,43 +55,46 @@
 
             <p>DNI</p>
 
-            <input disabled type="number" name="dni"<%_ if(typeof data != "undefined"){ _%>value="<%=data.dni%>"<%_ }else{_%>value="<%=user.dni%>"<%_}_%>>
+            <input type="number" name="dni"<%_ if(typeof data != "undefined"){ _%>value="<%=data.dni%>"<%_ }else{_%> disabled value="<%=user.dni%>"<%_}_%>>
 
             <p>Calle</p>
             
-            <input disabled type="text" name="calle" <%_ if(typeof data != "undefined"){ _%>value="<%=data.calle%>"<%_ }else{_%>value="<%=user.calle%>"<%_}_%>>
+            <input type="text" name="calle" <%_ if(typeof data != "undefined"){ _%>value="<%=data.calle%>"<%_ }else{_%>disabled value="<%=user.calle%>"<%_}_%>>
 
             <p>Altura</p>
 
-            <input disabled type="text" name="altura" <%_ if(typeof data != "undefined"){ _%>value="<%=data.altura%>"<%_ }else{_%>value="<%=user.altura%>"<%_}_%>>
+            <input type="text" name="altura" <%_ if(typeof data != "undefined"){ _%>value="<%=data.altura%>"<%_ }else{_%>disabled value="<%=user.altura%>"<%_}_%>>
 
             <p>Piso</p>
 
-            <input disabled type="text" name="piso" <%_ if(typeof data != "undefined"){ _%>value="<%=data.piso%>"<%_ }else{_%>value="<%=user.piso%>"<%_}_%>>
+            <input type="text" name="piso" <%_ if(typeof data != "undefined"){ _%>value="<%=data.piso%>"<%_ }else{_%>disabled value="<%=user.piso%>"<%_}_%>>
             
             <p>Departamento</p>
 
-            <input disabled type="text" name="departamento" <%_ if(typeof data != "undefined"){ _%>value="<%=data.departamento%>"<%_ }else{_%>value="<%=user.departamento%>"<%_}_%>>
+            <input type="text" name="departamento" <%_ if(typeof data != "undefined"){ _%>value="<%=data.departamento%>"<%_ }else{_%>disabled value="<%=user.departamento%>"<%_}_%>>
 
             <p>Barrio</p>
 
-            <input disabled type="text" name="barrio" <%_ if(typeof data != "undefined"){ _%>value="<%=data.barrio%>"<%_ }else{_%>value="<%=user.barrio%>"<%_}_%>>
+            <input type="text" name="barrio" <%_ if(typeof data != "undefined"){ _%>value="<%=data.barrio%>"<%_ }else{_%>disabled value="<%=user.barrio%>"<%_}_%>>
 
             <p>Localidad</p>
 
-            <input disabled type="text" name="localidad" <%_ if(typeof data != "undefined"){ _%>value="<%=data.localidad%>"<%_ }else{_%>value="<%=user.localidad%>"<%_}_%>>
+            <input type="text" name="localidad" <%_ if(typeof data != "undefined"){ _%>value="<%=data.localidad%>"<%_ }else{_%>disabled value="<%=user.localidad%>"<%_}_%>>
 
             <p>Provincia</p>
 
-            <input disabled type="text" name="provincia" <%_ if(typeof data != "undefined"){ _%>value="<%=data.provincia%>"<%_ }else{_%>value="<%=user.provincia%>"<%_}_%>>
+            <input type="text" name="provincia" <%_ if(typeof data != "undefined"){ _%>value="<%=data.provincia%>"<%_ }else{_%>disabled value="<%=user.provincia%>"<%_}_%>>
 
             <p>Pais</p>
 
-            <input disabled type="text" name="pais"<%_ if(typeof data != "undefined"){ _%>value="<%=data.pais%>"<%_ }else{_%>value="<%=user.pais%>"<%_}_%>>
+            <input type="text" name="pais"<%_ if(typeof data != "undefined"){ _%>value="<%=data.pais%>"<%_ }else{_%>disabled value="<%=user.pais%>"<%_}_%>>
 
             <p>Avatar</p>
 
-            <input disabled type="file" name="avatar">
+            <input disabled type="file" name="avatar" <%_ if(typeof data == "undefined"){ _%> disabled <%_ }_%>>
+            <div id="imagenesCargadas">
+                <img src="/images/userAvatar/<%_if(typeof data != "undefined"){_%><%=data.avatar%><%_}else{_%><%=user.avatar%><%_}_%>">
+            </div> 
             
             <!-- <div>
                 
@@ -100,7 +103,7 @@
 
             </div> -->
 
-            <button id="submitButton" class="claseButton" type="submit">Registrarme</button>
+            <button id="submitButton" class="claseButton" type="submit">Guardar Cambios</button>
            
 
         </form>

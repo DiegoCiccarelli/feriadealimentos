@@ -4,12 +4,22 @@ window.addEventListener('load', function(){
     let submitButton = document.querySelector("#submitButton");
     let editButton = document.querySelector("#editButton");
     let emailInput = document.querySelector("#emailRegister");
+    let IsError = document.querySelector(".errorMessageForm");
     // let inputContrasena = document.querySelector("#pwdRegister");
     // let inputRepitaContrasena = document.querySelector("#repeatPwdRegister");
   //  let pContrasena = document.querySelector("#pContrasena");
   //  let pRepitaContrasena = document.querySelector("#pRepitaContrasena");
+    submitButton.style.display="none";  
+    
+    if (IsError != null){
 
-    submitButton.style.display="none";
+      editButton.style.display="none";
+      submitButton.style.display="block";
+
+    } 
+
+    //console.log(IsError);
+   
     // inputContrasena.style.display="none";
     // inputRepitaContrasena.style.display="none";
 
