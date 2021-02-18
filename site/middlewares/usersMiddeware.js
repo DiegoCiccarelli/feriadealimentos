@@ -18,7 +18,7 @@ const usersMiddleware = {
                 }
             })
         }),
-        body("pass").notEmpty().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})").withMessage("Debe ingresar una contraseña con un minimo de 8 caracteres, una minuscula, una mayuscula y un caracter especial"),
+        body("pass").notEmpty().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})").withMessage("Debe ingresar una contraseña con un minimo de 8 caracteres, una minuscula, una mayuscula"),
         body("repeatPass", "Las contraseñas deben coincidir").notEmpty().custom(function(value, {req}){
             if(value == req.body.pass){
                 return true
