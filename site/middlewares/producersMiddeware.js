@@ -6,6 +6,7 @@ var router = express.Router();
 const { Session } = require("inspector");
 
 
+
 const producersMiddleware = {
     registerValidation : [
         body("apellido").trim().notEmpty().withMessage("Debe ingresar un apellido"),

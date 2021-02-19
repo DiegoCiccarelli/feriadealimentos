@@ -94,19 +94,35 @@ const usersMiddleware = {
 
     isLogged: function (req, res, next){
 
-                                console.log(req.session.email);
+           //  console.log(req.session.email);
+        if (req.session.email != undefined){
 
-                                if (req.session.email != undefined){
+            return next();
 
-                                    return next();
+        }else{
 
-                                }else{
+            return res.render("user/login");                                    
 
-                                    return res.render("user/login");                                    
+        };
 
-                                };
+    },
+
+    isAdmin: function (req, res, next){
+
+        //console.log(req.session.email);
+
+        if (req.session.admin == true){
+
+            return next();
+
+        }else{
+
+            return res.render("user/login");                                    
+
+        };
 
     }
+
 }
 
 

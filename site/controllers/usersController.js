@@ -56,8 +56,15 @@ const usersController = {
                 
                 if(bcrypt.compareSync(req.body.pwd, result.contrasena)){
                     
-                    //creamos la session
+                    //creamos la session y seteamos el email
                     req.session.email = req.body.email;
+
+                    // si es admin creo el valor en session admin true
+                    if (result.tipo_usuario="admin"){
+                        req.session.admin = true;
+                    }else{
+                        req.session.admin = false;
+                    }
                     
                     // si eligió recuérdame seteamos la cookie
                     if(req.body.rememberMe){

@@ -7,6 +7,7 @@ const {check, body, validationResult} = require("express-validator");
 const path = require("path");
 const multer = require('multer');
 const usersMiddleware = require('../middlewares/usersMiddeware');
+const { usersQuantity } = require('../controllers/api/apiController');
 var storage = multer.diskStorage({
 	  destination:(req,file,cb)=>{
 		  cb(null,'public/images/productsImages');
@@ -26,24 +27,24 @@ router.get('/carrito', usersMiddleware.isLogged, productsController.cart);
 /* GET detalle de un producto */
 router.get('/detalleProducto/:id', productsController.productDetail);
 
-router.get('/productoNuevo', productsController.newProduct);
+router.get('/productoNuevo', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.newProduct);
 
-router.post('/productoNuevo', upload.any(),productsMiddleware.productCreateCheck, productsController.createProduct);
+router.post('/productoNuevo', usersMiddleware.isLogged, usersMiddleware.isAdmin, upload.any(),productsMiddleware.productCreateCheck, productsController.createProduct);
 
-router.get('/listadoProductosAdmin', productsController.productListAdmin);
+router.get('/listadoProductosAdmin', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.productListAdmin);
 
 /* GET carga de formulario con datos para edicion de producto */
-router.get('/productoEditar/:id', productsController.showProductEdit);
+router.get('/productoEditar/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.showProductEdit);
 
 /*Post guardar producto editado */
-router.post('/productoEditar/:id', upload.any(), productsMiddleware.productEditCheck, productsController.productEdit);
+router.post('/productoEditar/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, upload.any(), productsMiddleware.productEditCheck, productsController.productEdit);
 
-router.get('/productDelete/:id',  productsController.productDelete) 
+router.get('/productDelete/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin,  productsController.productDelete) 
 
-router.get("/listadoCategorias", productsController.listadoCategorias)
-router.get('/crearCategoria', productsController.viewCreateCategory)
-router.post('/crearCategoria', productsController.createCategory)
-router.get('/editarCategoria/:id', productsController.viewCreateCategory)
-router.post('/editarCategoria/:id', productsController.createCategory)
-router.get('/eliminarCategoria/:id', productsController.deleteCategory)
+router.get("/listadoCategorias", usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.listadoCategorias)
+router.get('/crearCategoria', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.viewCreateCategory)
+router.post('/crearCategoria', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.createCategory)
+router.get('/editarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.viewCreateCategory)
+router.post('/editarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.createCategory)
+router.get('/eliminarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.deleteCategory)
 module.exports = router;

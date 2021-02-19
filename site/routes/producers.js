@@ -6,6 +6,8 @@ const {check, body, validationResult} = require("express-validator");
 const multer = require('multer');
 const path = require("path");
 const productsController = require('../controllers/productsController');
+const usersMiddleware = require('../middlewares/usersMiddeware');
+
 var storage = multer.diskStorage({
 	  destination:(req,file,cb)=>{
 		  cb(null,'public/images/producersLogos');
@@ -17,23 +19,23 @@ var storage = multer.diskStorage({
 var upload = multer({storage:storage});
 
 //Listar productores
-router.get('/listado', producersController.list)
+router.get('/listado', usersMiddleware.isLogged, usersMiddleware.isAdmin, producersController.list)
 
 
 //Mostrar para crear
-router.get('/registro', producersController.viewRegister);
+router.get('/registro', usersMiddleware.isLogged, usersMiddleware.isAdmin, producersController.viewRegister);
 
 //Guardar Productor
-router.post('/registro', upload.any(), producersMiddleware.registerValidation, producersController.register);
+router.post('/registro', usersMiddleware.isLogged, usersMiddleware.isAdmin, upload.any(), producersMiddleware.registerValidation, producersController.register);
 
 //Mostrar para editar
-router.get('/editar/:id', producersController.viewEditRegister);
+router.get('/editar/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, producersController.viewEditRegister);
 
 //Editar productor
-router.post('/editar/:id', upload.any(), producersMiddleware.producerEditCheck, producersController.edit);
+router.post('/editar/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, upload.any(), producersMiddleware.producerEditCheck, producersController.edit);
 
 //Eliminar productor
-router.get('/eliminar/:id', producersController.delete)
+router.get('/eliminar/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, producersController.delete)
 
 
 module.exports = router;
