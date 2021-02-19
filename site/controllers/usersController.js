@@ -60,7 +60,8 @@ const usersController = {
                     req.session.email = req.body.email;
 
                     // si es admin creo el valor en session admin true
-                    if (result.tipo_usuario="admin"){
+                   console.log(result.tipo_usuario);
+                    if (result.tipo_usuario=="admin"){
                         req.session.admin = true;
                     }else{
                         req.session.admin = false;
