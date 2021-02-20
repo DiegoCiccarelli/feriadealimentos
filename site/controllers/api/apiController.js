@@ -43,6 +43,12 @@ const apiController = {
         res.json(data);
         })
     },
+
+    products : (req, res) => {
+        db.Product.findAll().then((data)=> {
+            res.json(data);
+        })
+    }
 }
 
 module.exports = apiController;

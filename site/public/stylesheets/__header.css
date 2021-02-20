@@ -72,6 +72,20 @@ header{
     color: lightslategrey;
 }
 
+#resultadoBusqueda{
+    position: absolute;
+    background-color: white;
+    padding-left: 10px;
+    text-decoration: none;    
+    width: 50%;
+
+}
+
+#resultadoBusqueda a, a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color: black;
+}
+
 nav{
     display: flex;
     justify-content: center;
