@@ -58,6 +58,7 @@ const usersController = {
                     
                     //creamos la session y seteamos el email
                     req.session.email = req.body.email;
+                    req.session.nombre = result.nombre_usuario
 
                     // si es admin creo el valor en session admin true
                    console.log(result.tipo_usuario);

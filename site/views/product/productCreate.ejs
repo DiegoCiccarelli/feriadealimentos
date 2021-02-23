@@ -27,7 +27,7 @@
         <% } %>>
 
             <% for(let i = 0; i < categories.length; i++) {%>
-                <input type="checkbox" name="category" value="<%= categories[i].id%>"%> 
+                <input type="checkbox" name="category" value="<%= categories[i].id%>"%>
                 <% if(typeof data != "undefined"){ %>
                     <% if(Array.isArray(data.category)){%>
                         <% for(let j = 0; j < data.category.length; j++){%>
@@ -41,7 +41,7 @@
                         <%}%>
                     <%}%>
                 <%}%>>
-                <%= categories[i].nombre_categoria%>
+                <label><%= categories[i].nombre_categoria%></label>
             <%}%>
 
             <select name="productor">
@@ -57,7 +57,9 @@
             <%}%>
             </select>
 
-            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><% if(typeof data != "undefined"){%><%= data.descripcionCorta %><% } %></textarea>
+            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><% if(typeof data != "undefined"){ %>
+                <%= data.descripcionCorta %>
+                <% } %></textarea>
             <span></span>
             <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><% if(typeof data != "undefined"){ %><%= data.descripcionLarga %><% } %></textarea>
             <span></span>
@@ -67,6 +69,8 @@
         <button class="claseButton" type="submit">Guardar Cambios</button>
     </form>
     
+    <button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
+
     </div>
 
     <%- include('../partials/footer.ejs'); %>
