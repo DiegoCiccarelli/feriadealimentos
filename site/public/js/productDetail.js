@@ -63,24 +63,6 @@ window.addEventListener('load', function(){
             })
             .then(function(info){
                 return console.log(info);
-                let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
-                fetch('http://localhost:3500/productos/agregarcarrito' {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(function(response){
-                    return response.json();
-                })
-                .then(function(info){
-                    return console.log(info);
-                }).catch(function(error){
-                    return console.log(error);
-                })
-    
-    
             }).catch(function(error){
                 return console.log(error);
             })
