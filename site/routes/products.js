@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const productsController = require("../controllers/productsController");
+const cartController = require("../controllers/cartController")
 const productsMiddleware = require("../middlewares/productsMiddleware");
 const {check, body, validationResult} = require("express-validator");
 
@@ -20,9 +21,6 @@ var upload = multer({storage:storage});
 
 /* GET listado productos. */
 router.get('/listadoProductos', productsController.productList);
-
-  /* GET Carrito. */
-router.get('/carrito', usersMiddleware.isLogged, productsController.cart);
 
 /* GET detalle de un producto */
 router.get('/detalleProducto/:id', productsController.productDetail);
@@ -47,4 +45,10 @@ router.post('/crearCategoria', usersMiddleware.isLogged, usersMiddleware.isAdmin
 router.get('/editarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.viewCreateCategory)
 router.post('/editarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.createCategory)
 router.get('/eliminarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.deleteCategory)
+
+/* Carrito */
+router.get('/carrito', usersMiddleware.isLogged, productsController.cart);
+router.post("/agregarcarrito", usersMiddleware.isLogged, cartController.addCart)
+
+
 module.exports = router;

@@ -56,17 +56,22 @@
                     <p id="precio">PRECIO: $ <%=productData.precio%></p>    
                 
                     <div id="sumaRestaCarrito">
-                            
-                        <p id="textoCantidadCarrito">Cantidad:</p>
+
+                        <form action="/productos/agregarcarrito" method="POST">
+
+                            <input type="hidden" name="product_id" value="<%=productData.id%>">
+
+                            <p id="textoCantidadCarrito">Cantidad:</p>
                     
-                        <button class="claseButton" id="botonRestar">-</button>
-                    
-                        <input type="number" value="1" class="cantidadAgregaCarrito">
-                    
-                        <button class="claseButton" id="botonSumar">+</button>
-                    
-                        <button id="btnAgregarCarrito" class="claseButton">Agregar al Carrito</button>
-                
+                            <button class="claseButton" id="botonRestar">-</button>
+                        
+                            <input type="number" value="3" class="cantidadAgregaCarrito" name="product_quantity">
+                        
+                            <button class="claseButton" id="botonSumar">+</button>
+
+                            <button type="submit" id="btnAgregarCarrito" class="claseButton">Agregar al Carrito</button>
+
+                        </form>                
                     </div>
                 
                     <div id="contenedorBotonContinuarComprando">

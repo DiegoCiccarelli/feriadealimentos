@@ -17,15 +17,15 @@ module.exports = function(sequelize, dataTypes){
         },
         total_carrito: {
             type: dataTypes.FLOAT(),
-            "allowNull" : false
+            "allowNull" : true
         },
         metodo_pago: {
             type: dataTypes.STRING(50),
-            "allowNull" : false
+            "allowNull" : true
         },
         forma_entrega: {
             type: dataTypes.STRING(50),
-            "allowNull" : false
+            "allowNull" : true
         },
         nodo_entrega: {
             type: dataTypes.STRING(50),

@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
             }
         },
         cantidad: {
-            type: dataTypes.DATE(),
+            type: dataTypes.INTEGER.UNSIGNED,
             "allowNull" : false
         },
 
@@ -47,10 +47,12 @@ module.exports = function(sequelize, dataTypes){
 
     CartProduct.associate = function(models){
         CartProduct.belongsTo(models.Cart,{
+            as : "cart",
             foreignKey: "carrito_id"
         })
         
         CartProduct.belongsTo(models.Product,{
+            as : "product",
             foreignKey: "producto_id"
         })
     }   
