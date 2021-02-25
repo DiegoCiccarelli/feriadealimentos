@@ -1,3 +1,6 @@
+const { Json } = require("sequelize/types/lib/utils");
+const { productsQuantity } = require("../../controllers/api/apiController");
+
 window.addEventListener('load', function(){
 
     let botonResta = document.querySelector('#botonRestar');
@@ -6,6 +9,7 @@ window.addEventListener('load', function(){
     let botonAgregarAlCarrito = document.querySelector('#btnAgregarCarrito');
     let pPrecioTotal = document.querySelector('#precioTotal');
     let spanNumeroPrecio = document.querySelector('#numeroPrecio');
+    let inputProductId = document.querySelector('#product_id');
 
     let precioUnitario = parseInt(spanNumeroPrecio.innerText);
     console.log(precioUnitario);
@@ -45,7 +49,44 @@ window.addEventListener('load', function(){
             alert("La cantidad no puede ser menor a 1 o mayor a 99");
 
         }else{
-           // alert("producto se agregó al carrito");
+            
+            let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
+            fetch('http://localhost:3500/productos/agregarcarrito' {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(info){
+                return console.log(info);
+                let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
+                fetch('http://localhost:3500/productos/agregarcarrito' {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(info){
+                    return console.log(info);
+                }).catch(function(error){
+                    return console.log(error);
+                })
+    
+    
+            }).catch(function(error){
+                return console.log(error);
+            })
+
+
+            
         };
 
     })
