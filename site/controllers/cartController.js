@@ -134,7 +134,23 @@ const cartController = {
                 })
             }
         })
-    }
+    },
+    viewCart : function(req, res, next){
+        db.Cart.findOne(
+        {
+            where : 
+                {
+                    estado_carrito : "activo", 
+                    usuario_id : req.session.userId
+                }
+        })
+        .then( data => {
+               db.CartProduct.findAll({where : {carrito_id : data.id}, include : [{association : "product"}]})
+               .then( data => {
+                   res.render("product/cart", {productData : data})
+               })
+        })
+    },
 }
 
 module.exports = cartController;

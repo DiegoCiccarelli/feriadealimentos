@@ -1,10 +1,17 @@
 .contenedor{
-    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .contenedorCarrito{
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1500px;
 }
 .productoCarrito{
     display: flex;
@@ -56,16 +63,6 @@ height: auto;
 max-width: 30px;
 }   
 
-.pagoParcial{
-display: flex;
-justify-content: space-between;
-width: 100%;
-}
-.pagoParcial h2{
-margin: 0;
-padding: 0;
-font-size: 1.2rem;
-}
 .pagoTotal{
 display: flex;
 justify-content: flex-end;
@@ -80,10 +77,10 @@ font-size: 1.2rem;
 }
 
 .carritoBotones{
-    width: 100%;
+    width: 60%;
     justify-content: space-around;
     display: flex;
-    margin-top: 1vh;
+    margin: 1vh 0;
 }
 
 .carritoBotones button{

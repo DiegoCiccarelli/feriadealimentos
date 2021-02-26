@@ -39,39 +39,39 @@ window.addEventListener('load', function(){
                 //console.log('hola');
     });
 
-    botonAgregarAlCarrito.addEventListener('click', function(e){
+    // botonAgregarAlCarrito.addEventListener('click', function(e){
        
-        let cantidad = parseInt(inputCantidad.value);
+    //     let cantidad = parseInt(inputCantidad.value);
       
-        if((cantidad<1)||(cantidad>99)){
+    //     if((cantidad<1)||(cantidad>99)){
       
-            e.preventDefault();
-            alert("La cantidad no puede ser menor a 1 o mayor a 99");
+    //         e.preventDefault();
+    //         alert("La cantidad no puede ser menor a 1 o mayor a 99");
 
-        }else{
+    //     }else{
             
-            let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
-            fetch('http://localhost:3500/productos/agregarcarrito' {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(info){
-                return console.log(info);
-            }).catch(function(error){
-                return console.log(error);
-            })
+    //         let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
+    //         fetch('http://localhost:3500/productos/agregarcarrito', {
+    //             method: 'POST',
+    //             body: JSON.stringify(data),
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         })
+    //         .then(function(response){
+    //             return response.json();
+    //         })
+    //         .then(function(info){
+    //             return console.log(info);
+    //         }).catch(function(error){
+    //             return console.log(error);
+    //         })
 
 
             
-        };
+    //     };
 
-    })
+    // })
 
     inputCantidad.addEventListener('keyup', function(){
         let cantidad = parseInt(inputCantidad.value);

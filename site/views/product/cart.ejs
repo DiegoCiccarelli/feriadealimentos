@@ -4,66 +4,33 @@
 <%- include('../partials/header.ejs'); %>
     
 <main class="contenedor">
-
+<h1>TU CARRITO</h1>
 <section class="contenedorCarrito">
+<% for(let i = 0; i < productData.length; i++){ %>
     <article class="productoCarrito">
         <div class="imagenCarrito">
-            <img src="../images/imagen-producto1.jpg" alt="">
+            <img src="../images/productsImages/<%= productData[i].product.imagen%>" alt="">
         </div>
         <div class="informacionProducto">
-            <p>NOMBRE DEL PRODUCTO</p>
+            <p><%= productData[i].product.nombre_producto%></p>
             <p>CANTIDAD:</p>
             <div>
-                <button class="claseButton">-</button>
-                <p>1</p>
-                <button class="claseButton">+</button>
+                <button class="claseButton" id="botonRestar">-</button>
+                        
+                <input id="inputCantidad" type="number" value="<%=productData[i].cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
+                
+                <button class="claseButton" id="botonSumar">+</button>
             </div>
-            <p>PRECIO: $300</p>
-            <p>TOTAL: $300</p>
+            <p>PRECIO: $<%= productData[i].product.precio%></p>
+            <p>TOTAL: CALCULO JS</p>
             </div>  
     </article>
-
-    <article class="productoCarrito">
-        <div class="imagenCarrito">
-            <img src="./images/imagen-producto1.jpg" alt="">
-        </div>
-        <div class="informacionProducto">
-            <p>NOMBRE DEL PRODUCTO</p>
-            <p>CANTIDAD:</p>
-            <div>
-                <button class="claseButton">-</button>
-                <p>1</p>
-                <button class="claseButton">+</button>
-            </div>
-            <p>PRECIO: $300</p>
-            <p>TOTAL: $300</p>
-        </div>
-    </article>
-
-    <article class="productoCarrito">
-        <div class="imagenCarrito">
-            <img src="./images/imagen-producto1.jpg" alt="">
-        </div>
-        <div class="informacionProducto">
-            <p>NOMBRE DEL PRODUCTO</p>
-            <p>CANTIDAD:</p>
-            <div>
-                <button class="claseButton">-</button>
-                <p>1</p>
-                <button class="claseButton">+</button>
-            </div>
-            <p>PRECIO: $300</p>
-            <p>TOTAL: $300</p>
-        </div>
-    </article>
+<% } %>
 </section>
 
-    <div class="pagoParcial">
-        <h2>SUB-TOTAL</h2>
-        <h2>ENVIO: 1500</h2>
-    </div>
+
     <div class="pagoTotal">
-        <h2>TOTAL:5000</h2>
+        <h2>TOTAL: AGREGAR JS</h2>
     </div>
 
     <div class="carritoBotones">
