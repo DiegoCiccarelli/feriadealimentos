@@ -1,5 +1,3 @@
-const { Json } = require("sequelize/types/lib/utils");
-const { productsQuantity } = require("../../controllers/api/apiController");
 
 window.addEventListener('load', function(){
 
@@ -50,9 +48,13 @@ window.addEventListener('load', function(){
 
         }else{
             
-            let data = {product_id: inputProductId.value, product_quantity: inputCantidad.value};
-            fetch('http://localhost:3500/productos/agregarcarrito' {
-                method: 'POST',
+            let data = {product_id: parseInt(inputProductId.value), product_quantity: parseInt(inputCantidad.value)};
+
+            console.log(data)
+            console.log(JSON.stringify(data))
+
+            fetch("http://localhost:3500/productos/agregarcarrito/",{
+                method: "POST",
                 body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
@@ -63,15 +65,16 @@ window.addEventListener('load', function(){
             })
             .then(function(info){
                 return console.log(info);
-            }).catch(function(error){
-                return console.log(error);
+            })
+            .catch(function(e){
+                return console.log(e);
             })
 
 
             
         };
 
-    })
+    });
 
     inputCantidad.addEventListener('keyup', function(){
         let cantidad = parseInt(inputCantidad.value);
