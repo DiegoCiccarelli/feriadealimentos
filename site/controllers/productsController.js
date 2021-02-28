@@ -16,10 +16,6 @@ const productsController = {
         })
     },
 
-    cart : function(req, res, next){
-        res.render('product/cart');
-    },
-
     productDetail : function(req, res, next) {
         db.Product.findByPk(req.params.id, {where:{estado_producto : 1}})
         .then( (productData) => {

@@ -34,7 +34,7 @@ window.addEventListener('load', function(){
             
         };
 
-                //console.log('hola');
+           
     });
 
     botonAgregarAlCarrito.addEventListener('click', function(e){
@@ -50,16 +50,13 @@ window.addEventListener('load', function(){
             
             let data = {product_id: parseInt(inputProductId.value), product_quantity: parseInt(inputCantidad.value)};
 
-            console.log(data)
-            console.log(JSON.stringify(data))
-
             fetch("http://localhost:3500/productos/agregarcarrito/",{
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
-                }
+                'Content-Type': 'application/json'}
             })
+
             .then(function(response){
                 return response.json();
             })
@@ -69,13 +66,9 @@ window.addEventListener('load', function(){
             .catch(function(e){
                 return console.log(e);
             })
-
-
-            
-        };
-
+        }
     });
-
+       
     inputCantidad.addEventListener('keyup', function(){
         let cantidad = parseInt(inputCantidad.value);
         if((cantidad>=1)&&(cantidad<=99)){

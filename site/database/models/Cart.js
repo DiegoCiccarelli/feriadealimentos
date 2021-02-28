@@ -68,8 +68,8 @@ module.exports = function(sequelize, dataTypes){
         Cart.belongsToMany(models.Product, {
             as:"products",
             through: "carrito_producto",
-            foreignKey: "producto_id",
-            otherKey: "carrito_id"
+            foreignKey: "carrito_id",
+            otherKey: "producto_id"
         })
     }
 

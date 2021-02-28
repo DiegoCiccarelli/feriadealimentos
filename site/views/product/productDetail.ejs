@@ -59,19 +59,19 @@
                     
                         <button class="claseButton" id="botonRestar">-</button>
                         
-                        <input id="inputCantidad" type="number" value="1" class="cantidadAgregaCarrito" name="product_quantity">
+                        <input id="inputCantidad" type="number" value="1" class="cantidadAgregaCarrito" name="product_quantity" form="addCart">
                         
                         <button class="claseButton" id="botonSumar">+</button>
 
 
 
-                       <!-- <form action="/productos/agregarcarrito" method="POST">-->
+                       <form action="/productos/agregarcarrito" method="POST" id="addCart">
 
                             <input id="product_id" type="hidden" name="product_id" value="<%=productData.id%>">
 
                             <button type="submit" id="btnAgregarCarrito" class="claseButton">Agregar al Carrito</button>
 
-                      <!--  </form>                -->
+                      </form>               
                         
                     </div>
                     

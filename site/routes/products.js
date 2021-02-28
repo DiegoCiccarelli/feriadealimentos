@@ -47,7 +47,7 @@ router.post('/editarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.is
 router.get('/eliminarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.isAdmin, productsController.deleteCategory)
 
 /* Carrito */
-router.get('/carrito', usersMiddleware.isLogged, productsController.cart);
+router.get('/carrito', usersMiddleware.isLogged, cartController.viewCart);
 router.post("/agregarcarrito", usersMiddleware.isLogged, cartController.addCart)
 
 
