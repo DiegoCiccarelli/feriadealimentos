@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
             }
         },
         cantidad: {
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER,
             "allowNull" : false
         },
 

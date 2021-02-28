@@ -6,22 +6,23 @@
 <main class="contenedor">
 <h1>TU CARRITO</h1>
 <section class="contenedorCarrito">
-<% for(let i = 0; i < productData.length; i++){ %>
+<% for(let i = 0; i < cartData.products.length; i++){ %>
     <article class="productoCarrito">
+    <input type="hidden" name="product_id" value="<%= cartData.products[i].id%>">
         <div class="imagenCarrito">
-            <img src="../images/productsImages/<%= productData[i].product.imagen%>" alt="">
+            <img src="../images/productsImages/<%= cartData.products[i].imagen%>" alt="">
         </div>
         <div class="informacionProducto">
-            <p><%= productData[i].product.nombre_producto%></p>
+            <p><%= cartData.products[i].nombre_producto%></p>
             <p>CANTIDAD:</p>
             <div>
                 <button class="claseButton" id="botonRestar">-</button>
                         
-                <input id="inputCantidad" type="number" value="<%=productData[i].cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
+                <input id="inputCantidad" type="number" value="<%=cartData.products[i].CartProduct.cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
                 
                 <button class="claseButton" id="botonSumar">+</button>
             </div>
-            <p>PRECIO: $<%= productData[i].product.precio%></p>
+            <p>PRECIO: $<%= cartData.products[i].precio%></p>
             <p>TOTAL: CALCULO JS</p>
             </div>  
     </article>
