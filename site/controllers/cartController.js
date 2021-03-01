@@ -51,6 +51,7 @@ const cartController = {
             /* Si no existe carrito activo entonces debo crear el carrito y luego subir el producto*/
             } else {
                 /* Creamos el carrito */
+                console.log("creamos el carrito")
                 db.Cart.create(
                     {
                         usuario_id : userId,
@@ -58,6 +59,7 @@ const cartController = {
                     })
                 .then(response => {
                     /* Agregamos el producto al nuevo carrito creado*/
+                    req.session.carrito_id = response.id;
                     db.CartProduct.create(
                         {
                             carrito_id : response.id,
@@ -82,12 +84,26 @@ const cartController = {
                 },
             include : "products"
         })
-        .then( data => res.render("product/cart", {cartData : data}))
+        .then( data => {
+            req.session.carrito_id = data.id;
+            res.render("product/cart", {cartData : data})})
 
     },
 
     deleteProductInCart: function(req, res, next){
-        // eliminar productos de un carrito
+        
+        db.CartProduct.destroy(
+        {
+            where :
+                {
+                    producto_id : req.body.product_id,
+                    carrito_id : req.session.carrito_id
+                }
+        }
+        ).then(data =>{
+            res.json(data);
+        });
+
     }
 
     

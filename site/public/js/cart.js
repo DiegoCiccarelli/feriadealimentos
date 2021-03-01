@@ -1,5 +1,6 @@
 window.addEventListener('load', function(){
 
+    let inputIdProducto = document.querySelector("#product_id");
     let totalCarrito= document.querySelector("#totalCarrito");
 
     function calcularCarrito(pSubtotales){
@@ -103,9 +104,31 @@ window.addEventListener('load', function(){
             element.addEventListener('click', function(){
 
                 // obtener el id del producto a eliminar
-                // obtener el id del carrito donde está el producto 
+                let product_id = Number(inputIdProducto.value);
+                let data = {product_id};
+                
                 // hacer un fectch para eliminar ese producto de ese carrito
-                actualizarCarrito();
+                fetch("http://localhost:3500/productos/quitarProductoCarrito/",{
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                'Content-Type': 'application/json'}
+            })
+            .then(function(response){
+                console.log(response)
+                return response.json();
+                
+
+            })
+            .then(function(info){
+                console.log ("la respuesta de la eliminacion es " + info)
+                
+                return;// console.log(info);
+            })
+            .catch(function(e){
+                return console.log("el error es" + e);
+            })
+                
                 
 
 

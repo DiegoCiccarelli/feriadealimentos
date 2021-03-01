@@ -8,7 +8,7 @@
 <section class="contenedorCarrito">
 <% for(let i = 0; i < cartData.products.length; i++){ %>
     <article class="productoCarrito">
-        <input type="hidden" name="product_id" value="<%= cartData.products[i].id%>">
+        <input type="hidden" id="product_id" name="product_id" value="<%= cartData.products[i].id%>">
         <div class="imagenCarrito">
             <img src="../images/productsImages/<%= cartData.products[i].imagen%>" alt="">
         </div>

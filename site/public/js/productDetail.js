@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
     let inputProductId = document.querySelector('#product_id');
 
     let precioUnitario = parseInt(spanNumeroPrecio.innerText);
-    console.log(precioUnitario);
+    //console.log(precioUnitario);
 
     botonResta.addEventListener('click', function(){
         let cantidad = parseInt(inputCantidad.value);
@@ -61,7 +61,7 @@ window.addEventListener('load', function(){
                 return console.log(info);
             })
             .catch(function(e){
-                return console.log(e);
+                 console.log(e);
             })
         }
     });
