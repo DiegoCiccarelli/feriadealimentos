@@ -3,12 +3,10 @@ var router = express.Router();
 const productsController = require("../controllers/productsController");
 const cartController = require("../controllers/cartController")
 const productsMiddleware = require("../middlewares/productsMiddleware");
-const {check, body, validationResult} = require("express-validator");
 
 const path = require("path");
 const multer = require('multer');
 const usersMiddleware = require('../middlewares/usersMiddeware');
-const { usersQuantity } = require('../controllers/api/apiController');
 var storage = multer.diskStorage({
 	  destination:(req,file,cb)=>{
 		  cb(null,'public/images/productsImages');

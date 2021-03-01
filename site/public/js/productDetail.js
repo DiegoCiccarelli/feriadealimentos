@@ -38,12 +38,10 @@ window.addEventListener('load', function(){
     });
 
     botonAgregarAlCarrito.addEventListener('click', function(e){
-       
+        e.preventDefault();
         let cantidad = parseInt(inputCantidad.value);
       
         if((cantidad<1)||(cantidad>99)){
-      
-            e.preventDefault();
             alert("La cantidad no puede ser menor a 1 o mayor a 99");
 
         }else{
@@ -56,7 +54,6 @@ window.addEventListener('load', function(){
                 headers: {
                 'Content-Type': 'application/json'}
             })
-
             .then(function(response){
                 return response.json();
             })
