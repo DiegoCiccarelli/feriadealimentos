@@ -150,6 +150,12 @@ const cartController = {
         .then( data => res.render("product/cart", {cartData : data}))
 
     },
+
+    deleteProductInCart: function(req, res, next){
+        // eliminar productos de un carrito
+    }
+
+    
 }
 
 module.exports = cartController;

@@ -48,7 +48,8 @@ router.get('/eliminarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.i
 
 /* Carrito */
 router.get('/carrito', usersMiddleware.isLogged, cartController.viewCart);
-router.post("/agregarcarrito", usersMiddleware.isLogged, cartController.addCart)
+router.post("/agregarcarrito", usersMiddleware.isLogged, cartController.addCart);
+router.post('/quitarProductoCarrito', usersMiddleware.isLogged, cartController.deleteProductInCart);
 
 
 module.exports = router;

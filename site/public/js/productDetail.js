@@ -75,10 +75,12 @@ window.addEventListener('load', function(){
        
         pPrecioTotal.innerHTML = "Total $" + (cantidad * precioUnitario); 
         }else{
-            inputCantidad.value ="1";
-            pPrecioTotal.innerHTML = "Total $ 600";
             alert("La cantidad no puede ser menor a 1 o mayor a 99");
 
+            inputCantidad.value ="1";
+            cantidad=1;
+            pPrecioTotal.innerHTML = "Total $" + (cantidad * precioUnitario);
+            
         };
     })
 

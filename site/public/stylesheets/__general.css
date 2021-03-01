@@ -11,6 +11,9 @@ body{
     margin: 0;
   }
 
+button{
+  cursor: pointer;
+}
   .claseButton{
     border: none;
     font-size: 1rem;

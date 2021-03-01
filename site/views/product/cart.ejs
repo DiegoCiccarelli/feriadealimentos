@@ -8,7 +8,7 @@
 <section class="contenedorCarrito">
 <% for(let i = 0; i < cartData.products.length; i++){ %>
     <article class="productoCarrito">
-    <input type="hidden" name="product_id" value="<%= cartData.products[i].id%>">
+        <input type="hidden" name="product_id" value="<%= cartData.products[i].id%>">
         <div class="imagenCarrito">
             <img src="../images/productsImages/<%= cartData.products[i].imagen%>" alt="">
         </div>
@@ -16,22 +16,26 @@
             <p><%= cartData.products[i].nombre_producto%></p>
             <p>CANTIDAD:</p>
             <div>
-                <button class="claseButton" id="botonRestar">-</button>
+                <button class="claseButton botonResta">-</button>
                         
-                <input id="inputCantidad" type="number" value="<%=cartData.products[i].CartProduct.cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
+                <input id="inputCantidad" class="inputCantidad" type="number" value="<%=cartData.products[i].CartProduct.cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
                 
-                <button class="claseButton" id="botonSumar">+</button>
+                <button class="claseButton botonSuma">+</button>
             </div>
-            <p>PRECIO: $<%= cartData.products[i].precio%></p>
-            <p>TOTAL: CALCULO JS</p>
-            </div>  
+            <p>Precio $</p>
+            <p class="pPrecio"><%= cartData.products[i].precio%></p>
+            <p>Subtotal</p>
+            <p class="pSubtotal"><%=cartData.products[i].CartProduct.cantidad * cartData.products[i].precio%></p>
+            <buttom class="botonQuitarProducto">x</buttom> 
+        </div>  
+       
     </article>
 <% } %>
 </section>
 
 
-    <div class="pagoTotal">
-        <h2>TOTAL: AGREGAR JS</h2>
+    <div id="totalCarrito">
+        
     </div>
 
     <div class="carritoBotones">
@@ -40,5 +44,7 @@
     </div>
 
 </main>
+
+<script src="/js/cart.js"></script>
 
 <%- include('../partials/footer.ejs'); %>
