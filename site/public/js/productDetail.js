@@ -38,16 +38,11 @@ window.addEventListener('load', function(){
     });
 
     botonAgregarAlCarrito.addEventListener('click', function(e){
-        e.preventDefault();
         let cantidad = parseInt(inputCantidad.value);
-      
         if((cantidad<1)||(cantidad>99)){
             alert("La cantidad no puede ser menor a 1 o mayor a 99");
-
         }else{
-            
-            let data = {product_id: parseInt(inputProductId.value), product_quantity: parseInt(inputCantidad.value)};
-
+            let data = {product_id: parseInt(inputProductId.value), product_quantity: cantidad};
             fetch("http://localhost:3500/productos/agregarcarrito/",{
                 method: "POST",
                 body: JSON.stringify(data),

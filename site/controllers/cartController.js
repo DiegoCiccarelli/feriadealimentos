@@ -34,7 +34,7 @@ const cartController = {
                             }
                             )
                         .then( (data) => {
-                            return res.redirect(`/productos/detalleproducto/${req.body.product_id}`)
+                            return res.json(data)
                         })
                     /* Si no tiene ese producto en su carrito simplemente agregamos el producto a la tabla intermedia */
                     }else{
@@ -44,8 +44,8 @@ const cartController = {
                                 producto_id : req.body.product_id,
                                 cantidad : Number(req.body.product_quantity)
                             })
-                            .then( () => {
-                                return res.redirect(`/productos/detalleproducto/${req.body.product_id}`)
+                            .then( (data) => {
+                                return res.json(data)
                             })
                     }
             /* Si no existe carrito activo entonces debo crear el carrito y luego subir el producto*/
@@ -66,8 +66,10 @@ const cartController = {
                             producto_id : req.body.product_id,
                             cantidad : Number(req.body.product_quantity)
                         })
- 
-                     return res.redirect(`/productos/detalleproducto/${req.body.product_id}`)
+                    .then((data) => {
+                        return res.json(data)
+                    })
+                     
                 })
             }
         })
