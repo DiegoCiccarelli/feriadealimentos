@@ -1,7 +1,8 @@
 window.addEventListener('load', function(){
 
-    let inputIdProducto = document.querySelector("#product_id");
     let totalCarrito= document.querySelector("#totalCarrito");
+    let botonFinalizarCompra = document.querySelector("#botonFinalizarCompra")
+    let botonContinuarCompra = document.querySelector("#botonContinuarCompra")
 
     function calcularCarrito(pSubtotales){
         let sumaCarrito = 0;
@@ -26,7 +27,7 @@ window.addEventListener('load', function(){
     }
     
     function actualizarCarrito(){
-
+        let inputIdProducto = document.querySelectorAll("#product_id");
         let pSubtotales = document.querySelectorAll(".pSubtotal");
         let botonesResta = document.querySelectorAll(".botonResta");
         let botonesSuma = document.querySelectorAll(".botonSuma");
@@ -34,6 +35,46 @@ window.addEventListener('load', function(){
         let pPrecios = document.querySelectorAll(".pPrecio");
         let botonesQuitarProducto = document.querySelectorAll(".botonQuitarProducto");
 
+        botonFinalizarCompra.addEventListener("click", () => {
+            let product_id = Array.from(inputIdProducto).map(element => element.value)
+            let product_quantity = Array.from(inputsCantidad).map(element => element.value)
+            fetch("http://localhost:3500/productos/finalizarcompra",{
+                method: "POST",
+                body: JSON.stringify({product_id : product_id, product_quantity : product_quantity}),
+                headers: {
+                'Content-Type': 'application/json'
+                }
+                })
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(info){
+                    console.log ("la respuesta de la eliminacion es " + info)
+                })
+                .catch(function(e){
+                    return console.log("el error es" + e);
+                })
+        })
+        botonContinuarCompra.addEventListener("click", () => {
+            let product_id = Array.from(inputIdProducto).map(element => element.value)
+            let product_quantity = Array.from(inputsCantidad).map(element => element.value)
+            fetch("http://localhost:3500/productos/continuarcompra",{
+                method: "POST",
+                body: JSON.stringify({product_id : product_id, product_quantity : product_quantity}),
+                headers: {
+                'Content-Type': 'application/json'
+                }
+                })
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(info){
+                    window.location = "http://localhost:3500/productos/listadoproductos"
+                })
+                .catch(function(e){
+                    return console.log("el error es" + e);
+                })
+        })
 
         totalCarrito.innerHTML = "<h2> Total Carrito $ " + calcularCarrito(pSubtotales) + "<h2>";
 
@@ -108,11 +149,11 @@ window.addEventListener('load', function(){
                 let data = {product_id};
                 
                 // hacer un fectch para eliminar ese producto de ese carrito
-                fetch("http://localhost:3500/productos/quitarProductoCarrito/",{
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {
-                'Content-Type': 'application/json'}
+            fetch("http://localhost:3500/productos/quitarProductoCarrito/",{
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+            'Content-Type': 'application/json'}
             })
             .then(function(response){
                 console.log(response)
@@ -128,17 +169,10 @@ window.addEventListener('load', function(){
             .catch(function(e){
                 return console.log("el error es" + e);
             })
-                
-                
-
-
             })
         })
     }
 
     actualizarCarrito();
-
-
-
     
 });

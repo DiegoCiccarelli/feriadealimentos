@@ -1,5 +1,26 @@
 const db = require("../database/models/index")
 
+
+const cartFunction = {
+    refreshQuantity : (a, b) => {
+    console.log(a.body)
+    for(let i = 0; i < a.body.product_id.length; i++){
+        db.CartProduct.update(
+            {
+                cantidad : a.body.product_quantity[i]
+            },
+            {
+                where : 
+                    {
+                        carrito_id : a.session.carrito_id,
+                        producto_id : a.body.product_id[i]
+                    }
+            }
+        )
+        .catch( err => b.json(500))
+    }
+    }
+}
 const cartController = {
     addCart : (req, res) => {
         /*  Guardamos el id del usuario que agrega el producto */
@@ -106,6 +127,28 @@ const cartController = {
             res.json(data);
         });
 
+    },
+
+    endPurchase : (req, res) => {
+        cartFunction.refreshQuantity(req,res)
+        db.Cart.update(
+            {
+                estado_carrito : "cerrado"
+            },
+            {
+                where : 
+                    {
+                        id : req.session.carrito_id
+                    }
+            }
+        )
+        .then( data =>{
+            res.json(data)
+        })
+    },
+    continuePurchase : (req, res) => {
+        cartFunction.refreshQuantity(req, res)
+        res.json(200)
     }
 
     

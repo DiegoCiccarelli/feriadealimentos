@@ -48,6 +48,8 @@ router.get('/eliminarCategoria/:id', usersMiddleware.isLogged, usersMiddleware.i
 router.get('/carrito', usersMiddleware.isLogged, cartController.viewCart);
 router.post("/agregarcarrito", usersMiddleware.isLogged, cartController.addCart);
 router.post('/quitarProductoCarrito', usersMiddleware.isLogged, cartController.deleteProductInCart);
+router.post('/finalizarcompra', usersMiddleware.isLogged, cartController.endPurchase);
+router.post('/continuarcompra', usersMiddleware.isLogged, cartController.continuePurchase);
 
 
 module.exports = router;
