@@ -12,38 +12,14 @@
         <div class="contenedorImagen">
             <img src="./images/banner-sin-texto.jpg" alt="">
         </div>
-    <div class="categoriasProductos">
-
-        <div class="contenedorCategorias">
-            <p>Despliegue las categorias</p>
-            <div class="categorias">
-                <a href="#">Categoria</a>
-            </div>
-            <div class="sub-categorias">
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-            </div>
-            <div class="categorias">
-                <a href="#">Categoria</a>
-            </div>
-            <div class="sub-categorias">
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-            </div>
-            <div class="categorias">
-                    <a href="#">Categoria</a>
-            </div>
-            <div class="sub-categorias">
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-                <a href="#">Sub-categoria</a>
-            </div>
+    
+        <div id="listadoCategorias">
+          
         </div>
 
         <div class="contenedorListadoProductos">
-                <div class="listadoProductos">
+            
+            <div class="listadoProductos">
                     <% for(let productData of productsData){%>
                       
                     <div class="productoListado">
@@ -54,23 +30,15 @@
                     </div>
                     <% } %>
 
-                </div>    
+            </div>    
 
-                    
-                <div class="listadoProductos">
-                    
-
-                    </div> 
-                        
-                    <div class="listadoProductos">
-                        
-
-                    </div> 
-                </div>
-            </div>
+        </div>
+        
+    </div>
             
 
     </div>
+    <script src="/js/productList.js"></script>
 
     <%- include('../partials/footer.ejs'); %>
   

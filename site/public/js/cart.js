@@ -34,6 +34,9 @@ window.addEventListener('load', function(){
         let inputsCantidad = document.querySelectorAll(".inputCantidad");
         let pPrecios = document.querySelectorAll(".pPrecio");
         let botonesQuitarProducto = document.querySelectorAll(".botonQuitarProducto");
+        let divsProductoCarrito = document.querySelectorAll(".productoCarrito");
+        let divContenedorCarrito = document.querySelector(".contenedorCarrito");
+
 
         botonFinalizarCompra.addEventListener("click", () => {
             let product_id = Array.from(inputIdProducto).map(element => element.value)
@@ -140,12 +143,12 @@ window.addEventListener('load', function(){
             
         });
 
-        botonesQuitarProducto.forEach(element =>{
+        botonesQuitarProducto.forEach((element, index)=>{
 
             element.addEventListener('click', function(){
-
+                
                 // obtener el id del producto a eliminar
-                let product_id = Number(inputIdProducto.value);
+                let product_id = Number(inputIdProducto[index].value);
                 let data = {product_id};
                 
                 // hacer un fectch para eliminar ese producto de ese carrito
@@ -162,7 +165,13 @@ window.addEventListener('load', function(){
 
             })
             .then(function(info){
-                console.log ("la respuesta de la eliminacion es " + info)
+               if(info){
+                divContenedorCarrito.removeChild(divsProductoCarrito[index]);
+                alert("producto eliminado del carrito");
+                actualizarCarrito();
+               }else{
+                   alert("no se pudo eliminar el producto del carrito, intente nuevamente");
+                };
                 
                 return;// console.log(info);
             })

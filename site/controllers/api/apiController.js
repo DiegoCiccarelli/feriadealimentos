@@ -45,7 +45,15 @@ const apiController = {
     },
 
     products : (req, res) => {
-        db.Product.findAll().then((data)=> {
+        db.Product.findAll({
+            include : "categories"
+        }).then((data)=> {
+            res.json(data);
+        })
+    },
+
+    categories : (req, res) => {
+        db.Category.findAll().then((data)=> {
             res.json(data);
         })
     }
