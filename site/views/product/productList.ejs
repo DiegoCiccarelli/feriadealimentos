@@ -6,12 +6,18 @@
     <div class="contenedorListado">
         <div class="categoriasProductos">
 
-            <div class="contenedorCategorias">
-            ACA VAN LOS FILTROS
-            </div>
+        
+        <div class="contenedorImagen">
+            <img src="./images/banner-sin-texto.jpg" alt="">
+        </div>
+    
+        <div id="listadoCategorias">
+          
+        </div>
 
-            <div class="contenedorListadoProductos">
-                <div class="listadoProductos">
+        <div class="contenedorListadoProductos">
+            
+            <div class="listadoProductos">
                     <% for(let productData of productsData){%>
                         
                     <div class="productoListado">
@@ -23,10 +29,15 @@
                     </div>
                     <% } %>
 
-                </div>
-            </div>
+            </div>    
+
         </div>
+        
     </div>
+            
+
+    </div>
+    <script src="/js/productList.js"></script>
 
     <%- include('../partials/footer.ejs'); %>
   

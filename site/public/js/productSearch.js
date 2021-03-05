@@ -2,7 +2,7 @@
 window.addEventListener('load', function(){
     
     //productList será el listado (array) de productos para usar en el buscador
-    let ProductsArray;
+   // let ProductsArray;
     let inputSearchProduct = document.querySelector("#inputBusqueda");
     let listadoBusqueda = document.querySelector("#resultadoBusqueda");
     
@@ -46,7 +46,7 @@ window.addEventListener('load', function(){
 
                 if(filterText == nombreProducto.slice(0,largo)){
                     
-                    listadoBusqueda.innerHTML += '<a target="_self" href="productos/detalleProducto/' + product.id + '">' + product.nombre_producto + '</a><br>';
+                    listadoBusqueda.innerHTML += '<a target="_self" href="/productos/detalleProducto/' + product.id + '">' + product.nombre_producto + '</a><br>';
                 };
             
             });

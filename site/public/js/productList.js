@@ -1,35 +1,90 @@
+window.addEventListener('load', function(){
+    
+    let divListadoCategoria = document.querySelector('#listadoCategorias');
+    let categoriesArray;
+    let aItemCategoria;
+    let productArray;
+    let divProductoListado = document.querySelector('.listadoProductos');
 
-window.addEventListener("load", () => {
-    let botonFiltrar = document.querySelector("#filter")
-    let categories = document.querySelectorAll("#categories")
-    let productsQuantity = document.querySelector("#productQuantity")
-    let minPrice = document.querySelector("#minprice")
-    let maxPrice = document.querySelector("#maxprice")
-    let products = document.querySelectorAll(".productoListado")
+    //traigo categorias
+    fetch("http://localhost:3500/api/categories")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(dataDecode){
+    
+        
+        categoriesArray = dataDecode;
+        
+        categoriesArray.forEach(element => {
+    
+            if(element.estado_categoria=="1"){
+                divListadoCategoria.innerHTML+= '<a id="' + element.nombre_categoria + '" class="itemCategoria">' + element.nombre_categoria + '</a><br>';
+            };
+        });        
+        
+        aItemCategoria = document.querySelectorAll(".itemCategoria");
+        
+        aItemCategoria.forEach(element => {
+
+            element.addEventListener('click', function(){
+                filtrarPorCategoria(element.id, productArray);
+            })
+            
+        });
+        
+    }).catch(function(error){
+        console.log(error);
+    })
+
+
+   
+    function filtrarPorCategoria(categoria, array){
+       
+        divProductoListado.innerHTML="";
+
+       array.forEach(element => {
+       
+        for(let category of element.categories){
+            if(categoria==category.nombre_categoria){
+                //console.log(element.nombre_producto);
+               
+                divProductoListado.innerHTML+='<div class="productoListado">\
+                <img src="../images/productsImages/' + element.imagen + '" alt="imagen">\
+                <p class="productoNombre">' + element.nombre_producto + '</p>\
+                <p class="productoPrecio">$' + element.precio + '</p>\
+                <button class="claseButton"><a href="/productos/detalleProducto/' + element.id + '">Ver detalle</a></button>\
+                </div>'
     
 
-    botonFiltrar.addEventListener("click", () => {
-        let checkedCategories = []
-        for(let category of categories){
-            if(category.checked){
-            checkedCategories.push(category.value)
             }
         }
 
-        for(let product of products){
-            let productCategory = product.querySelector("#product_category")
-            let productPrice = product.querySelector("#product_price")
-            for(let i = 0; i < checkedCategories.length; i++){
-                for (let j = 0; j < array.length; j++) {
-                    const element = array[j];
-                    
-                }
-                if(productCategory.value == checkedCategories[i]){
-                    product.style.display = "none"
-                } else {
-                    product.style.display = "block"
-                }
-            }
-        }
+       
+        
+       });
+       
+
+
+    };
+
+
+    fetch("http://localhost:3500/api/products")
+    .then(function(response){
+        return response.json();
     })
+    .then(function(dataDecode){
+    
+        //lo asigno a productList
+        productArray = dataDecode;
+     
+
+    }).catch(function(error){
+        console.log(error);
+    })
+
 })
+
+
+
+
