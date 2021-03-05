@@ -38,7 +38,7 @@ window.addEventListener('load', function(){
         botonFinalizarCompra.addEventListener("click", () => {
             let product_id = Array.from(inputIdProducto).map(element => element.value)
             let product_quantity = Array.from(inputsCantidad).map(element => element.value)
-            fetch("http://localhost:3500/productos/finalizarcompra",{
+            fetch("http://localhost:3500/productos/resumen",{
                 method: "POST",
                 body: JSON.stringify({product_id : product_id, product_quantity : product_quantity}),
                 headers: {
@@ -49,7 +49,8 @@ window.addEventListener('load', function(){
                     return response.json();
                 })
                 .then(function(info){
-                    console.log ("la respuesta de la eliminacion es " + info)
+                    window.location.href = "http://localhost:3500/productos/resumen";
+
                 })
                 .catch(function(e){
                     return console.log("el error es" + e);

@@ -93,15 +93,13 @@ const usersMiddleware = {
 
 
     isLogged: function (req, res, next){
-
-           //  console.log(req.session.email);
-        if (req.session.email != undefined){
+        if (req.session.email !== undefined){
 
             return next();
 
         }else{
 
-            return res.render("user/login");                                    
+            return res.redirect("/usuarios/login");                                    
 
         };
 

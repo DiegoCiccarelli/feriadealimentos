@@ -4,8 +4,7 @@ const {check, body, validationResult} = require("express-validator");
 let productsDirname = path.join(__dirname, "/../data/productsData.json");
 let productsData = JSON.parse(fs.readFileSync(productsDirname, "utf-8"));
 let db = require("../database/models/index");
-const { error } = require("console");
-const { report } = require("../routes/products");
+
 
 const productsController = {
 

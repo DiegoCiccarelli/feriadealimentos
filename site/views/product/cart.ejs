@@ -6,6 +6,7 @@
 <main class="contenedor">
 <h1>TU CARRITO</h1>
 <section class="contenedorCarrito">
+<% if(typeof cartData !== "undefined"){ %>
 <% for(let i = 0; i < cartData.products.length; i++){ %>
     <article class="productoCarrito">
         <input type="hidden" id="product_id" name="product_id" value="<%= cartData.products[i].id%>">
@@ -32,17 +33,15 @@
     </article>
 <% } %>
 </section>
-
-
-    <div id="totalCarrito">
-        
-    </div>
+    <div id="totalCarrito"></div>
 
     <div class="carritoBotones">
         <button class="claseButton" id="botonContinuarCompra">CONTINUAR COMPRANDO</button>
         <button class="claseButton" id="botonFinalizarCompra">FINALIZAR COMPRA</button>
     </div>
-
+    <% } else {%>
+        <p>Todavia no agregaste ningun producto, ¡visitá nuestra <a href="/productos/listadoProductos"><strong>tienda</strong></a>!</p>
+    <% } %>
 </main>
 
 <script src="/js/cart.js"></script>
