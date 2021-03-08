@@ -30,6 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'Frase secreta Feria Sitio'}));
 
 
+
+
+
 app.use('/', indexRouter);
 app.use('/usuarios', usersRouter);
 app.use('/productos', productsRouter);

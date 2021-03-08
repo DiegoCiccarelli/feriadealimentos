@@ -53,7 +53,11 @@ window.addEventListener('load', function(){
                 return response.json();
             })
             .then(function(info){
-                return console.log(info);
+                if(info.status == 401){
+                    window.location = "http://localhost:3500/usuarios/login/"
+                }else{
+                    console.log(info)
+                }
             })
             .catch(function(e){
                  console.log(e);

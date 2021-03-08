@@ -94,13 +94,13 @@ const usersMiddleware = {
 
     isLogged: function (req, res, next){
         if (req.session.email !== undefined){
-
             return next();
-
         }else{
-
-            return res.redirect("/usuarios/login");                                    
-
+            if (req.is("application/json")){
+                res.json({status : 401})
+            } else {
+            return res.render("user/login");                                    
+            }
         };
 
     },
