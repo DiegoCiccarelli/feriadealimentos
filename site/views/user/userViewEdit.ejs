@@ -19,7 +19,6 @@
         
         <form method="POST" enctype="multipart/form-data" action="/usuarios/perfil">
             
-           
             <p>Apellido</p>
            
             <input type="text" name="apellido" id="apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>disabled value="<%=user.apellido_usuario%>"<%_}_%>
@@ -40,18 +39,6 @@
 
             <input type="tel" name="telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>disabled value="<%=user.telefono_usuario%>"<%_}_%>
             >
-
-
-            <!-- VER SI CORRESPONDE PODER CAMBIAR LA CONTRASEÑA ACA O EN UNA VISTA APARTE 
-                <p id="pContrasena">Contraseña</p>
-           
-            <input disabled type="password" name="pass" id="pwdRegister">
-
-            <p id="pRepitaContrasena">Repita Contraseña</p>
-           
-            <input disabled type="password" name="repeatPass" id="repeatPwdRegister"> -->
-
-           
 
             <p>DNI</p>
 
@@ -95,13 +82,6 @@
             <div id="imagenesCargadas">
                 <img src="/images/userAvatar/<%_if(typeof data != "undefined"){_%><%=data.avatar%><%_}else{_%><%=user.avatar%><%_}_%>">
             </div> 
-            
-            <!-- <div>
-                
-                <label for="aceptoTerminos"><a href="#">Acepto los términos y condiciones </a>   </label>
-                <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos">
-
-            </div> -->
 
             <button id="submitButton" class="claseButton" type="submit">Guardar Cambios</button>
            

@@ -7,9 +7,10 @@
             </div>
 
             <div id="contenedorBusqueda">
-
+                <div>
                 <input type="search" name="inputBusqueda" id="inputBusqueda" placeholder=" Buscar producto">
-                <i id="iconoBusqueda" class="fas fa-search fa-2x"></i>
+                <i id="iconoBusqueda" class="fas fa-search"></i>
+                </div>
 
                 <div id="resultadoBusqueda">
                     
@@ -19,18 +20,20 @@
 
             <div id="contenedorIconosHeader">
                 
-                <div class="iconoHeader" id="iconoAyuda">
-                    <a href="/ayuda">
-                        <i class="far fa-comments"></i>
-                        <p>Ayuda</p>
-                    </a>
-                </div>
+
                 
                 <div class="iconoHeader" id="iconoLogin">
-                    <a href="/usuarios/login">
+                    <% if(typeof username != "undefined"){ %>
+                    <a href="/usuarios/perfil">
                         <i class="far fa-user"></i>
-                        <p>Login</p>
+                        <p><%= username %></p>
                     </a>
+                    <%}else{%>
+                        <a href="/usuarios/login">
+                            <i class="far fa-user"></i>
+                            <p>Login</p>
+                        </a>
+                    <%}%>    
                 </div>
 
                 <div class="iconoHeader" id="iconoCarrito">

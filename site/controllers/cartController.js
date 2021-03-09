@@ -23,8 +23,6 @@ const cartFunction = {
 }
 const cartController = {
     addCart : (req, res) => {
-        console.log(req.method)
-        console.log("hola")
         /*  Guardamos el id del usuario que agrega el producto */
         let userId = req.session.userId 
         /* Chequeamos si el usuario tiene un carrito activo */

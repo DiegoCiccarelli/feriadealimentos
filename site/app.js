@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const globalMiddleware = require("./middlewares/globalMiddleware")
 
 //Requerimos session
 const session = require('express-session');
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //session
 app.use(session({secret: 'Frase secreta Feria Sitio'}));
-
+app.use(globalMiddleware.headerUser)
 
 
 

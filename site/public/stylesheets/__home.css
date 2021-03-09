@@ -17,23 +17,9 @@
   }
   
   /** SLIDER */
-  .banner{
-    display: flex;
-    width: 80%;
-    height: 30vh;
-    align-items: center;
-    justify-content: space-between;
-    background-image: url("../images/banner-home1.jpg");
-    max-width: 1200px;
-    background-size: cover;
-    margin-top: 1vh;
-  }
-
-  .banner i{
-    margin-right: 1vh;
-    margin-left: 1vh;
-    color: #F2E2C4;
-  }
+ .banner{
+   margin-top: 2vh;
+ }
   
   /**  **/
 
@@ -125,6 +111,7 @@
     transform: scale(0.8);
     transition: 0.3s;
     color: #BF9D73;
+    font-size: 80px;
   }
   
   .iconos i:hover{
