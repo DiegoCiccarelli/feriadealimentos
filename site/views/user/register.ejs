@@ -3,8 +3,8 @@
 
 <%- include('../partials/header.ejs'); %>
     
-        <div id="contenedorRegister">
-        <h1>Registro de nuevo Cliente</h1>
+        <div class="contenedorForm">
+        <h1>Registro</h1>
         
         <% if(typeof errors != "undefined"){%>
             <div class="errorMessageForm">
@@ -16,112 +16,50 @@
             </div>
             <%}%>
         
+        <div class="errorMessageForm"></div>
         
         <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
+           <div>
            
-            <p>Apellido</p>
-           
-            <input type="text" name="apellido" id="apellido" <% if(typeof datos != "undefined"){ %>
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" <% if(typeof datos != "undefined"){ %>
                 value="<%= datos.apellido %>"
             <% } %>>
         
-
-            <p>Nombre</p>
            
-            <input type="text" name="nombre" id="nombre" <% if(typeof datos != "undefined"){ %>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" <% if(typeof datos != "undefined"){ %>
                 value="<%= datos.nombre %>"
             <% } %>>
+            </div>
 
-            <p>Email</p>
            
-            <input type="email" name="email" id="emailRegister" <% if(typeof datos != "undefined"){ %>
+            <input type="email" name="email" id="emailRegister" placeholder="Correo electronico" <% if(typeof datos != "undefined"){ %>
                 value="<%= datos.email %>"
             <% } %>>
            
-            <p>Contraseña</p>
+            <div>
            
-            <input type="password" name="pass" id="pwdRegister">
+            <input type="password" name="pass" id="pwdRegister" placeholder="Contraseña">
 
-            <p>Repita Contraseña</p>
            
-            <input type="password" name="repeatPass" id="repeatPwdRegister">
+            <input type="password" name="repeatPass" id="repeatPwdRegister" placeholder="Repetir contraseña">
+            </div>
 
-            <p>Telefono</p>
 
-            <input type="tel" name="telefono" <% if(typeof datos != "undefined"){ %>
+            <input type="tel" id="telefono" name="telefono" placeholder="Telefono" <% if(typeof datos != "undefined"){ %>
                 value="<%= datos.telefono %>"
             <% } %>>
 
-            <p>DNI</p>
 
-            <input type="number" name="dni" <% if(typeof datos != "undefined"){ %>
+            <input type="number" name="dni" id="dni" placeholder="DNI" <% if(typeof datos != "undefined"){ %>
                 value="<%= datos.dni %>"
             <% } %>>
 
-            <p>Calle</p>
-            
-            <input type="text" name="calle" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.calle %>"
-            <% } %>>
-
-            <p>Altura</p>
-
-            <input type="text" name="altura" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.altura %>"
-            <% } %>>
-
-            <p>Piso</p>
-
-            <input type="text" name="piso" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.piso %>"
-            <% } %>>
-            
-            <p>Departamento</p>
-
-            <input type="text" name="departamento" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.departamento %>"
-            <% } %>>
-
-            <p>Barrio</p>
-
-            <input type="text" name="barrio" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.barrio %>"
-            <% } %>>
-
-            <p>Localidad</p>
-
-            <input type="text" name="localidad" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.localidad %>"
-            <% } %>>
-
-            <p>Provincia</p>
-
-            <input type="text" name="provincia" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.provincia %>"
-            <% } %>>
-
-            <p>Pais</p>
-
-            <input type="text" name="pais" <% if(typeof datos != "undefined"){ %>
-                value="<%= datos.pais %>"
-            <% } %>>
-
-            <p>Avatar</p>
-
-            <input type="file" name="avatar">
-            
-            <!-- <div>
-                
-                <label for="aceptoTerminos"><a href="#">Acepto los términos y condiciones </a>   </label>
-                <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos">
-
-            </div> -->
-
-            <button class="claseButton" type="submit">Registrarme</button>
+            <button class="claseButton" type="submit" id="btnRegister">Registrarme</button>
 
         </form>
 
         <a href="/usuarios/login">Ya tengo usuario y contraseña</a>
         
     </div>
+    <script src="/js/register.js"></script>
     <%- include('../partials/footer.ejs'); %>

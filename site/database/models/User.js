@@ -33,11 +33,11 @@ module.exports = function(sequelize, dataTypes){
         },
         calle: {
             type: dataTypes.STRING(50),
-            "allowNull" : false
+            "allowNull" : true
         },
         altura: {
             type: dataTypes.STRING(10),
-            "allowNull" : false
+            "allowNull" : true
         },
         piso: {
             type: dataTypes.STRING(10),
@@ -49,17 +49,13 @@ module.exports = function(sequelize, dataTypes){
         },
         barrio: {
             type: dataTypes.STRING(50),
-            "allowNull" : false
+            "allowNull" : true
         },
         localidad: {
             type: dataTypes.STRING(50),
-            "allowNull" : false
-        },
-        provincia: {
-            type: dataTypes.STRING(50),
             "allowNull" : true
         },
-        pais: {
+        provincia: {
             type: dataTypes.STRING(50),
             "allowNull" : true
         },

@@ -36,11 +36,10 @@ button{
   }
 
   .errorMessageForm{
-    background-color: #ffcccb;
+    color: red;
     font-weight: bold; 
     margin: 1vh; 
     font-size: 0.9rem;
-    padding: 0px 5px 5px 5px ;
     margin: 0px;
   }
 

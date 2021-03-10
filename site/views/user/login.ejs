@@ -3,7 +3,7 @@
 <%- include('../partials/header.ejs'); %>
 
 
-    <div id="contenedorLogin">
+    <div class="contenedorForm">
         <h1>Login</h1>
 
         <% if(typeof errorMessage != "undefined"){%>
@@ -14,16 +14,14 @@
         
         <form action="/usuarios/login" method="POST">
            
-            <p>Email</p>
            
-            <input type="email" name="email" id="emailLogin" <% if(typeof datos != "undefined"){%> value="<%=datos.email%>" <% } %> >
-           
-            <p>Contraseña</p>
-           
-            <input type="password" name="pwd" id="pwdLogin">
-           
-            <p>Recordarme en esta pc</p>
-            <input type="checkbox" name="rememberMe" id="rememberMe">
+            <input type="email" name="email" id="emailLogin" placeholder="Correo Electronico"<% if(typeof datos != "undefined"){%> value="<%=datos.email%>" <% } %> >
+                      
+            <input type="password" name="pwd" id="pwdLogin" placeholder="Contraseña">
+            <div>
+                <span>Recordarme en esta pc</span>
+                <input type="checkbox" name="rememberMe">
+            </div>
 
             <button class="claseButton">Ingresar</button>
 

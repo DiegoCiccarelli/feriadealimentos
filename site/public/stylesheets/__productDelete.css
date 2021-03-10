@@ -134,7 +134,7 @@ width: 100px;
 #btnAgregarCarrito{
     margin-left: 20px;
     max-width: 200px;
-    /*font-size: 14px;*/
+    font-size: 14px;
 }
 
 #textoCantidadCarrito{

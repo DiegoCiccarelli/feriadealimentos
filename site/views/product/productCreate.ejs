@@ -2,7 +2,7 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<div id="contenedorProductCreateEdit">
+<div class="contenedorForm">
     <h1>Nuevo Producto</h1>
 
     <% if(typeof errors != "undefined"){%>
@@ -16,17 +16,20 @@
         <%}%>
     
         <form action="/productos/productoNuevo" method="POST" enctype="multipart/form-data">
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" 
+        <input type="text" name="nombre" placeholder="Nombre Producto" 
         <% if(typeof data != "undefined"){ %>
             value="<%= data.nombre %>"
         <% } %>>
                    
-        <input type="number" name ="precioProducto" id="precio" placeholder="Precio" 
+        <input type="number" name ="precioProducto" placeholder="Precio" 
         <% if(typeof data != "undefined"){ %>
             value="<%= data.precioProducto %>"
         <% } %>>
-
+            <div>
+                <p>Categorias</p>
             <% for(let i = 0; i < categories.length; i++) {%>
+                <div>
+                <span><%= categories[i].nombre_categoria%></span>
                 <input type="checkbox" name="category" value="<%= categories[i].id%>"%>
                 <% if(typeof data != "undefined"){ %>
                     <% if(Array.isArray(data.category)){%>
@@ -41,10 +44,12 @@
                         <%}%>
                     <%}%>
                 <%}%>>
-                <label><%= categories[i].nombre_categoria%></label>
+            </div></br>
             <%}%>
+            </div>
 
             <select name="productor">
+            <span>Productor:</span>
             <% for(let i = 0; i < producers.length; i++) {%>
             <option value="<%= producers[i].id%>" 
                 <% if(typeof data != "undefined"){ %>
