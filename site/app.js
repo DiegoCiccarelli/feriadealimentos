@@ -17,6 +17,8 @@ var apiRouter = require("./routes/api/api")
 
 var app = express();
 
+var cors = require('cors');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -29,8 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //session
 app.use(session({secret: 'Frase secreta Feria Sitio'}));
-app.use(globalMiddleware.headerUser)
+app.use(globalMiddleware.headerUser);
 
+//cors
+app.use(cors());
 
 
 
