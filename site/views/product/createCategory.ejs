@@ -2,28 +2,27 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<main class="contenedor">
+<main class="contenedorForm">
     <% if(typeof categoria == "undefined"){%>
-        <section id="contenedorRegister">
-            <form style="text-align: center;" action="/productos/crearCategoria" method="POST">
-                <h1>Crear categoria</h1>
-                <p>Categoria</p> 
-                <input type="text" name="categoria">
-                <p><button class="claseButton"type="submit">CREAR</button></p>
+
+        <h1>Crear categoria</h1>
+
+            <form action="/productos/crearCategoria" method="POST">
+                <input type="text" name="categoria" placeholder="Nombre">
+                <button class="claseButton"type="submit">CREAR</button>
+                <button class="claseButton"><a href="/productos/listadoCategorias">Cancelar</a></button>
             </form>
-        </section>
+
         
         <%}else{%>
-    <section id="contenedorRegister">
-        
+
+        <h1>Editar categoria</h1>
         <form action="/productos/editarCategoria/<%= categoria.id %>" method="POST" class="contenedorForm">
-            <h1>Editar categoria</h1>
-            <p>Categoria</p>
-            <input type="text" name="categoria" value="<%= categoria.nombre_categoria%>">
-            <p><button class="claseButton" type="submit">EDITAR</button></p>
+            <input type="text" name="categoria" placeholder="Nombre" value="<%= categoria.nombre_categoria%>">
+            <button class="claseButton" type="submit">EDITAR</button>
+            <button class="claseButton"><a href="/productos/listadoCategorias">Cancelar</a></button>
         </form>
-    </section>
+
     <%}%>
-    <button class="claseButton"><a href="/productos/listadoCategorias">Cancelar</a></button>
 </main>
 <%- include('../partials/footer.ejs'); %>

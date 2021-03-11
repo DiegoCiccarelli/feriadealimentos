@@ -16,40 +16,41 @@
         <%}%>
     
         <form action="/productos/productoNuevo" method="POST" enctype="multipart/form-data">
-        <input type="text" name="nombre" placeholder="Nombre Producto" 
-        <% if(typeof data != "undefined"){ %>
-            value="<%= data.nombre %>"
-        <% } %>>
-                   
-        <input type="number" name ="precioProducto" placeholder="Precio" 
-        <% if(typeof data != "undefined"){ %>
-            value="<%= data.precioProducto %>"
-        <% } %>>
-            <div>
-                <p>Categorias</p>
+        <div>
+            <input type="text" name="nombre" placeholder="Nombre Producto" 
+            <% if(typeof data != "undefined"){ %>
+                value="<%= data.nombre %>"
+            <% } %>>
+                    
+            <input type="number" name ="precioProducto" placeholder="Precio" 
+            <% if(typeof data != "undefined"){ %>
+                value="<%= data.precioProducto %>"
+            <% } %>>
+        </div>
+
+        <h2>Categorias</h4>
+
+            <div class="categoriasProducto">
             <% for(let i = 0; i < categories.length; i++) {%>
                 <div>
                 <span><%= categories[i].nombre_categoria%></span>
-                <input type="checkbox" name="category" value="<%= categories[i].id%>"%>
-                <% if(typeof data != "undefined"){ %>
+                <input type="checkbox" name="category" value="<%= categories[i].id%>"%><% if(typeof data != "undefined"){ %>
                     <% if(Array.isArray(data.category)){%>
                         <% for(let j = 0; j < data.category.length; j++){%>
                             <%  if(data.category[j] == categories[i].id){%>
                                     checked
                             <%}%>
-                        <%}%>
-                    <%} else { %>
+                        <%}%><%} else { %>
                         <%  if(data.category == categories[i].id){%>
                                 checked
                         <%}%>
                     <%}%>
                 <%}%>>
-            </div></br>
+                </div>
             <%}%>
             </div>
-
+            <h2>Productor: </h4>
             <select name="productor">
-            <span>Productor:</span>
             <% for(let i = 0; i < producers.length; i++) {%>
             <option value="<%= producers[i].id%>" 
                 <% if(typeof data != "undefined"){ %>
@@ -57,24 +58,25 @@
                         selected
                     <%}%>
                 <%}%>>
-                <%= producers[i].nombre_productor %>
+                <%= producers[i].nombre_emprendimiento %>
             </option>
             <%}%>
             </select>
-
-            <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><% if(typeof data != "undefined"){ %>
+            <div>
+            <textarea rows="5" cols="30" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><% if(typeof data != "undefined"){ %>
                 <%= data.descripcionCorta %>
                 <% } %></textarea>
-            <span></span>
-            <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><% if(typeof data != "undefined"){ %><%= data.descripcionLarga %><% } %></textarea>
-            <span></span>
-
-                <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+            <textarea rows="10" cols="30" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><% if(typeof data != "undefined"){ %><%= data.descripcionLarga %><% } %></textarea>
+            </div>
+                <label class="uploadImage">
+                    <i class="fa fa-cloud-upload"></i><span>Subir imagen</span>
+                    <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+                </label>
     
         <button class="claseButton" type="submit">Guardar Cambios</button>
+        <button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
     </form>
     
-    <button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
 
     </div>
 

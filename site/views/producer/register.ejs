@@ -3,7 +3,7 @@
 
 <%- include('../partials/header.ejs'); %>
     
-        <div id="contenedorRegister">
+        <div class="contenedorForm">
         <h1>Registro de nuevo Productor</h1>
         
         <% if(typeof errors != "undefined"){%>
@@ -18,53 +18,35 @@
         
         
         <form action="/productores/registro" method="POST" enctype="multipart/form-data">
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido"<% if(typeof data != "undefined"){ %>
+                    value="<%= data.apellido %>"
+                <% } %>>
+                    
+                <input type="text" name="nombreProductor" id="nombre" placeholder="Nombre"<% if(typeof data != "undefined"){ %>
+                    value="<%= data.nombre %>"
+                <% } %>>
            
-            <p>Apellido</p>
-           
-            <input type="text" name="apellido" id="apellido" <% if(typeof data != "undefined"){ %>
-                value="<%= data.apellido %>"
-            <% } %>>
-        
-
-            <p>Nombre</p>
-           
-            <input type="text" name="nombreProductor" id="nombre" <% if(typeof data != "undefined"){ %>
-                value="<%= data.nombre %>"
-            <% } %>>
-
-            <p>Email</p>
-           
-            <input type="email" name="email" id="emailRegister" <% if(typeof data != "undefined"){ %>
+            <input type="email" name="email" id="emailRegister" placeholder="Email"<% if(typeof data != "undefined"){ %>
                 value="<%= data.email %>"
             <% } %>>
            
-            <p>Telefono</p>
-
-            <input type="tel" name="telefono" <% if(typeof data != "undefined"){ %>
+            <input type="tel" name="telefono" placeholder="Telefono"<% if(typeof data != "undefined"){ %>
                 value="<%= data.telefono %>"
             <% } %>>
-
-            <p>Domicilio</p>
-            
-            <input type="text" name="domicilio" <% if(typeof data != "undefined"){ %>
+            <input type="text" name="domicilio" placeholder="Domicilio"<% if(typeof data != "undefined"){ %>
                 value="<%= data.domicilio %>"
             <% } %>>
-
-            <p>Nombre Emprendimiento</p>
             
-            <input type="text" name="nombreEmprendimiento" <% if(typeof data != "undefined"){ %>
+            <input type="text" name="nombreEmprendimiento" placeholder="Nombre emprendimiento"<% if(typeof data != "undefined"){ %>
                 value="<%= data.nombreEmprendimiento %>"
             <% } %>>
 
-            <p>Descripción Emprendimiento</p>
-            
-            <input type="text" name="descripcion" <% if(typeof data != "undefined"){ %>
-                value="<%= data.nombreEmprendimiento %>"
-            <% } %>>
+            <textarea cols="40" rows="5" name="descripcion" placeholder="Descripcion emprendimiento"><% if(typeof data != "undefined"){ %><%= data.descripcion %><% } %></textarea>
 
-            <p>Logotipo</p>
-
-            <input type="file" name="logotipo">
+            <label class="uploadImage">
+                <i class="fa fa-cloud-upload"></i><span>Subir imagen</span>
+                <input type="file" name="logotipo" placeholder="Subir Imágenes">
+            </label>
 
             <button class="claseButton" type="submit">Registrar Productor</button>
 

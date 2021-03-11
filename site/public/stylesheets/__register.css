@@ -4,11 +4,12 @@
     margin-bottom: 30px;
     max-width:fit-content;
     display: flex;
-    padding: 10px;
     flex-direction: column;
+    padding-bottom: 1vh;
     align-items: center;
     border-radius: 5px;
-    
+    background-color: white;
+    border-radius: 10px;
 }
 
 .contenedorForm form{
@@ -23,21 +24,38 @@
  .contenedorForm h1{
     font-size: 1.8rem;
     background-color: green;
-    align-self: stretch;
-    width: inherit;
+    width: 100%;
     text-align: center;
     color: white;
+    font-weight: bold;
 
 } 
+ .contenedorForm h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+} 
 
-.contenedorForm input{
+
+.contenedorForm input:not([type="checkbox"]){
     text-align: center;
     margin: 10px 10px;
     background: #f1f1f1;
     font-size: 1rem;
     border: none;
     border-bottom: 1px black solid;
-    width: 95%;
+    width: 97%;
+    min-width: 300px;
+}
+.contenedorForm div input:not([type="checkbox"]){
+    text-align: center;
+    margin: 10px 10px;
+    background: #f1f1f1;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px black solid;
+    width: 45%;
+    min-width: 300px;
 }
 
 .contenedorForm input[type=checkbox]{
@@ -45,16 +63,37 @@
     margin: 7px;
 }
 
-.contenedorForm form div{
-    display: flex;
-    justify-content: center;
+
+
+.categoriasProducto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+justify-items: self-end;
+}
+.contenedorForm textarea{
+    justify-content: flex-start;
+    margin: 1vh;
+    vertical-align: top;
 }
 
+.uploadImage input[type="file"] {
+    display: none;
+}
+
+.uploadImage{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.uploadImage i{
+    margin-right: 5px;
+}
 
 .contenedorForm a{
     font-size: 0.8rem;
     margin-top: 10px;
-    color: gray;
+    color: black;
 
 }
 

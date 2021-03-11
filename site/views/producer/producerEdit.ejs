@@ -3,7 +3,7 @@
 
 <%- include('../partials/header.ejs'); %>
     
-        <div id="contenedorRegister">
+        <div class="contenedorForm">
         <h1>Editar Productor</h1>
         
         <% if(typeof errors != "undefined"){%>
@@ -19,55 +19,43 @@
         
         <form method="POST" enctype="multipart/form-data" action="/productores/editar/<%_ if(typeof data != "undefined"){_%><%=data.id%><%_}else{_%><%=producer.id%><%_}_%>">
             
-           
-            <p>Apellido</p>
-           
-            <input type="text" name="apellido" id="apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>value="<%=producer.apellido_productor%>"<%_}_%>
+                      
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>value="<%=producer.apellido_productor%>"<%_}_%>
             >
-        
-
-            <p>Nombre</p>
-           
-            <input type="text" name="nombreProductor" id="nombre" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreProductor%>"<%_ }else{_%>value="<%=producer.nombre_productor%>"<%_}_%>
+                   
+            <input type="text" name="nombreProductor" id="nombre" placeholder="Nombre" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreProductor%>"<%_ }else{_%>value="<%=producer.nombre_productor%>"<%_}_%>
             >
 
-            <p>Email</p>
            
-            <input type="email" name="email" id="emailRegister" <%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%>value="<%=producer.email_productor%>"<%_}_%>
+            <input type="email" name="email" id="emailRegister" placeholder="Email" <%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%>value="<%=producer.email_productor%>"<%_}_%>
             >
            
-            <p>Telefono</p>
 
-            <input type="tel" name="telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>value="<%=producer.telefono_productor%>"<%_}_%>
+            <input type="tel" name="telefono" placeholder="Telefono" <%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>value="<%=producer.telefono_productor%>"<%_}_%>
             >
 
-            <p>Domicilio</p>
             
-            <input type="text" name="domicilio" <%_ if(typeof data != "undefined"){ _%>value="<%=data.domicilio%>"<%_ }else{_%>value="<%=producer.domicilio_productor%>"<%_}_%>
+            <input type="text" name="domicilio" placeholder="Domicilio" <%_ if(typeof data != "undefined"){ _%>value="<%=data.domicilio%>"<%_ }else{_%>value="<%=producer.domicilio_productor%>"<%_}_%>
             >
 
-            <p>Nombre Emprendimiento</p>
             
-            <input type="text" name="nombreEmprendimiento" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreEmprendimiento%>"<%_ }else{_%>value="<%=producer.nombre_emprendimiento%>"<%_}_%>
+            <input type="text" name="nombreEmprendimiento" placeholder="Nombre emprendimiento" <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreEmprendimiento%>"<%_ }else{_%>value="<%=producer.nombre_emprendimiento%>"<%_}_%>
             >
+            <textarea cols="40" rows="5" name="descripcion" placeholder="Descripcion emprendimiento"><%_ if(typeof data != "undefined"){ _%><%=data.descripcion%><%_ }else{_%><%=producer.descripcion_productor%><%_}_%></textarea>
 
-            <p>Descripción Emprendimiento</p>
-            
-            <input type="text" name="descripcion" <%_ if(typeof data != "undefined"){ _%>value="<%=data.descripcion%>"<%_ }else{_%>value="<%=producer.descripcion_productor%>"<%_}_%>
-            >
 
-            <p>Logotipo</p>
-
-            <input type="file" name="logotipo">
-                    <% if(typeof producer !== "undefined"){%>
-                        <% if(producer.logotipo != null){%>
-                     <img class="thumbnailImage" src="/images/producersLogos/<%= producer.logotipo %>">
-                    <%}%>
-                    <%}%>
+            <label class="uploadImage">
+                <i class="fa fa-cloud-upload"></i><span>Subir imagen</span>
+                <input type="file" name="logotipo" placeholder="Subir Imágenes">
+            </label>
+            <% if(typeof producer !== "undefined"){%>
+                <% if(producer.logotipo != null){%>
+                <img class="thumbnailImage" src="/images/producersLogos/<%= producer.logotipo %>">
+            <%}%>
+            <%}%>
 
             <button class="claseButton" type="submit">Confirmar Cambios</button>
-
+            <button class="claseButton"><a href="/productores/listado">Cancelar</a></button>
         </form>
-        <button class="claseButton"><a href="/productores/listado">Cancelar</a></button>
     </div>
     <%- include('../partials/footer.ejs'); %>

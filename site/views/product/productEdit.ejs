@@ -2,7 +2,7 @@
 
 <%- include('../partials/header.ejs'); %>
 
-<div id="contenedorProductCreateEdit">
+<div class="contenedorForm">
     <h1>Editar Producto</h1>
 
     <% if(typeof errors != "undefined"){%>
@@ -17,15 +17,21 @@
     
 <form method="POST" enctype="multipart/form-data" action="/productos/productoEditar/<%_ if(typeof data != "undefined"){_%><%=data.id%><%_}else{_%><%=product.id%><%_}_%>">
     
-
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto" 
+    <div>
+    <input type="text" name="nombre"  placeholder="Nombre Producto" 
     <%_ if(typeof data != "undefined"){ _%>value="<%=data.nombre%>"<%_ }else{_%>value="<%=product.nombre_producto%>"<%_}_%>
     >
                 
-    <input type="number" name ="precioProducto" id="precio" placeholder="Precio" 
+    <input type="number" name ="precioProducto"  placeholder="Precio" 
     <% if(typeof data != "undefined"){%>value="<%=data.precioProducto%>"<% } else{%>value="<%=product.precio%>"><% }%>>
-    
+    </div>
+
+    <h2>Categorias: </h2>
+
+    <div class="categoriasProducto">
     <% for(let i = 0; i < categories.length; i++) {%>
+        <div>
+        <span><%=categories[i].nombre_categoria%></span>
         <input type="checkbox" name="category" value="<%= categories[i].id%>" 
         <% if(typeof data != "undefined"){ %>
             <% if(Array.isArray(data.category)){%>
@@ -46,9 +52,11 @@
             <%}%>
             <%}%>
         <%}%>>
-        <%=categories[i].nombre_categoria%>
+        
+        </div>
     <%}%>
-
+    </div>
+    <h2>Productor: </h2>
     <select name="productor">
     <% for(let i = 0; i < producers.length; i++) {%>
     <option value="<%=producers[i].id%>" 
@@ -61,30 +69,30 @@
         selected
     <% } %>
     <%}%>>
-    <%=producers[i].nombre_productor%></option>
+    <%=producers[i].nombre_emprendimiento%></option>
     <%}%>>
     </select>
 
 
 
     
+    <div>
+        <textarea rows="5" cols="30" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><%_if(typeof data != "undefined"){_%><%=data.descripcionCorta%><%_}else{_%><%=product.descripcion_corta%><%_}_%></textarea>
+        <textarea rows="10" cols="30" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><%_ if(typeof data != "undefined"){_%><%=data.descripcionLarga%><%_}else{_%><%=product.descripcion_larga%><%_}_%></textarea>
+    </div>
 
-    <textarea rows="2" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta">
-        <%_if(typeof data != "undefined"){_%><%=data.descripcionCorta%><%_}else{_%><%=product.descripcion_corta%><%_}_%>
-    </textarea>
-    <span></span>
-    <textarea rows="14" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><%_ if(typeof data != "undefined"){_%><%=data.descripcionLarga%><%_}else{_%><%=product.descripcion_larga%><%_}_%></textarea>
-    <span></span>
-
-    <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+    <label class="uploadImage">
+        <i class="fa fa-cloud-upload"></i><span>Subir imagen</span>
+        <input type="file" name="imagenProducto" id="imagenProducto" placeholder="Subir Imágenes">
+    </label>
     <div id="imagenesCargadas">
         <img src="/images/productsImages/<%_if(typeof data != "undefined"){_%><%=data.imagen%><%_}else{_%><%=product.imagen%><%_}_%>">
     </div> 
 
         <button class="claseButton" type="submit">Guardar Cambios</button>
-</form>
+        <button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
 
-<button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
+</form>
 
 </div>
 

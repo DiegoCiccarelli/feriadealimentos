@@ -55,3 +55,6 @@ router.post('/finalizarcompra', usersMiddleware.isLogged, cartController.finishP
 
 
 module.exports = router;
+
+
+
