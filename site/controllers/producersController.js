@@ -62,10 +62,13 @@ const producersController = {
             res.render("producer/producerEdit", {errors : errors.errors, data : req.body})
 
         }else{
-            let logotipo = null;
             if(typeof req.files[0] != "undefined"){
-            logotipo = req.files[0].filename
-        
+            db.Producer.update({
+                logotipo: req.files[0].filename
+                }, 
+                {
+                    where : {id:req.params.id}
+                }).then( () => Promise.resolve("Se ha subido la imagen"))
             }
         
 
@@ -74,7 +77,6 @@ const producersController = {
             apellido_productor: req.body.apellido,
             email_productor: req.body.email,
             domicilio_productor: req.body.domicilio,
-            logotipo: logotipo,
             telefono_productor: req.body.telefono,
             nombre_emprendimiento: req.body.nombreEmprendimiento,
             descripcion_productor: req.body.descripcion
@@ -87,8 +89,9 @@ const producersController = {
 
     delete: function(req, res){
     db.Producer.update({estado_productor : 0},{where:{id:req.params.id}})
-    .then(
+    .then( () => {
         res.redirect('/productores/listado')
+    }
     )}
     
 
