@@ -249,8 +249,9 @@ const productsController = {
             {
                 id:req.params.id
             }
-        }).then(
+        }).then( () => {
             res.redirect('/productos/listadoCategorias')
+        }
         )
     },
     listadoCategorias : function(req,res){
