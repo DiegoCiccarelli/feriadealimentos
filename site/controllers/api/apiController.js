@@ -42,6 +42,9 @@ const apiController = {
         db.Product.findAll({
             order: [['created_at', "DESC"]],
             limit : 1
+        },
+        {
+            estado_producto : 1
         })
         .then( (data) => {
         res.json(data[0]);
@@ -57,7 +60,7 @@ const apiController = {
     },
 
     categories : (req, res) => {
-        db.Category.findAll().then((data)=> {
+        db.Category.findAll({where : {estado_categoria : 1}}).then((data)=> {
             res.json(data);
         })
     }
