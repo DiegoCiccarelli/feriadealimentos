@@ -31,7 +31,7 @@ const apiController = {
     })},
 
     salesQuantity : (req, res) => {
-        db.Cart.findAll({where:{estado_carrito : "cerrado"}})
+        db.Cart.findAll({where:{estado_carrito : "comprado"}})
         .then( (data) => {
             res.json({data : {
                 quantity : data.length
