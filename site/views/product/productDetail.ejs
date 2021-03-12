@@ -24,11 +24,11 @@
                     <p class="textoCompartir">Compartir</p>
                 
                     <ul id="listaCompartirIconosSociales"> 
-                    
-                        <li id="iconoCompartirFacebook"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                        <div class="fb-share-button" data-href="http://localhost:3500/productos/detalleProducto/1" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3500%2Fproductos%2FdetalleProducto%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+                        <!-- <li id="iconoCompartirFacebook"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></li> -->
                         <li id="iconoCompartirInstagram"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li id="iconoCompartirTwitter"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
-                    
+                        <!-- <li id="iconoCompartirTwitter"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li> -->
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </ul>
                     
 
@@ -98,7 +98,8 @@
 
 
     </main>
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v10.0" nonce="HvllrM7I"></script>
     <script src="/js/productDetail.js"></script>
 
 <%- include('../partials/footer.ejs'); %>
