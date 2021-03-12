@@ -213,8 +213,9 @@ const productsController = {
         {
             id:req.params.id
         }
-    }).then(
+    }).then( () => {
         res.redirect('/productos/listadoProductosAdmin')
+    }
     )
     },
     viewCreateCategory : function(req, res){
