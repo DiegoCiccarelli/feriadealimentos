@@ -35,16 +35,19 @@
       justify-items: center
   }
 
-  .gridCategorias button {
+  /* .gridCategorias button {
     width: 150px;
     height: 30px;
-  }
+  } */
 
 
 
 
   /** COMBOS**/
-
+#frase{
+  font-family: Redressed;
+  font-size: 2.5rem;
+}
   
   .contenedorProductos{
     display: flex;
@@ -110,12 +113,12 @@
 .iconos i{
     transform: scale(0.8);
     transition: 0.3s;
-    color: #BF9D73;
+    color: #6E682D;
     font-size: 80px;
   }
   
   .iconos i:hover{
-    transform: scale(1) rotate(30deg);
+    transform: scale(1) rotate(5deg);
     filter: brightness(110%) grayscale(0);
   } 
   
@@ -167,6 +170,7 @@
     height: 25px;
   }
 
+  
                       /** CELULAR **/
   @media only screen and (max-width: 480px) {
   
@@ -269,4 +273,12 @@
     width: 70%;
   }
 
+  }
+
+
+  @media(max-width: 768px){
+  #frase {
+        
+    font-size: 1.5rem;
+}
   }
