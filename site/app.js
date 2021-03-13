@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //session
 app.use(session({secret: 'Frase secreta Feria Sitio'}));
+app.use(globalMiddleware.sessionRecovery)
 app.use(globalMiddleware.headerUser);
 
 //cors

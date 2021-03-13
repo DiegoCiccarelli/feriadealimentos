@@ -51,7 +51,20 @@ const usersMiddleware = {
         body("calle").notEmpty().withMessage("Debe ingresar una calle"),
         body("altura").notEmpty().withMessage("Debe ingresar una altura"),
         body("barrio").notEmpty().withMessage("Debe ingresar un barrio"),
-        body("localidad").notEmpty().withMessage("Debe ingresar una localidad"),
+        body("localidad").notEmpty().withMessage("Solo hacemos entregas en ciudad de Cordoba").custom(function(value, {req}){
+            if(value == "Ciudad de Cordoba"){
+                return true
+            } else{
+                return false
+            }
+        }),
+        body("emailRegister").custom(function(value){
+            return db.User.findOne({where : {email_usuario : value, estado}}).then(function(resultado){
+                if(resultado){
+                    return Promise.reject("El email ya está en uso")
+                }
+            })
+        }),
         body("avatar", "Debe ingresar una imagen válida").custom(function(value, {req}){
             if(typeof req.files[0] == "undefined"){
                 return true;
@@ -73,7 +86,7 @@ const usersMiddleware = {
 
 
     isLogged: function (req, res, next){
-        if (req.session.email !== undefined){
+        if (req.session.email || req.cookies.recordar){
             return next();
         }else{
             if (req.is("application/json")){
@@ -87,7 +100,6 @@ const usersMiddleware = {
 
     isAdmin: function (req, res, next){
 
-        //console.log(req.session.email);
 
         if (req.session.admin == true){
 

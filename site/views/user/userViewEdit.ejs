@@ -51,14 +51,16 @@
 
             <input type="text" name="departamento" placeholder="Departamento"<%_ if(typeof data != "undefined"){ _%>value="<%=data.departamento%>"<%_ }else{_%>disabled value="<%=user.departamento%>"<%_}_%>>
 
+            <p>BARRIO:</p><select name="barrio" id="barrio" disabled><% if(typeof data != "undefined"){%>
+                <option value="<%= data.barrio %>" selected><%= data.barrio %></option>
+            <%}else if(user.barrio != ""){%>
+                <option value="<%= user.barrio %>" selected><%= user.barrio %></option>
+            <%}%></select>
 
-            <input type="text" name="barrio" placeholder="Barrio"<%_ if(typeof data != "undefined"){ _%>value="<%=data.barrio%>"<%_ }else{_%>disabled value="<%=user.barrio%>"<%_}_%>>
 
 
-            <input type="text" name="localidad" placeholder="Localidad"<%_ if(typeof data != "undefined"){ _%>value="<%=data.localidad%>"<%_ }else{_%>disabled value="<%=user.localidad%>"<%_}_%>>
+            <input type="text" name="localidad" placeholder="Localidad" value="Ciudad de Cordoba" id="localidad" disabled>
 
-
-            <input type="text" name="provincia" placeholder="Provincia"<%_ if(typeof data != "undefined"){ _%>value="<%=data.provincia%>"<%_ }else{_%>disabled value="<%=user.provincia%>"<%_}_%>>
 
             <p>Avatar</p>
 

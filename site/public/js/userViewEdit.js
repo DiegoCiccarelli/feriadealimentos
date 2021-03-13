@@ -5,10 +5,30 @@ window.addEventListener('load', function(){
     let editButton = document.querySelector("#editButton");
     let emailInput = document.querySelector("#emailRegister");
     let IsError = document.querySelector(".errorMessageForm");
-    // let inputContrasena = document.querySelector("#pwdRegister");
-    // let inputRepitaContrasena = document.querySelector("#repeatPwdRegister");
-  //  let pContrasena = document.querySelector("#pContrasena");
-  //  let pRepitaContrasena = document.querySelector("#pRepitaContrasena");
+    let localidadInput = document.querySelector("#localidad")
+    let barrioSelect = document.querySelector("#barrio")
+    let barrioOption = barrioSelect.querySelector("option")
+
+    fetch("https://gobiernoabierto.cordoba.gob.ar/api/v2/barrios/barrios?es_oficial=true")
+    .then(res => res.json())
+    .then(res => {
+        console.log(res.results.features[0].properties)
+        for(let barrio of res.results.features){
+            if(barrioOption){
+              if(barrioOption.value != barrio.properties.nombre){
+              let option =  document.createElement("option")
+              option.value = barrio.properties.nombre
+              option.innerHTML = barrio.properties.nombre
+              barrioSelect.appendChild(option)
+              }
+            } else{
+              let option =  document.createElement("option")
+              option.value = barrio.properties.nombre
+              option.innerHTML = barrio.properties.nombre
+              barrioSelect.appendChild(option)
+            }
+        }
+    })
     submitButton.style.display="none";  
     
     if (IsError != null){
@@ -16,13 +36,7 @@ window.addEventListener('load', function(){
       editButton.style.display="none";
       submitButton.style.display="block";
 
-    } 
-
-    //console.log(IsError);
-   
-    // inputContrasena.style.display="none";
-    // inputRepitaContrasena.style.display="none";
-
+    }
    
     editButton.addEventListener('click', function(event){
         
@@ -31,18 +45,22 @@ window.addEventListener('load', function(){
         inputs.forEach(element => {
          // element.style.backgroundColor="red";
             element.removeAttribute("disabled");
-            
+            barrioSelect.removeAttribute("disabled")
         });
 
         // pongo en disabled el email, porque nunca se puede cambiar
         emailInput.setAttribute("disabled", "disabled");
+        localidadInput.setAttribute("disabled", "true");
         this.style.display="none";
         submitButton.style.display="block";
         
 
     })
-    //  pContrasena.style.display="none";
-  //  pRepitaContrasena.style.display="none";
+
+    submitButton.addEventListener("click", () => {
+      emailInput.removeAttribute("disabled");
+      localidadInput.removeAttribute("disabled");
+    })
     
     
 

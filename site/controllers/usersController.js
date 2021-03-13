@@ -3,6 +3,8 @@ const path = require("path");
 const db = require("../database/models/index")
 const bcrypt = require("bcryptjs"); 
 const { validationResult } = require("express-validator");
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr('Zxu2!h');
 
 
 
@@ -62,10 +64,10 @@ const usersController = {
                     }
                     
                     // si eligió recuérdame seteamos la cookie
-                    if(req.body.rememberMe){
-                        //seteo cookie a un año
-                        res.cookie("userFeria", req.body.email, { expires: new Date(Date.now() + 31536000000)});
-                    };
+                    if (typeof req.body.rememberMe != 'undefined') {
+                        res.cookie('recordar' , cryptr.encrypt("true"), { maxAge: 31536000000, httpOnly: true })
+                        res.cookie('email' , cryptr.encrypt(req.body.email), { maxAge: 31536000000, httpOnly: true })
+                      }
 
                     res.redirect("/");
                
@@ -88,8 +90,6 @@ const usersController = {
 
     viewEdit: function(req, res, next){
 
-        //console.log("llego");
-       //console.log(req.session.email);
         db.User.findOne({where : {email_usuario: req.session.email}}).then(function(result){
             //console.log(result);
             if(result == null){
@@ -108,9 +108,7 @@ const usersController = {
             console.log(req.body);
             res.render("user/userViewEdit", {errors : errors.errors, data : req.body})
         }else{
-            
-            //let avatar = null;
-            
+                        
             if(typeof req.files[0] !== "undefined"){
                 db.User.update({
                 avatar: req.files[0].filename
@@ -125,7 +123,6 @@ const usersController = {
                 apellido_usuario: req.body.apellido,
                 email_usuario: req.body.email,
                 telefono_usuario: req.body.telefono,
-                //contrasena: bcrypt.hashSync(req.body.pass,10),
                 dni: req.body.dni,
                 calle: req.body.calle,
                 altura: req.body.altura,
@@ -135,7 +132,6 @@ const usersController = {
                 localidad: req.body.localidad,
                 provincia: req.body.provincia,
                 pais: req.body.pais,
-                //avatar: avatar,
                 tipo_usuario: "cliente",    
             }, {where : {email_usuario : req.session.email}}).then(function(){
 
@@ -143,6 +139,12 @@ const usersController = {
             
             })
         }
+    },
+    logout : (req, res) => {
+        req.session.destroy();
+        res.clearCookie('recordar')
+        res.clearCookie('email')
+        res.redirect("/")
     }
 
 };

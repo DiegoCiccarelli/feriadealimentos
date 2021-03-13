@@ -38,7 +38,6 @@ const cartController = {
         .then( response => {
             /* Si hay un carrito activo entonces le asignamos el producto que eligio el usuario */
             if(response){
-                console.log("TIENE UN CARRITO ACTIVO")
                 /* Comprobamos si el usuario ya tiene ese producto en su carrito*/
                     /* Si lo tiene entonces los productos seleccionados a la columna cantidad para evitar tener productos repetidos */
                     const productMatch = response.products.find(element => element.CartProduct.producto_id == req.body.product_id)

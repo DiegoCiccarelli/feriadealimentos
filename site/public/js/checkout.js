@@ -11,6 +11,31 @@ let inputObservaciones = document.querySelector("#observaciones")
 let inputsNodo = contenedorNodos.querySelectorAll("input")
 let errorEnvio = document.querySelector("#errorEnvio")
 let errorEnvioNodo = document.querySelector("#errorEnvioNodo")
+let barrioSelect = document.querySelector("#barrio")
+let barrioOption = barrioSelect.querySelector("option")
+
+
+fetch("https://gobiernoabierto.cordoba.gob.ar/api/v2/barrios/barrios?es_oficial=true")
+    .then(res => res.json())
+    .then(res => {
+        console.log(res.results.features[0].properties)
+        for(let barrio of res.results.features){
+            if(barrioOption){
+              if(barrioOption.value != barrio.properties.nombre){
+              let option =  document.createElement("option")
+              option.value = barrio.properties.nombre
+              option.innerHTML = barrio.properties.nombre
+              barrioSelect.appendChild(option)
+              }
+            } else{
+              let option =  document.createElement("option")
+              option.value = barrio.properties.nombre
+              option.innerHTML = barrio.properties.nombre
+              barrioSelect.appendChild(option)
+            }
+        }
+    })
+
 console.log(inputsNodo)
     for(let eleccion of inputsEntrega){
         eleccion.addEventListener("click", () => {
@@ -27,12 +52,16 @@ console.log(inputsNodo)
     btnEditar.addEventListener("click", () => {
         if(btnEditar.innerHTML == "EDITAR"){
             for(let input of inputsDomicilio){
+                if(input.id != "localidad"){
                 input.removeAttribute("disabled")
+                }
+                barrioSelect.removeAttribute("disabled")
             }
             btnEditar.innerHTML = "GUARDAR"
         } else {
             for(let input of inputsDomicilio){
                 input.setAttribute("disabled", "true")
+                barrioSelect.setAttribute("disabled", "true")
             }
             btnEditar.innerHTML = "EDITAR"
         }
