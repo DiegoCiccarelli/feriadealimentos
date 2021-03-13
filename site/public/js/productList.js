@@ -19,7 +19,8 @@ window.addEventListener('load', function(){
         categoriesArray.forEach(element => {
     
             if(element.estado_categoria=="1"){
-                divListadoCategoria.innerHTML+= '<a id="' + element.nombre_categoria + '" class="itemCategoria">' + element.nombre_categoria + '</a><br>';
+
+                divListadoCategoria.innerHTML+= '<li><a id="' + element.nombre_categoria + '" class="itemCategoria">' + element.nombre_categoria + '</a></li>';
             };
         });        
         

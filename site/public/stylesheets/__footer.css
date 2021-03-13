@@ -1,3 +1,9 @@
+/* footer {
+ 
+  position: absolute;
+  bottom: 0;
+ width: 100%;
+} */
 
 #listaIconosSociales{
   display: flex;
@@ -30,32 +36,38 @@ footer h3 {
 }
   
 #iconoFacebook, #iconoInstagram, #iconoTwitter {
-  padding: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 12px;
 }
 
-#copyright{
+#copyright p{
   text-align: center;
   font-size: 12px;
   color: white;
-  background-color:  #365902;
-  padding: 5px 0;
+  background-color: #4a602c;
+  padding: 5px 0px 5px 0px;
+  margin: 0px;
 }
 
 .listaFooter li:nth-child(1) {
 
   font-size: 18px;
-  list-style: none;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 5px;
 
 }
-  
+
+.listaFooter li{
+  list-style: none;
+}
+
 
 #contenedorListasFooter{
     
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #BF9D73;
+  background-color:#737831 ;
   color: white;
   margin-bottom: 0px;
     
@@ -63,6 +75,7 @@ footer h3 {
   
     
 #listaMediosPago{
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,6 +92,22 @@ footer h3 {
   color: white;
   font-size: 18px;
 }
+
+.btn-whatsapp {
+  display:block;
+  width:70px;
+  height:70px;
+  color: #fff;
+  position: fixed;
+  right:30px;
+  bottom:30px;
+  border-radius:50%;
+  line-height:80px;
+  text-align:center;
+  z-index:999;
+}
+
+
 
 @media (min-width: 480px){
 
@@ -111,8 +140,26 @@ footer h3 {
 
 }
 
-@media(max-width: 767px){
+@media(max-width: 768px){
   #listaMediosPago .iconoMedioPago img{
     content: url("/images/logo-mercadopago.jpg");
   }
+}
+
+@media(max-width: 768px){
+#contenedorListasFooter{
+  align-items: center;
+
+}
+#contenedorListasFooter ul li{
+  text-align: center;
+  
+}
+footer ul{
+  margin: 10px 0px 7px 0px;
+}
+#iconoFacebook, #iconoInstagram, #iconoTwitter{
+  margin-top: 5px;;
+}
+
 }

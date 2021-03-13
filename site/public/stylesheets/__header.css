@@ -3,12 +3,22 @@ header{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #558C03;
+    background-color: #4a602c;
+}
+
+header a{
+    color: #ffffff;
+    
+}
+
+header a:hover{
+    color: #f7f7f7;
+     
 }
 
 #contenedorHeader{
     
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     width: 90%;
     margin-top: 30px;
     display: flex;
@@ -20,9 +30,13 @@ header{
 }
 
 #contenedorHeader img{
-    width: 200px;
+    width: 220px;
     height: auto;
-    
+   
+}
+#contenedorHeader img:hover{
+transform: scale(1) rotate(1deg);
+filter: brightness(110%) grayscale(0);
 }
 
 #contenedorIconosHeader{
@@ -30,6 +44,7 @@ header{
     display: flex;
     justify-content: space-evenly;
     color: white;
+    margin-top: 15px;
 
 }
 
@@ -43,7 +58,7 @@ header{
 
 #contenedorIconosHeader i{
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     
 }
 
@@ -57,10 +72,15 @@ header{
 
     width: 100%;
     font-size: 1.2rem;
-    height: 30px;
-    border-radius: 5px;
+    height: 35px;
+    border-radius: 20px;
     border: 0px;
-    
+    margin-left: 12px;
+   
+}
+
+#inputBusqueda::placeholder{
+    padding-left: 20px;
 }
 
 #iconoBusqueda{
@@ -76,23 +96,25 @@ header{
     background-color: white;
     text-decoration: none;    
     width: 100%;
+    z-index: 100;
 
 }
 
-#resultadoBusqueda a, a:link,a:visited,a:hover,a:active{
+#resultadoBusqueda a{
     text-decoration: none;
     color: black;
 }
 
+/****************************************Menu */
+
 nav{
     display: flex;
+    position: relative;
     justify-content: center;
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
-    border-top-style:solid; 
-    border-top-width: 1px;
-    border-top-color: white;
+   background-color: #737831;
+   height: 35px;
 
 }
 nav ul{
@@ -107,22 +129,103 @@ nav ul{
 
 nav ul li{
     text-align: center;
-    border-radius: 3px;
-    background-color: #BF9D73;
+  
     margin: 0 10px;
     width: 150px;
-    padding: 7px;
-    margin-top: 1vh;
+    
+    margin-top: 5px;
+    color: #4a602c;
 }
 
-nav ul li:hover{
-background-color: #a88b67;
-box-shadow: 0px 0px 5px 0px white;
+nav ul li a:hover{
+
+color: #c1b017 !important;
+text-decoration: none;
+} 
+
+#hamburguerIcon{
+   display: none;
 }
 
+#menuMobile{
+    visibility: hidden;
+}
 
-@media(max-width: 992px) {
+#hamburguerIcon{
    
+    position: absolute;
+    right: 10px;
+    font-size: 30px;
+    color: #ffffff;
+    
+
+}
+#menuMobile{
+  
+   flex-direction: column;
+   position: absolute;
+   top: 35px;
+   background-color: #4a602c;
+    z-index: 2;
+    width: 90%;
+    align-items: center;
+    overflow: hidden;
+    transition:height .26s ;
+   
+    
+    
+}
+
+#menuMobile li{
+    border-bottom: 1px solid gray;
+    width: 90%;
+    padding: 5px 0px;
+   
+}
+
+#menuMobile li:hover{
+    background-color: #737831;
+}
+
+#menuMobile a:hover{
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+@media(max-width: 768px){
+    #hamburguerIcon{
+        display: block;
+       
+    }
+
+    #menuPC{
+        display: none;
+        ;
+    }
+
+    #menuMobile{
+       visibility: hidden;
+       height: 35px;
+        
+    }
+    
+
+}
+
+
+  /* fin menu ********************************************/
+
+#iconoLogin{
+    text-align: center;
+    
+    
+}
+#iconoLogin:hover, #iconoCarrito:hover{
+    transform: scale(1) rotate(1deg);
+    filter: brightness(110%) grayscale(0);
+}
+@media(max-width: 992px) {
+/*    
     nav{
         
         border: none;
@@ -133,7 +236,7 @@ box-shadow: 0px 0px 5px 0px white;
         
         flex-direction: column;
         align-self: flex-start;
-    }
+    } */
 
     #contenedorIconosHeader i{
 
@@ -156,6 +259,12 @@ box-shadow: 0px 0px 5px 0px white;
         
         
     }
+
+    
+    #iconoLogin{
+        
+    }
+
     
     #contenedorHeader {
         flex-wrap: wrap;
@@ -175,43 +284,43 @@ box-shadow: 0px 0px 5px 0px white;
 
 }
 @media(max-width: 768px){
- 
-    nav{
-        
-        border: none;
 
+    #contenedorHeader{
+        margin-top: 20px;
     }
 
-    nav ul{
-        
-        flex-direction: column;
-        align-self: flex-start;
+    #contenedorHeader input {
+        width: 100%;
+        font-size: 1rem;
+        height: 30px;
+        border-radius: 20px;
+        border: 0px;
+        margin-bottom: 7px;
+       
     }
+
 
     #contenedorIconosHeader i{
 
-        font-size: 2rem;
+        font-size: 20px;
+
         
     }
 
     #contenedorHeader img{
-        width: 150px;
+        width: 130px;
         height: auto;
-        margin-left: 20%;
+        margin-left: 0px;
         margin-right: 20%;
+        margin-top: -10px;
         order: 1;
        
     }
 
-    #iconoAyuda {
+       
+    #iconoLogin, #iconoCarrito {
         
-        display: none;
-
-    }
-    
-    #iconoLogin {
-        
-        display: none;
+    margin-right: 5px;;
 
     }
 
@@ -223,6 +332,7 @@ box-shadow: 0px 0px 5px 0px white;
     }
     
     #contenedorHeader {
+        justify-content: space-between;
         flex-wrap: wrap;
     }
 
