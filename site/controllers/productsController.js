@@ -14,6 +14,17 @@ const productsController = {
         res.render('product/productList', {productsData});
         })
     },
+    productListCategory : (req, res) => {
+        db.Product.findAll(
+            {
+                where : {estado_producto : 1},
+                include : [{association : "categories", where : {id : req.params.id}}]
+            },
+        )
+        .then((productsData) => {
+            res.render('product/productList', {productsData});
+        })
+    },
 
     productDetail : function(req, res, next) {
         db.Product.findByPk(req.params.id, {where:{estado_producto : 1}})

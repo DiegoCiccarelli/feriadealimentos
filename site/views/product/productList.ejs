@@ -28,7 +28,7 @@
                     <% for(let productData of productsData){%>
                         
                     <div class="productoListado">
-                        <img src="../images/productsImages/<%= productData.imagen %>" alt="imagen">
+                        <img src="/images/productsImages/<%= productData.imagen %>" alt="imagen">
                         <p class="productoNombre"><%= productData.nombre_producto %></p>
                         <p class="productoPrecio"> $<%= productData.precio %></p>
                         <button class="claseButton"><a href="/productos/detalleProducto/<%= productData.id%>">Ver detalle</a></button>
