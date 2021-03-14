@@ -143,9 +143,7 @@ text-align: center;
      */
 }
 
-.productoListado:hover{
-    /* transform: scale(1.05); */
-  }
+
 .productoNombre{
   margin: 0;
   padding: 0;

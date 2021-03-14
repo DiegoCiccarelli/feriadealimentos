@@ -5,9 +5,39 @@
     padding-bottom: 50px;
     
 }
-#contenedorFlex{
+
+#imagenBandaDetalleProd img{
+
+    width: 100%;
+    height: auto;
+    
+
+}
+
+#imagenBandaDetalleProd h1{
+    
+   
+    font-size: 35px;
+    text-align: center;
+
+}
+.fb-share-button{
+    padding: 10px;
+}
+
+#twitter-widget-0{
+  margin-top: 15px;
+}
+.tituloPequeno{
+    
+    text-align: center;
+}
+
+#mainDetalleProducto #contenedorFlex{
     display: flex;
     flex-direction: column;
+    height: 550px;
+    
 }
 
 .rutaProducto{
@@ -20,7 +50,8 @@ h1.tituloProducto{
     
     text-align: center;
     margin-bottom: 10px;
-    
+    font-size: 35px;
+    font-weight: 700;
 }
 
 #contenedorTituloDescripcion{
@@ -107,9 +138,9 @@ width: 100px;
 
 #precio, #precioTotal{
     text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 0px;
+    font-size: 25px;
+    font-weight:700;
+    margin-top: 20px;
 }
 
 #sumaRestaCarrito{
@@ -120,9 +151,15 @@ width: 100px;
 
 #botonSumar, #botonRestar{
     
-    width: 25px;
+    min-width: 25px;
+    border-radius: 5px;
     margin-left: 2px;
     margin-right: 2px;
+}
+
+#inputCantidad{
+    border-radius:5px;
+    margin-bottom: 0px;
 }
 
 .cantidadAgregaCarrito{
@@ -157,6 +194,7 @@ width: 425px;
 }
 
 p#condiciones{
+    margin: 20px;
     font-size: 14px;
     text-align: center;
 }
@@ -198,7 +236,7 @@ p#condiciones{
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        height:50vh;
+       
 
     }
 
@@ -221,9 +259,11 @@ p#condiciones{
         padding-right: 10%;
     }
 
+   
 }
 
-@media (min-width: 992px){
+
+/* @media (min-width: 992px){
 
     #contenedorFlex{
        
@@ -231,6 +271,38 @@ p#condiciones{
         max-width: 1200px;
         margin: auto;
 
+    }
+
+} */
+
+@media (max-width: 768px){
+
+    #imagenBandaDetalleProd h1{
+    
+        margin-bottom: 0px;
+        font-size: 25px;
+    }
+    
+    #sumaRestaCarrito{
+        width: 95%;
+    }
+
+    #sumaRestaCarrito #textoCantidadCarrito{
+        display: none;
+    }
+
+    #mainDetalleProducto #contenedorFlex{
+        display: flex;
+        flex-direction: column;
+        height: 730px;
+        
+    }
+    #precioTotal{
+        font-size: 22px;
+    }
+
+    #contenedorBotonContinuarComprando button{
+        width:300px !important;
     }
 
 }

@@ -80,4 +80,11 @@ window.addEventListener('load', function(){
         };
     })
 
+    let btnContinuarComprando = document.querySelector('#btnContinuarComprando');
+    btnContinuarComprando.addEventListener("click",function(){
+
+        window.location.href = "http://localhost:3500/productos/listadoproductos";
+
+    })
+
 })
