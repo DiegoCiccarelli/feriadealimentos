@@ -7,7 +7,15 @@ const { validationResult } = require("express-validator");
 
 
 const producersController = {
+
+    producerView : (req, res) => {
+        db.Producer.findAll({where : {estado_productor : 1}})
+        .then((producersData) => {
+            res.render("producer/producerView", {producersData})
+        })
+    },
     viewRegister : function(req, res, next){
+
         res.render('producer/register');
     },
 

@@ -17,8 +17,13 @@ var storage = multer.diskStorage({
     });
 var upload = multer({storage:storage});
 
+
+/* GET LISTADO PRODUCTOS CATEGORIA*/
+router.get('/listadoProductos/:id', productsController.productListCategory);
+
 /* GET listado productos. */
 router.get('/listadoProductos', productsController.productList);
+
 
 /* GET detalle de un producto */
 router.get('/detalleProducto/:id', productsController.productDetail);

@@ -60,7 +60,7 @@ window.addEventListener('load', function(){
                 //console.log(element.nombre_producto);
                
                 divProductoListado.innerHTML+='<div class="productoListado">\
-                <img src="../images/productsImages/' + element.imagen + '" alt="imagen">\
+                <img src="/images/productsImages/' + element.imagen + '" alt="imagen">\
                 <p class="productoNombre">' + element.nombre_producto + '</p>\
                 <p class="productoPrecio">$' + element.precio + '</p>\
                 <button class="claseButton"><a href="/productos/detalleProducto/' + element.id + '">Ver detalle</a></button>\

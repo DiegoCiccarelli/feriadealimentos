@@ -20,6 +20,7 @@ var upload = multer({storage:storage});
 
 //Listar productores
 router.get('/listado', usersMiddleware.isLogged, usersMiddleware.isAdmin, producersController.list)
+router.get('/',  producersController.producerView)
 
 
 //Mostrar para crear

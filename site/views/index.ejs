@@ -43,7 +43,7 @@
 		<section class="contenedorGrid">
 			<div class="gridCategorias">
 			<%	for(let categoria of categories){ %>
-				<button class="claseButton"><%=categoria.nombre_categoria%></button>
+				<a href="/productos/listadoproductos/<%=categoria.id%>"><button class="claseButton"><%=categoria.nombre_categoria%></button></a>
 			<%	} %>
 			</div>
 		</section>

@@ -1,0 +1,22 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+<main class="contenedorListadoProductores">
+    <div class="contenedorImagen">
+        <img src="/images/banda-tienda.png" alt="">
+        <h1>Productores</h1>
+    </div>
+    <div class="contenedorProductores">
+        <%for(let producerData of producersData){%>
+        <div class="contenedorProductor">
+            <img src="/images/producersLogos/<%=producerData.logotipo%>" alt="productorAvatar">
+            <h1><%= producerData.nombre_emprendimiento%></h1>
+            <p><%= producerData.descripcion_productor%></p>
+            <span><%= producerData.email_productor%></span>
+            <span id="telefono"><%=producerData.telefono_productor%></span>
+        </div>
+        <%}%>
+    </div>
+
+</main>
+<%- include('../partials/footer.ejs'); %>
