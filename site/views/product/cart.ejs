@@ -4,7 +4,12 @@
 <%- include('../partials/header.ejs'); %>
     
 <main class="contenedor">
-<h1>TU CARRITO</h1>
+<div id="headCarrito">
+    <img src="/images/banda-prod.png">
+    <h1>Carrito de Compras</h1>
+    <img src="/images/banda-prod.png">
+</div>    
+
 <section class="contenedorCarrito">
 <% if(typeof cartData !== "undefined"){ %>
 <% for(let i = 0; i < cartData.products.length; i++){ %>
@@ -15,19 +20,28 @@
         </div>
         <div class="informacionProducto">
             <p><%= cartData.products[i].nombre_producto%></p>
-            <p>CANTIDAD:</p>
-            <div>
+            <p id="textCantidad">Cantidad:</p>
+            <div id="sumaRestaCarritoCompra">
                 <button class="claseButton botonResta">-</button>
                         
                 <input id="inputCantidad" class="inputCantidad" type="number" value="<%=cartData.products[i].CartProduct.cantidad %>" class="cantidadAgregaCarrito" name="product_quantity">
                 
                 <button class="claseButton botonSuma">+</button>
             </div>
-            <p>Precio $</p>
-            <p class="pPrecio"><%= cartData.products[i].precio%></p>
-            <p>Subtotal</p>
-            <p class="pSubtotal"><%=cartData.products[i].CartProduct.cantidad * cartData.products[i].precio%></p>
+            
+            <div id="precioProductoCarrito">
+                <p>Precio $</p>
+                <p class="pPrecio"><%= cartData.products[i].precio%></p>
+            </div>
+
+            <div id="precioSubtotalCarrito">
+                <p>Subtotal $</p>
+                <p class="pSubtotal"><%=cartData.products[i].CartProduct.cantidad * cartData.products[i].precio%></p>
+            </div>
+
             <buttom class="botonQuitarProducto">x</buttom> 
+            <buttom class="claseButton botonQuitarProducto1">Quitar Producto</buttom> 
+
         </div>  
        
     </article>
@@ -36,8 +50,8 @@
     <div id="totalCarrito"></div>
 
     <div class="carritoBotones">
-        <button class="claseButton" id="botonContinuarCompra">CONTINUAR COMPRANDO</button>
-        <button class="claseButton" id="botonFinalizarCompra">FINALIZAR COMPRA</button>
+        <button class="claseButton" id="botonContinuarCompra">Continuar Comprando</button>
+        <button class="claseButton" id="botonFinalizarCompra">Finalizar Compra</button>
     </div>
     <% } else {%>
         <p>Todavia no agregaste ningun producto, ¡visitá nuestra <a href="/productos/listadoProductos"><strong>tienda</strong></a>!</p>
