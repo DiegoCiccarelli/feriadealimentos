@@ -3,8 +3,10 @@ window.addEventListener('load', function(){
     let divListadoCategoria = document.querySelector('#listadoCategorias');
     let categoriesArray;
     let aItemCategoria;
+    let itemSelectCategory;
     let productArray;
     let divProductoListado = document.querySelector('.listadoProductos');
+    let selectCategory = document.querySelector('#selectCategory');
 
     //traigo categorias
     fetch("http://localhost:3500/api/categories")
@@ -21,11 +23,13 @@ window.addEventListener('load', function(){
             if(element.estado_categoria=="1"){
 
                 divListadoCategoria.innerHTML+= '<li><a id="' + element.nombre_categoria + '" class="itemCategoria">' + element.nombre_categoria + '</a></li>';
+                selectCategory.innerHTML+='<option value="' + element.nombre_categoria + '" class="itemSelectCategory">' + element.nombre_categoria + '</option>'
+               
             };
         });        
         
         aItemCategoria = document.querySelectorAll(".itemCategoria");
-        
+               
         aItemCategoria.forEach(element => {
 
             element.addEventListener('click', function(){
@@ -33,7 +37,12 @@ window.addEventListener('load', function(){
             })
             
         });
+
         
+        selectCategory.addEventListener('change', function(){
+            filtrarPorCategoria(selectCategory.value, productArray);
+        })
+
     }).catch(function(error){
         console.log(error);
     })

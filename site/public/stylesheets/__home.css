@@ -42,7 +42,9 @@
 
 
 
-
+.gridCategorias .claseButton{
+  margin-bottom: 5px;
+}
   /** COMBOS**/
 #frase{
   font-family: Redressed;

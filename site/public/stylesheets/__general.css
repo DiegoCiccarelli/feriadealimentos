@@ -42,19 +42,29 @@ button{
   }
 
   .errorMessageForm{
-    color: red;
+   
+    color:#E15C5C;
     font-weight: bold; 
-    margin: 1vh; 
+   
     font-size: 0.9rem;
     margin: 0px;
+    /*position: absolute;*/
   }
 
+  .errorMessageForm p{
+    margin: 0px;
+  }
 
 a {
   cursor: pointer;
 }
 
-  
+select{
+  border: 1px solid #c1b017
+}
+
+
+
  .thumbnailImage{
    width: 200px;
    height: auto;

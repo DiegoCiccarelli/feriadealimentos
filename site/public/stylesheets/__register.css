@@ -7,9 +7,11 @@
     flex-direction: column;
     padding-bottom: 1vh;
     align-items: center;
-    border-radius: 5px;
-    background-color: white;
     border-radius: 10px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 .contenedorForm form{
@@ -21,13 +23,20 @@
 
 }
 
+.contenedorForm #divRecordarme{
+
+    margin-bottom: 10px;
+
+}
+
  .contenedorForm h1{
     font-size: 1.8rem;
-    background-color: green;
+    background-color:#4a602c ;
     width: 100%;
     text-align: center;
     color: white;
     font-weight: bold;
+    padding: 5px 0px 5px 0px;
 
 } 
  .contenedorForm h2{
@@ -40,12 +49,13 @@
 .contenedorForm input:not([type="checkbox"]){
     text-align: center;
     margin: 10px 10px;
-    background: #f1f1f1;
+    background: white;
     font-size: 1rem;
-    border: none;
-    border-bottom: 1px black solid;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
     width: 97%;
     min-width: 300px;
+    padding: 10px;
 }
 .contenedorForm div input:not([type="checkbox"]){
     text-align: center;
@@ -92,17 +102,12 @@ justify-items: self-end;
 
 .contenedorForm a{
     font-size: 0.8rem;
-    margin-top: 10px;
-    color: black;
+    margin-top: 5px;
+    color: #4a602c;
 
 }
 
- .contenedorForm button {
-    font-size: 0.8;
-    padding: 0 5px;
- }
-
-
+ 
 @media (max-width: 480px){
 
     .contenedorForm h1{
@@ -114,4 +119,11 @@ justify-items: self-end;
     }
 
 
+}
+
+@media(max-width: 768px){
+    .contenedorForm{
+    margin-left: 10px;
+    margin-right: 10px;
+    }
 }
