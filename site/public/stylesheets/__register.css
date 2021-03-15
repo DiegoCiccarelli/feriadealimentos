@@ -60,10 +60,10 @@
 .contenedorForm div input:not([type="checkbox"]){
     text-align: center;
     margin: 10px 10px;
-    background: #f1f1f1;
+    background: white;
     font-size: 1rem;
-    border: none;
-    border-bottom: 1px black solid;
+    border-radius: 10px;
+    border: 1px solid #c3c3c3;
     width: 45%;
     min-width: 300px;
 }
@@ -73,6 +73,16 @@
     margin: 7px;
 }
 
+.contenedorForm textarea{
+    background: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #c3c3c3;
+    margin: 1vh 0;
+}
+.contenedorForm textarea::placeholder{
+    text-align: center;
+}
 
 
 .categoriasProducto{

@@ -28,4 +28,5 @@ router.post('/perfil', upload.any(), usersMiddleware.editValidation, usersContro
 
 router.post("/logout", usersController.logout)
 
+
 module.exports = router;

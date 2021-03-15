@@ -4,10 +4,15 @@
         <div id="contenedorListasFooter">
             <ul class="listaFooter"> 
                 <li>La Feria</li>
-                <li>Mi cuenta</li>
-                <li>Carrito</li>
-                <li>Productos</li>
-                <li>Productores</li>
+                <a href="/usuarios/perfil"><li>Mi cuenta</li></a>
+                <a href="/productos/carrito"><li>Carrito</li></a>
+                <a href="/productos/listadoproductos"><li>Productos</li></a>
+                <a href="/productores"><li>Productores</li></a>
+                <% if(typeof username != "undefined"){ %>
+                <form action="/usuarios/logout" method="POST">
+                <button  class="claseButton" id="cerrarsesionPC">Cerrar sesion</button>
+                </form>
+                <%}%>
             </ul>
 
             <ul class="listaFooter"> 
@@ -24,7 +29,11 @@
                 <li>Segunda Direccion 5544</li>
                 <li>Tercera Direccion 5548</li>
                 <li>Córdoba Argentina</li>
-                
+                <% if(typeof username != "undefined"){ %>
+                <form action="/usuarios/logout" method="POST">
+                    <button  class="claseButton" id="cerrarsesionMobile">Cerrar sesion</button>
+                </form>
+                <%}%>
             </ul>
 
              <!-- iconos sociales -->

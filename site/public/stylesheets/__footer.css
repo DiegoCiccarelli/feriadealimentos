@@ -12,7 +12,7 @@
   margin-bottom: 0px ;
 
 }
-  
+
 footer   ul{
   padding: 0px;
   margin: 16px 0px;
@@ -58,8 +58,21 @@ footer h3 {
 
 }
 
-.listaFooter li{
+.listaFooter li {
   list-style: none;
+}
+
+.listaFooter a li{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-weight:normal!important;
+  font-size: 16px!important;
+  margin: 0!important;
+}
+
+.listaFooter form {
+  width: fit-content;
 }
 
 
@@ -107,7 +120,26 @@ footer h3 {
   z-index:999;
 }
 
-
+#cerrarsesionPC{
+  position: relative;
+  text-decoration: none;
+  padding: 0;
+  min-width: 0;
+  width:120px;
+  color: white;
+  margin-top: 2vh;
+  right: 0.5vw;
+}
+#cerrarsesionMobile{
+  display: none;
+  text-decoration: none;
+  padding: 0;
+  min-width: 0;
+  width:120px;
+  color: white;
+  margin-top: 3vh;
+  margin-left: 25px;
+}
 
 @media (min-width: 480px){
 
@@ -133,6 +165,8 @@ footer h3 {
   #listaMediosPago .iconoMedioPago img{
     content: url("/images/banner-mercadopago.jpg");
   }
+
+
 } 
 
 
@@ -141,6 +175,13 @@ footer h3 {
 }
 
 @media(max-width: 768px){
+  #cerrarsesionMobile{
+    display: block;
+  }
+
+  #cerrarsesionPC{
+    display: none;
+  }
   #listaMediosPago .iconoMedioPago img{
     content: url("/images/logo-mercadopago.jpg");
   }

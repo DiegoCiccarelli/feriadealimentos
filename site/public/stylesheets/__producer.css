@@ -20,10 +20,12 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 2px 2px 5px grey;
+    min-height: 400px;
 }
 
 .contenedorProductor h1{
     font-size: 1.4rem;
+    font-weight: bold;
 }
 
 .contenedorProductor img{
@@ -38,9 +40,12 @@
 .contenedorProductor p {
     word-break: break-all;
     text-align: center;
+    padding: 10px;
+    margin: 0; 
+    height: 20%;
 }
 #telefono{
-    margin-bottom: 1vh;
+    margin: 1vh 0;
 }
 
 @media only screen and (max-width: 1340px){
