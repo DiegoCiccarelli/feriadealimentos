@@ -60,7 +60,8 @@ const apiController = {
     },
 
     categories : (req, res) => {
-        db.Category.findAll({where : {estado_categoria : 1}}).then((data)=> {
+        db.Category.findAll({where : {estado_categoria : 1},
+                            order: ["nombre_categoria"]}).then((data)=> {
             res.json(data);
         })
     }
