@@ -168,7 +168,7 @@ window.addEventListener('load', function(){
             .then(function(info){
                if(info){
                 divContenedorCarrito.removeChild(divsProductoCarrito[index]);
-                alert("producto eliminado del carrito");
+                modal.style.display = "block";
                 actualizarCarrito();
                }else{
                    alert("no se pudo eliminar el producto del carrito, intente nuevamente");
@@ -181,7 +181,27 @@ window.addEventListener('load', function(){
             })
             })
         })
+
+        
     }
+let modal = document.getElementById("Modal");
+let span = document.getElementsByClassName("close")[0];
+
+
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+    
 
     actualizarCarrito();
     
