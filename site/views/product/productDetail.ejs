@@ -4,6 +4,16 @@
 
 
     <main id="mainDetalleProducto">
+        <!-- The Modal -->
+<div id="Modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>El producto fue agregado a su carrito</p>
+    </div>
+  
+  </div>
         <div id="imagenBandaDetalleProd">
             <img src="/images/banda-prod.png">
             <h1 class="tituloProducto"><%=productData.nombre_producto%></h1>
@@ -71,6 +81,9 @@
                             <input id="product_id" type="hidden" name="product_id" value="<%=productData.id%>">
 
                             <button id="btnAgregarCarrito" class="claseButton">Agregar al Carrito</button>
+                         
+
+
                         
                         
                     </div>

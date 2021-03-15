@@ -113,7 +113,9 @@ console.log(inputsNodo)
                     return response.json();
                 })
                 .then(function(info){
-                    window.location.replace("http://localhost:3500/")
+                    modal.style.display = "block";
+                    
+                    //window.location.replace("http://localhost:3500/")
                 })
                 .catch(function(e){
                     return console.log("el error es" + e);
@@ -121,4 +123,24 @@ console.log(inputsNodo)
         }
         
     })
+
+      
+let modal = document.getElementById("Modal");
+let span = document.getElementsByClassName("close")[0];
+
+
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+  window.location.replace("http://localhost:3500/")
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    window.location.replace("http://localhost:3500/")
+  }
+}
 })

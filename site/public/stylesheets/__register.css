@@ -121,6 +121,16 @@ justify-items: self-end;
 
 }
 
+#barrio{
+    height: 40px;
+    margin-top: 11px;
+}
+
+#pBarrio{
+    margin-top: 20px;
+}
+
+
 
 
 @media(max-width: 738px){

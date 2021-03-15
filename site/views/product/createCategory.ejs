@@ -9,8 +9,8 @@
 
             <form action="/productos/crearCategoria" method="POST">
                 <input type="text" name="categoria" placeholder="Nombre">
-                <button class="claseButton"type="submit">CREAR</button>
-                <button class="claseButton"><a href="/productos/listadoCategorias">Cancelar</a></button>
+                <button class="claseButton"type="submit">Crear</button>
+                <button class="claseButton botonConLink"><a href="/productos/listadoCategorias">Cancelar</a></button>
             </form>
 
         
@@ -19,8 +19,8 @@
         <h1>Editar categoria</h1>
         <form action="/productos/editarCategoria/<%= categoria.id %>" method="POST" class="contenedorForm">
             <input type="text" name="categoria" placeholder="Nombre" value="<%= categoria.nombre_categoria%>">
-            <button class="claseButton" type="submit">EDITAR</button>
-            <button class="claseButton"><a href="/productos/listadoCategorias">Cancelar</a></button>
+            <button class="claseButton" type="submit">Editar</button>
+            <button class="claseButton botonConLink"><a href="/productos/listadoCategorias">Cancelar</a></button>
         </form>
 
     <%}%>

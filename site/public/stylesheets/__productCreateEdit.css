@@ -1,4 +1,5 @@
 
+
 #contenedorProductCreateEdit{
  
     margin: auto;
@@ -27,6 +28,12 @@
     
 }
 
+#descripcionCortaProductEdit, #descripcionLargaProductEdit{
+    max-width: 500px;
+    width: 90%;
+    resize: none;
+    height: 150px;
+}
 
 
 
@@ -109,11 +116,13 @@ align-self: flex-start;
 #imagenesCargadas img{
     
     
-    width: 25%;
+   max-width: 250px;
     min-width: 100px;
     
 }
-
+.categoriasProducto{
+    margin-bottom: 20px;
+}
 @media (max-width: 480px){
 
     #contenedorProductCreateEdit h1{

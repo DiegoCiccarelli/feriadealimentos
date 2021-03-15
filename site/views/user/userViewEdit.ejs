@@ -19,7 +19,7 @@
         
         <form method="POST" enctype="multipart/form-data" action="/usuarios/perfil">
             
-           
+           <div>
             <input type="text" name="apellido" id="apellido" placeholder="Apellido" <%_ if(typeof data != "undefined"){ _%>value="<%=data.apellido%>"<%_ }else{_%>disabled value="<%=user.apellido_usuario%>"<%_}_%>
             >
         
@@ -27,40 +27,45 @@
            
             <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre"<%_ if(typeof data != "undefined"){ _%>value="<%=data.nombreusuario%>"<%_ }else{_%>disabled value="<%=user.nombre_usuario%>"<%_}_%>
             >
-
-           
+        </div>
+          
             <input disabled type="email" name="emailRegister" id="emailRegister" placeholder="Email"<%_ if(typeof data != "undefined"){ _%>value="<%=data.email%>"<%_ }else{_%> value="<%=user.email_usuario%>"<%_}_%>
             >
            
-
+<div>
             <input type="tel" name="telefono" placeholder="Telefono"<%_ if(typeof data != "undefined"){ _%>value="<%=data.telefono%>"<%_ }else{_%>disabled value="<%=user.telefono_usuario%>"<%_}_%>
             >
-
+        
 
             <input type="number" name="dni" placeholder="dni"<%_ if(typeof data != "undefined"){ _%>value="<%=data.dni%>"<%_ }else{_%> disabled value="<%=user.dni%>"<%_}_%>>
 
-            
+        </div>      
+        <div> 
             <input type="text" name="calle" placeholder="Calle"<%_ if(typeof data != "undefined"){ _%>value="<%=data.calle%>"<%_ }else{_%>disabled value="<%=user.calle%>"<%_}_%>>
 
 
             <input type="text" name="altura" placeholder="Altura"<%_ if(typeof data != "undefined"){ _%>value="<%=data.altura%>"<%_ }else{_%>disabled value="<%=user.altura%>"<%_}_%>>
 
-
+        </div>
+        
+        <div>
             <input type="text" name="piso" placeholder="Piso"<%_ if(typeof data != "undefined"){ _%>value="<%=data.piso%>"<%_ }else{_%>disabled value="<%=user.piso%>"<%_}_%>>
             
-
+        
             <input type="text" name="departamento" placeholder="Departamento"<%_ if(typeof data != "undefined"){ _%>value="<%=data.departamento%>"<%_ }else{_%>disabled value="<%=user.departamento%>"<%_}_%>>
-
-            <p>BARRIO:</p><select name="barrio" id="barrio" disabled><% if(typeof data != "undefined"){%>
+        </div>
+        <div>
+        <p id="pBarrio">Barrio:</p><select name="barrio" id="barrio" disabled><% if(typeof data != "undefined"){%>
                 <option value="<%= data.barrio %>" selected><%= data.barrio %></option>
             <%}else if(user.barrio != ""){%>
                 <option value="<%= user.barrio %>" selected><%= user.barrio %></option>
             <%}%></select>
 
-
+        
 
             <input type="text" name="localidad" placeholder="Localidad" value="Ciudad de Cordoba" id="localidad" disabled>
 
+</div>
 
             <p>Avatar</p>
 

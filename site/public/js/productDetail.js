@@ -56,7 +56,8 @@ window.addEventListener('load', function(){
                 if(info.status == 401){
                     window.location = "http://localhost:3500/usuarios/login/"
                 }else{
-                    console.log(info)
+                    modal.style.display = "block";
+
                 }
             })
             .catch(function(e){
@@ -86,5 +87,23 @@ window.addEventListener('load', function(){
         window.location.href = "http://localhost:3500/productos/listadoproductos";
 
     })
+
+   
+let modal = document.getElementById("Modal");
+let span = document.getElementsByClassName("close")[0];
+
+
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 })

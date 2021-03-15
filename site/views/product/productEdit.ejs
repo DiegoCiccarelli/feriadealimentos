@@ -23,7 +23,7 @@
     >
                 
     <input type="number" name ="precioProducto"  placeholder="Precio" 
-    <% if(typeof data != "undefined"){%>value="<%=data.precioProducto%>"<% } else{%>value="<%=product.precio%>"><% }%>>
+    <% if(typeof data != "undefined"){%>value="<%=data.precioProducto%>"<% } else{%>value="<%=product.precio%>"><% }%>
     </div>
 
     <h2>Categorias: </h2>
@@ -76,10 +76,10 @@
 
 
     
-    <div>
-        <textarea rows="5" cols="30" name="descripcionCorta" id="descripcionCorta" placeholder="Descripción Corta"><%_if(typeof data != "undefined"){_%><%=data.descripcionCorta%><%_}else{_%><%=product.descripcion_corta%><%_}_%></textarea>
-        <textarea rows="10" cols="30" name="descripcionLarga" id="descripcionLarga" placeholder="Descripción Larga"><%_ if(typeof data != "undefined"){_%><%=data.descripcionLarga%><%_}else{_%><%=product.descripcion_larga%><%_}_%></textarea>
-    </div>
+   
+        <textarea rows="5" cols="30" name="descripcionCorta" id="descripcionCortaProductEdit" placeholder="Descripción Corta"><%_if(typeof data != "undefined"){_%><%=data.descripcionCorta%><%_}else{_%><%=product.descripcion_corta%><%_}_%></textarea>
+        <textarea rows="10" cols="30" name="descripcionLarga" id="descripcionLargaProductEdit" placeholder="Descripción Larga"><%_ if(typeof data != "undefined"){_%><%=data.descripcionLarga%><%_}else{_%><%=product.descripcion_larga%><%_}_%></textarea>
+   
 
     <label class="uploadImage">
         <i class="fa fa-cloud-upload"></i><span>Subir imagen</span>
@@ -90,7 +90,7 @@
     </div> 
 
         <button class="claseButton" type="submit">Guardar Cambios</button>
-        <button class="claseButton"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
+        <button class="claseButton botonConLink"><a href="/productos/listadoProductosAdmin">Cancelar</a></button>
 
 </form>
 
