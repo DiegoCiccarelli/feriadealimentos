@@ -1,7 +1,15 @@
 <%- include('../partials/head.ejs'); %>
 
 <%- include('../partials/header.ejs'); %>
-<main>
+<main id="mainCheckout">
+
+    <div id="headCarrito">
+        <img src="/images/banda-prod.png">
+        <h1>Confirmar Compra</h1>
+        <img src="/images/banda-prod.png">
+    </div>  
+
+    <div id="contenedorProductosCheckout">
     <% for(let i = 0; i < cartData.products.length; i++){ %>
         <article class="productoCarrito">
             <input type="hidden" id="product_id" name="product_id" value="<%= cartData.products[i].id%>">
@@ -9,12 +17,12 @@
             <div class="imagenCarrito">
                 <img src="../images/productsImages/<%= cartData.products[i].imagen%>" alt="">
             </div>
-            <div class="informacionProducto">
+            <div class="informacionProducto" id="informacionProductoCheck">
                 <p><%= cartData.products[i].nombre_producto%></p>
-                <p>CANTIDAD:</p>
-                <div>   
+                <p>Cantidad:</p>
+                  
                     <p id="inputCantidad" class="inputCantidad" type="number" class="cantidadAgregaCarrito" name="product_quantity"><%=cartData.products[i].CartProduct.cantidad %></p>
-                </div>
+                
                 <p>Precio </p>
                 <p class="pPrecio">$<%= cartData.products[i].precio %></p>
                 <p>Subtotal</p>
@@ -22,6 +30,7 @@
             </div>
         </article>
     <% } %>
+    </div>
         <div class="contenedorOpciones">
             <div class="contenedorEntrega">
             <h4>¿Desea envio a domicilio?</h4>
@@ -30,32 +39,34 @@
                 <input type="radio" name="delivery" id="deliveryNo" value="no"><span>No</span><br>
             </div>
             <div class="contenedorNodos" style="display: none;">
-                <h4>En que nodo desea retirar sus productos?</h4>
+                <h4>¿En que nodo desea retirar sus productos?</h4>
                 <p style="display: none; color: red;" id="errorEnvioNodo"><strong>Debes seleccionar una opcion</strong></p>
                 <input type="radio" name="nodo" id="nodo1" value="nodo1"><span>Nodo 1</span><br>
                 <input type="radio" name="nodo" id="nodo2" value="nodo2"><span>Nodo 2</span><br>
                 <input type="radio" name="nodo" id="nodo3" value="nodo3"><span>Nodo 3</span><br>
             </div>
-            <div class="contenedorDomicilio" style="display: none;">
-                <h3>DOMICILIO:</h3>
+            <div class="contenedorDomicilio contenedorForm" style="display: none;">
+                <h4>Domicilio</h4>
                 <span><strong>¡Atención! La entrega es solo dentro de Ciudad de Córdoba</strong></span>
-                <p>CALLE:</p><input type="text" name="calle" id="calle" value="<%= cartData.user.calle%>" disabled>
-                <p>ALTURA:</p><input type="text" name="altura" id="altura" value="<%= cartData.user.altura%>" disabled>
-                <p>PISO:</p><input type="text" name="piso" id="piso" value="<%= cartData.user.piso%>" disabled>
-                <p>DEPARTAMENTO:</p><input type="text" name="departamento" id="departamento" value="<%= cartData.user.departamento%>" disabled>
-                <p>BARRIO:</p><select name="barrio" id="barrio" disabled><%if(cartData.user.barrio != ""){%>
+                <input placeholder="Calle" type="text" name="calle" id="calle" value="<%= cartData.user.calle%>" disabled>
+                <input placeholder="Número"type="text" name="altura" id="altura" value="<%= cartData.user.altura%>" disabled>
+                <input placeholder="Piso" type="text" name="piso" id="piso" value="<%= cartData.user.piso%>" disabled>
+                <input placeholder="Departamento" type="text" name="departamento" id="departamento" value="<%= cartData.user.departamento%>" disabled>
+                <select name="barrio" id="barrio" disabled><%if(cartData.user.barrio != ""){%>
                     <option value="<%= cartData.user.barrio %>" selected><%= cartData.user.barrio %></option>
                 <%}%></select>
-                <p>LOCALIDAD:</p><input type="text" name="localidad" id="localidad" value="Ciudad de Cordoba" disabled><br>
-                <h4>Desea elegir otro domicilio de entrega?</h4>
-                <button class="claseButton" id="editarDomicilio">EDITAR</button>
+                <input type="text" name="localidad" id="localidad" value="Ciudad de Cordoba" disabled><br>
+                <h4>¿Desea elegir otro domicilio de entrega?</h4>
+                <button class="claseButton" id="editarDomicilio">Editar</button>
             </div>
             <div class="contenedorObservaciones">
-                <h3>OBSERVACIONES:</h3>
+                <h4>Observaciones:</h4>
                 <textarea id="observaciones" cols="50" rows="10"></textarea>
             </div>
         </div>
-    <button class="claseButton" id="finalizarcompra">COMPRAR</button>
+        <div id="contenedorBotonFinalizar">
+        <button class="claseButton" id="finalizarcompra">Confirmar Compra</button>
+        </div>
 </main>
 <script src="/js/checkout.js"></script>
 <%- include('../partials/footer.ejs'); %>
