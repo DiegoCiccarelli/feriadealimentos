@@ -57,6 +57,11 @@
     min-width: 300px;
     padding: 10px;
 }
+.contenedorForm div{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
 .contenedorForm div input:not([type="checkbox"]){
     text-align: center;
     margin: 10px 10px;
@@ -79,9 +84,12 @@
     border-radius: 10px;
     border: 1px solid #c3c3c3;
     margin: 1vh 0;
+    justify-content: flex-start;
+    vertical-align: top;
+    max-width: 100%;
 }
 .contenedorForm textarea::placeholder{
-    text-align: center;
+text-align: center;
 }
 
 
@@ -90,11 +98,7 @@
     grid-template-columns: repeat(3, 1fr);
 justify-items: self-end;
 }
-.contenedorForm textarea{
-    justify-content: flex-start;
-    margin: 1vh;
-    vertical-align: top;
-}
+
 
 .uploadImage input[type="file"] {
     display: none;
@@ -117,9 +121,32 @@ justify-items: self-end;
 
 }
 
- 
+
+
+@media(max-width: 738px){
+    .contenedorForm{
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+
+    .contenedorForm div input:not([type="checkbox"]){
+        width: 100%;
+        margin: 10px 10px;
+    }
+
+    .contenedorForm input:not([type="checkbox"]){
+        margin: 10px 0;
+
+    }
+
+    #contactoTextarea{
+        width: 100%;
+    }
+}
+
 @media (max-width: 480px){
 
+    
     .contenedorForm h1{
         font-size: 1.5rem;
     }
@@ -128,12 +155,17 @@ justify-items: self-end;
         font-size: 1rem;
     }
 
+    #contactoNombre, #contactoConsulta{
+        width: 100%;
+        margin: 10px 0;
+    }
 
-}
+    #contactoEmail{
+        width: 100%;
+        margin: 10px 0;
+    }
 
-@media(max-width: 768px){
-    .contenedorForm{
-    margin-left: 10px;
-    margin-right: 10px;
+    .contenedorForm textarea{
+        width: 100%;
     }
 }
