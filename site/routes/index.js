@@ -6,4 +6,5 @@ const indexController = require("../controllers/indexController");
 router.get('/', indexController.home);
 
 router.get("/contacto", indexController.viewContact)
+router.get("/institucional", indexController.viewAboutUs)
 module.exports = router;

@@ -17,6 +17,9 @@ const indexController = {
     },
     viewContact : (req, res) => {
         res.render("contact")
+    },
+    viewAboutUs : (req, res) => {
+        res.render("aboutUs")
     }
 };
 
