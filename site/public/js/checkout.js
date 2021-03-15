@@ -15,7 +15,7 @@ let barrioSelect = document.querySelector("#barrio")
 let barrioOption = barrioSelect.querySelector("option")
 
 
-fetch("https://gobiernoabierto.cordoba.gob.ar/api/v2/barrios/barrios?es_oficial=true")
+fetch("https://gobiernoabierto.cordoba.gob.ar/api/v2/barrios/barrios/?page=1&page=2&page=3&page=4&page=5&page=6&page=7&page=8&page=9&page=10&es_oficial=true")
     .then(res => res.json())
     .then(res => {
         console.log(res.results.features[0].properties)

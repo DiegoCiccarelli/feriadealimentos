@@ -14,6 +14,9 @@ const indexController = {
     .then( resultado => {
         res.render("index", {categories : resultado})
     })
+    },
+    viewContact : (req, res) => {
+        res.render("contact")
     }
 };
 

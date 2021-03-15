@@ -68,7 +68,9 @@ const usersController = {
                         res.cookie('recordar' , cryptr.encrypt("true"), { maxAge: 31536000000, httpOnly: true })
                         res.cookie('email' , cryptr.encrypt(req.body.email), { maxAge: 31536000000, httpOnly: true })
                       }
-
+                    if(result.tipo_usuario =="admin"){
+                       return res.redirect("/admin/menu");
+                    }
                     res.redirect("/");
                
                 }else{
