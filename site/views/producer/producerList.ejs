@@ -8,9 +8,8 @@
         <BUTton class="claseButton"><a href="/admin/menu">MENU ADMIN</a></button>
         <button class="claseButton"><a href="/productores/registro">NUEVO PRODUCTOR</a></button>
     </div>
-    
+<div style="overflow-x: auto;">
 <table>
-        <section>
         <thead>
             <tr>
                 <th>ID</th>
@@ -18,7 +17,6 @@
                 <th colspan="2">Modificar</th>
             </tr>
         </thead>
-        <article>
             <tbody>    
                 
                     <% if(typeof producer[0] == "undefined"){%>
@@ -28,8 +26,8 @@
                     <%}else{%>
                     <% for(let i = 0; i < producer.length; i++){ %>
                     <tr>
-                        <td><p><%= producer[i].id %></p></td>
-                        <td><p><%= producer[i].nombre_productor %></p></td>
+                        <td><%= producer[i].id %></td>
+                        <td><%= producer[i].nombre_emprendimiento %></td>
                         <td><button class="claseButton"><a href="/productores/editar/<%= producer[i].id %>">EDITAR</a></button></td>
                         <td><button class="claseButton"><a href="/productores/eliminar/<%= producer[i].id %>">ELIMINAR</a></button></td>
                     </tr>
@@ -37,10 +35,9 @@
                     <%}%>
                 
             </tbody>
-        </article>
         
-     </section>
     </table>
+    </div>
     </main>
 
 

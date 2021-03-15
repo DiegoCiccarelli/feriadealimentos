@@ -7,17 +7,18 @@
     <div id="menuAdmin">
     <BUTton class="claseButton"><a href="/admin/menu">MENU ADMIN</a></BUTton>
     </div>
+    <div style="overflow-x: auto;">
     <table>
-        <section>
         
         <thead>
             <tr>
                 <th>USUARIO</th>
+                <th>EMAIL</th>
                 <th>TOTAL</th>
                 <th>FORMA DE ENTREGA</th>
+                <th>PUNTO DE ENTREGA</th>
             </tr>
         </thead>
-        <article>
             <tbody>    
                 
                     <% if(typeof cartData[0] == "undefined"){%>
@@ -28,16 +29,22 @@
                     <% for(let data of cartData){ %>
                     <tr>
                         <td><%= data.user.nombre_usuario %> <%=data.user.apellido_usuario%></td>
+                        <td><%= data.user.email_usuario%></td>
                         <td>$<%= data.total_carrito %></td>
                         <td> <%=data.forma_entrega%></td>
+                        <td><%if(data.forma_entrega == "nodo"){%>
+                            <%=data.nodo_entrega%>
+                        <%} else{%>
+                            <%=data.domicilio_entrega%>
+                        <%}%>
+                        </td>
                     </tr>
                     <% }%>
                     <%}%>
                 
             </tbody>
-        </article>
         
-    </section>
     </table>
+    </div>
     </main>
 <%- include('../partials/footer.ejs'); %>

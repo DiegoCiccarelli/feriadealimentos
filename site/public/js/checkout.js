@@ -76,7 +76,13 @@ console.log(inputsNodo)
                 let domicilio_entrega = "";
                 data.forma_entrega = "delivery"
                 for(let input of inputsDomicilio){
-                    domicilio_entrega += `${input.value}, `
+                    if(input.value != ""){
+                        if(input.id == "localidad"){
+                        domicilio_entrega += `${input.value}`
+                        } else{
+                        domicilio_entrega += `${input.value}, `
+                        }
+                    }
                 }
                 data.domicilio_entrega = domicilio_entrega;
                 break;

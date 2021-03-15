@@ -9,9 +9,9 @@
     <BUTton class="claseButton"><a href="/admin/menu">MENU ADMIN</a></BUTton>
     <button class="claseButton"><a href="/productos/productoNuevo">NUEVO PRODUCTO</a></button>
     </div>
+    <div style="overflow-x: auto;">
     <table>
-        <section>
-        
+ 
         <thead>
             <tr>
                 <th>ID</th>
@@ -19,7 +19,6 @@
                 <th colspan="2">MODIFICAR</th>
             </tr>
         </thead>
-        <article>
             <tbody>    
                 
                     <% if(typeof product[0] == "undefined"){%>
@@ -29,8 +28,8 @@
                     <%}else{%>
                     <% for(let i = 0; i < product.length; i++){ %>
                     <tr>
-                        <td><p><%= product[i].id %></p></td>
-                        <td><p><%= product[i].nombre_producto %></p></td>
+                        <td><%= product[i].id %></td>
+                        <td><%= product[i].nombre_producto %></td>
                         <td><button class="claseButton"><a href="/productos/productoEditar/<%= product[i].id %>">EDITAR</a></button></td>
                         <td><button class="claseButton"><a href="/productos/productDelete/<%= product[i].id %>">BORRAR</a></button></td>
                     </tr>
@@ -38,10 +37,8 @@
                     <%}%>
                 
             </tbody>
-        </article>
-        
-    </section>
     </table>
+    </div>
     </main>
 
     <%- include('../partials/footer.ejs'); %>

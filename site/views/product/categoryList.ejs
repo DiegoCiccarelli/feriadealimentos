@@ -9,8 +9,8 @@
     <BUTton class="claseButton"><a href="/admin/menu">MENU ADMIN</a></BUTton>
     <button class="claseButton"><a href="/productos/crearCategoria">NUEVA CATEGORIA</a></button>
     </div>
+    <div style="overflow-x: auto;">
     <table>
-        <section>
         
         <thead>
             <tr>
@@ -19,7 +19,6 @@
                 <th colspan="2">MODIFICAR</th>
             </tr>
         </thead>
-        <article>
             <tbody>    
                 
                     <% if(typeof categoria[0] == "undefined"){%>
@@ -38,10 +37,9 @@
                     <%}%>
                 
             </tbody>
-        </article>
         
-    </section>
     </table>
+    </div>
     </main>
 
     <%- include('../partials/footer.ejs'); %>

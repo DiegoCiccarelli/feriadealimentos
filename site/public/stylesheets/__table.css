@@ -6,7 +6,14 @@ table{
     border-collapse: collapse;
     width: 100%;
     margin: 5px;
-    
+    padding: 25px;
+    table-layout: fixed;
+    border-spacing: 15px;
+}
+th,
+td {
+  overflow: hidden;
+  padding: 10px
 }
 th{
   text-align: center;
@@ -29,17 +36,23 @@ td {
   }
 
   td .claseButton{
-    width: 30%;
+    width: 50%;
+    min-width: 0;
+
   }
 
   @media only screen and (max-width: 760px){
     td .claseButton{
-      width: 40%;
+      width: 70%;
+      min-width: 0;
+      font-size: 0.8rem;
     }
   }
   @media only screen and (max-width: 620px){
     td .claseButton{
-      width: 55%;
+      width: 70%;
+      min-width: 0;
+      font-size: 0.8rem;
     }
 
     #menuAdmin{
@@ -56,5 +69,8 @@ td {
       min-width: 0;
       width: 70px;
       font-size: 0.8rem;
+    }
+    th,th{
+      width: 200px;
     }
   }
