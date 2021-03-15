@@ -1,0 +1,43 @@
+<%- include('../partials/head.ejs'); %>
+
+<%- include('../partials/header.ejs'); %>
+<main>
+
+    <h1 style="text-align: center;"">VENTAS</h1>
+    <div id="menuAdmin">
+    <BUTton class="claseButton"><a href="/admin/menu">MENU ADMIN</a></BUTton>
+    </div>
+    <table>
+        <section>
+        
+        <thead>
+            <tr>
+                <th>USUARIO</th>
+                <th>TOTAL</th>
+                <th>FORMA DE ENTREGA</th>
+            </tr>
+        </thead>
+        <article>
+            <tbody>    
+                
+                    <% if(typeof cartData[0] == "undefined"){%>
+                    <tr>
+                        <td colspan="4"><p>No se han encontrado productos</p> </td>
+                    </tr>
+                    <%}else{%>
+                    <% for(let data of cartData){ %>
+                    <tr>
+                        <td><%= data.user.nombre_usuario %> <%=data.user.apellido_usuario%></td>
+                        <td>$<%= data.total_carrito %></td>
+                        <td> <%=data.forma_entrega%></td>
+                    </tr>
+                    <% }%>
+                    <%}%>
+                
+            </tbody>
+        </article>
+        
+    </section>
+    </table>
+    </main>
+<%- include('../partials/footer.ejs'); %>

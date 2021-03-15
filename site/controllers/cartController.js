@@ -135,20 +135,7 @@ const cartController = {
 
     checkout : (req, res) => {
         cartFunction.refreshQuantity(req,res)
-        db.Cart.update(
-            {
-                estado_carrito : "cerrado"
-            },
-            {
-                where : 
-                    {
-                        id : req.session.carrito_id
-                    }
-            }
-        )
-        .then( data =>{
-            res.json(data)
-        })
+        res.json({status : 200})
     },
     continuePurchase : (req, res) => {
         cartFunction.refreshQuantity(req, res)
@@ -159,7 +146,7 @@ const cartController = {
             db.Cart.findOne({
                 where : {
                     id : req.session.carrito_id,
-                    estado_carrito : "cerrado"
+                    estado_carrito : "activo"
                 },
                 include : [{association : "products"}, {association : "user"}]
             })
@@ -175,7 +162,7 @@ const cartController = {
         db.Cart.findOne({
             where : {
                 id : req.session.carrito_id,
-                estado_carrito : "cerrado"
+                estado_carrito : "activo"
             },
             include : [{association : "products"}]
         })
@@ -199,7 +186,7 @@ const cartController = {
                     where : 
                         {
                             id : req.session.carrito_id,
-                            estado_carrito : "cerrado"
+                            estado_carrito : "activo"
                         }
                 })
                 .then( data => {
@@ -220,7 +207,7 @@ const cartController = {
                         where : 
                             {
                                 id : req.session.carrito_id,
-                                estado_carrito : "cerrado"
+                                estado_carrito : "activo"
                             }
                     })
                     .then(data => {

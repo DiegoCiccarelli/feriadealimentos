@@ -5,5 +5,6 @@ const usersMiddleware = require("../middlewares/usersMiddeware")
 
 /* GET home page. */
 router.get('/menu', usersMiddleware.isLogged, usersMiddleware.isAdmin, adminController.viewAdminMenu);
+router.get('/ventas', usersMiddleware.isLogged, usersMiddleware.isAdmin, adminController.viewPurchases);
 
 module.exports = router;

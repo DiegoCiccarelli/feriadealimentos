@@ -134,10 +134,7 @@ justify-items: self-end;
 
 
 @media(max-width: 738px){
-    .contenedorForm{
-        margin-left: 10px;
-        margin-right: 10px;
-        }
+
 
     .contenedorForm div input:not([type="checkbox"]){
         width: 100%;
