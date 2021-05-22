@@ -86,13 +86,13 @@ const usersMiddleware = {
 
 
     isLogged: function (req, res, next){
-        if (req.session.user.email || req.cookies.recordar){
+        if (req.session.email || req.cookies.recordar){
             return next();
         }else{
             if (req.is("application/json")){
                 res.json({status : 401})
             } else {
-            return res.render("system/login");                                    
+            return res.render("user/login");                                    
             }
         };
 
@@ -101,13 +101,13 @@ const usersMiddleware = {
     isAdmin: function (req, res, next){
 
 
-        if (req.session.admin == "true"){
+        if (req.session.admin == true){
 
             return next();
 
         }else{
 
-            return res.render("system/login");                                    
+            return res.render("user/login");                                    
 
         };
 

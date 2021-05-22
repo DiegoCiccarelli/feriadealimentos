@@ -40,7 +40,6 @@ const apiController = {
     
     lastProduct : (req, res) => {
         db.Product.findAll({
-            where : {estado_producto : 1},
             order: [['created_at', "DESC"]],
             limit : 1
         },

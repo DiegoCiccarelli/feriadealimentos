@@ -15,10 +15,8 @@ const usersController = {
     register : function(req, res, next){
         const errors = validationResult(req)
         if(!errors.isEmpty()){
-            console.log("hola2")
-            return res.render("user/register", {errors : errors.errors, datos : req.body})
+            res.render("user/register", {errors : errors.errors, datos : req.body})
         }else{
-            console.log("hola")
         let avatar = null;
         if(typeof req.files[0] != "undefined"){
         avatar = req.files[0].filename
@@ -33,7 +31,7 @@ const usersController = {
             avatar: avatar,
             tipo_usuario: "cliente",    
         }).then(function(){
-            return res.redirect('/usuarios/login');
+            res.redirect('/usuarios/login');
         })
     }
     },
